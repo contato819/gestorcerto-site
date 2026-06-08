@@ -1,0 +1,53 @@
+===============================================
+DEPLOYMENT INSTRUCTIONS - GESTORCERTO.COM.BR
+===============================================
+
+Site: gestorcerto.com.br
+Domain: gestorcerto.com.br
+Status: Production Ready
+
+FILES TO UPLOAD:
+================
+- index.html (HOME PAGE - 48KB)
+- assets/css/styles.css (48KB)
+- assets/js/main.js (4.6KB)
+- assets/img/ (all images/logos)
+- 404.html (error page)
+- (other pages if needed)
+
+UPLOAD INSTRUCTIONS:
+====================
+1. Connect to FTP with credentials provided
+2. Navigate to /public_html/ or root folder
+3. Upload all files maintaining directory structure:
+   /
+   ├── index.html
+   ├── assets/
+   │   ├── css/
+   │   │   └── styles.css
+   │   ├── js/
+   │   │   └── main.js
+   │   └── img/
+   │       └── (all images)
+   └── 404.html
+
+4. Verify: https://gestorcerto.com.br loads correctly
+
+FEATURES DEPLOYED:
+==================
+✓ New Slogan: "Grupo Gestor ser a base para Tomada de Decisões é o nosso motor"
+✓ 11 Professional Services
+✓ Fiscal Classifications (MEI, Simples, Lucro Presumido, Lucro Real)
+✓ RJ Focus
+✓ 6 Decision Relations
+✓ 18 Strategic Partnerships
+✓ Complete Cycle
+✓ Fully Proofread Content
+✓ Responsive Design
+✓ SEO Ready (JSON-LD)
+
+CONTACT:
+========
+WhatsApp: (11) 91404-0532
+Email: comercial@gestorcerto.com.br
+Address: Estr. Mun. Bela Vista, 917 - Sala 366, Alphaville, Santana de Parnaíba/SP - CEP 06539-010

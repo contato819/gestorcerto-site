@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# IA / LLMs — orientações em /llms.txt
+Sitemap: https://gestorcerto.com.br/sitemap.xml

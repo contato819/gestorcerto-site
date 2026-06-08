@@ -1,0 +1,124 @@
+{
+  "grupo_gestorcontabil": {
+    "handle": "@grupo_gestorcontabil",
+    "url": "https://instagram.com/grupo_gestorcontabil",
+    "description": "Dicas de contabilidade, fiscal e RH — para sua empresa e família.",
+    "posts": [
+      {
+        "id": "1",
+        "title": "Décimo Terceiro 2025",
+        "description": "Tudo que você precisa saber sobre o 13º salário: cálculos, prazos e impactos tributários.",
+        "category": "RH & Folha",
+        "image": "https://via.placeholder.com/400x400?text=13º+2025",
+        "date": "2025-06-01",
+        "color": "#0f172a"
+      },
+      {
+        "id": "2",
+        "title": "Imposto de Renda 2025",
+        "description": "Guia completo para declaração: abatimentos, deduções e como economizar na hora do acerto.",
+        "category": "Imposto de Renda",
+        "image": "https://via.placeholder.com/400x400?text=IRPF+2025",
+        "date": "2025-05-28",
+        "color": "#1a3a52"
+      },
+      {
+        "id": "3",
+        "title": "Abertura de Empresa",
+        "description": "Seu negócio começando agora? Veja passo a passo como abrir uma empresa sem dor de cabeça.",
+        "category": "CNPJ & Fiscal",
+        "image": "https://via.placeholder.com/400x400?text=Abertura+CNPJ",
+        "date": "2025-05-21",
+        "color": "#0f3a4a"
+      },
+      {
+        "id": "4",
+        "title": "Certificado Digital A1",
+        "description": "Como obter seu certificado digital, renovar e evitar problemas de acesso a portais fiscais.",
+        "category": "Certificação",
+        "image": "https://via.placeholder.com/400x400?text=Cert+Digital",
+        "date": "2025-05-14",
+        "color": "#1a2847"
+      },
+      {
+        "id": "5",
+        "title": "MEI: Guia Completo",
+        "description": "Tudo sobre DAS, NFS-e, categoria de serviço e como crescer como Microempreendedor.",
+        "category": "MEI",
+        "image": "https://via.placeholder.com/400x400?text=MEI+Guide",
+        "date": "2025-05-07",
+        "color": "#0d2d3a"
+      },
+      {
+        "id": "6",
+        "title": "Planejamento Tributário",
+        "description": "Identifique o melhor regime tributário para seu negócio: Simples, Lucro Real ou Presumido?",
+        "category": "Tributária",
+        "image": "https://via.placeholder.com/400x400?text=Planej.+Trib.",
+        "date": "2025-04-30",
+        "color": "#0f3a4a"
+      }
+    ]
+  },
+  "gestorcertocotafacil": {
+    "handle": "@gestorcertocotafacil",
+    "url": "https://instagram.com/gestorcertocotafacil",
+    "description": "Soluções para crédito, seguros, consórcios e financiamentos — para empresa e família.",
+    "posts": [
+      {
+        "id": "1",
+        "title": "Consórcios Imobiliários",
+        "description": "Financie seu imóvel sem juros: como funciona, vantagens e comparação com crédito tradicional.",
+        "category": "Consórcios",
+        "image": "https://via.placeholder.com/400x400?text=Consórcios",
+        "date": "2025-05-25",
+        "color": "#003d5c"
+      },
+      {
+        "id": "2",
+        "title": "Seguros Empresariais",
+        "description": "Proteja seu negócio: responsabilidade civil, incêndio, roubo e cobertas especializadas.",
+        "category": "Seguros",
+        "image": "https://via.placeholder.com/400x400?text=Seguros",
+        "date": "2025-05-18",
+        "color": "#1a2847"
+      },
+      {
+        "id": "3",
+        "title": "Crédito Empresarial",
+        "description": "5 opções de crédito para seu negócio crescer: empréstimo, refinanciamento e capital de giro.",
+        "category": "Crédito",
+        "image": "https://via.placeholder.com/400x400?text=Crédito",
+        "date": "2025-05-11",
+        "color": "#0f3a4a"
+      },
+      {
+        "id": "4",
+        "title": "Financiamento Imobiliário",
+        "description": "Moradia própria: simulações, aprovação rápida e as melhores taxas do mercado.",
+        "category": "Financiamento",
+        "image": "https://via.placeholder.com/400x400?text=Financiamento",
+        "date": "2025-05-04",
+        "color": "#003d5c"
+      },
+      {
+        "id": "5",
+        "title": "Seguros Pessoais",
+        "description": "Vida, saúde, viagem e responsabilidade: proteja você e sua família com as melhores coberturas.",
+        "category": "Seguros",
+        "image": "https://via.placeholder.com/400x400?text=Seguro+Pessoal",
+        "date": "2025-04-27",
+        "color": "#1a2847"
+      },
+      {
+        "id": "6",
+        "title": "Análise de Crédito",
+        "description": "Saiba seu score, melhore histórico e consiga melhores taxas em empréstimos e cartões.",
+        "category": "Consultoria",
+        "image": "https://via.placeholder.com/400x400?text=Score+Crédito",
+        "date": "2025-04-20",
+        "color": "#0f3a4a"
+      }
+    ]
+  }
+}

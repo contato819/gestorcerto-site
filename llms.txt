@@ -1,0 +1,77 @@
+# Gestor Certo — Ecossistema Grupo Gestor
+
+> Escritório de contabilidade em Santana de Parnaíba/SP (Alphaville) e um ecossistema integrado de soluções para empresas e famílias. Tudo começa na contabilidade — e o resto (RH, benefícios, consórcios, seguros, crédito e MEI) a gente também resolve.
+
+Marca institucional: Gestor Certo — Escritório de Contabilidade.
+Marca do ecossistema: Gestor Certo / Grupo Gestor.
+Slogan: "A base para tomada de decisões é o nosso motor!"
+CNPJ: 44.066.941/0001-01
+Sites: https://gestorcerto.com.br (principal) e https://grupogestormei.com.br (portal e app do MEI).
+
+## Blog
+Artigos atualizados sobre contabilidade, imposto de renda, aposentadoria, empreendedorismo e gestão empresarial.
+URL: https://gestorcerto.com.br/blog/
+
+## Contato
+- Endereço: Estr. Mun. Bela Vista, 917 — Sala 366, Alphaville, Santana de Parnaíba/SP — CEP 06539-010
+- WhatsApp: (11) 97575-0091 — https://wa.me/5511975750091
+- E-mail: contato@gestorcerto.com.br
+- Instagram (principal): @grupo_gestorcontabil
+- Instagram (CotaFácil — soluções): @gestorcertocotafacil
+- Facebook: facebook.com/GestorCerto/
+- YouTube: youtube.com/channel/UCdOHhl_W7kuxuEF56Lho0cQ
+- LinkedIn: linkedin.com/company/gestor-certo/
+- Atendimento: segunda a sexta, das 9h às 18h
+
+## Núcleo — Contabilidade & Fiscal
+- Abertura de empresas
+- Imposto de renda (IRPF e IRPJ)
+- Certificado digital A1/A3 (emissão e renovação)
+- Análise / planejamento tributário
+- BPO financeiro
+- Registro de marcas (INPI)
+- Consultoria empresarial
+- Folha de pagamento e rotinas trabalhistas (eSocial, FGTS Digital)
+- Integração bancária (contábil e fiscal em tempo real)
+Página: https://gestorcerto.com.br/contabilidade.html
+
+## Pessoas & RH
+Recrutamento & seleção; admissão, registros e folha (eSocial, FGTS Digital); atendimento humanizado ao funcionário via chat; homologação por vídeo.
+Página: https://gestorcerto.com.br/rh.html
+
+## Benefícios
+Vale-refeição & alimentação (cartão VR); VR Gente; TotalPass (saúde e bem-estar); planos de saúde com curadoria.
+Página: https://gestorcerto.com.br/rh.html
+
+## Soluções CotaFácil (empresa e família) — 29 soluções
+- Consórcios (7): automóveis, imóveis, motos, caminhões, máquinas, energia solar, serviços
+- Seguros (10): auto, moto, residencial, empresarial, vida, viagem, fiança, condominial, responsabilidade civil, equipamentos
+- Crédito & empréstimos (5): pessoal, consignado, refinanciamento, portabilidade, cartão de crédito
+- Financiamentos (3): veículos, imobiliário, máquinas & equipamentos
+- Outras (4): simulações, consultoria de crédito & seguros, comparação de planos, pacotes de viagens
+Página: https://gestorcerto.com.br/solucoes.html
+
+## App Grupo Gestor MEI
+Plataforma 100% web especializada em contabilidade para MEI, disponível para Android e iOS.
+Funcionalidades: emissão de NFS-e, geração e parcelamento de DAS, cadastro de clientes e fornecedores, controle de estoque, contas a pagar e receber, caixa/fluxo financeiro.
+Serviços complementares: abertura, alteração e baixa de CNPJ MEI; certificado digital; transição MEI → ME.
+- Acesso web: https://app.grupogestormei.com.br/login
+- Google Play: https://play.google.com/store/apps/details?id=com.openmei.grupogestormei
+- Portal MEI: https://grupogestormei.com.br
+Página: https://gestorcerto.com.br/mei.html
+
+## Portais & Sistemas (área do cliente)
+- App MEI — https://app.grupogestormei.com.br/login
+- Empresarial Web — https://sistemaweb.gestorcertositemasweb.com.br/sistema/
+- Clínica Web — https://sistemaclinica.gestorcertositemasweb.com.br/acesso
+- Pet Web — https://sistemapet.gestorcertositemasweb.com.br/sistema/
+- Grupo Gestor Zen (Questor) — https://conectfameg.app.questorpublico.com.br/entrar
+- Recibos de Pagamento — https://conectfameg.app.questorpublico.com.br/Authorize/LogOn?ReturnUrl=%2fempresa%2fqcolabore%3ffilter%3d1%26PluginSystemName%3dDocument.PayRoll
+- Grupo Gestor HUB — https://portal.hubstrom.com/login
+
+## Tecnologia & Fidelização
+Apps próprios; integração bancária em tempo real; secretária virtual; cashback; programa de pontos; indique e ganhe; pesquisa de satisfação (NPS); acompanhamento de recorrências; campanhas de relacionamento. Em desenvolvimento: Agente Fiscal & Contábil (IA), ERP completo multiusuário, licença da plataforma para outros escritórios.
+Página: https://gestorcerto.com.br/tecnologia.html
+
+## Setores atendidos
+Construção civil, clínicas médicas, agências de publicidade, terceiro setor, prestação de serviços, comércio & e-commerce.
