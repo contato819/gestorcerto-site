@@ -21,8 +21,3 @@ jobs:
         protocol: ftp
         local-dir: ./
         server-dir: /public_html/
-        timeout: 600000
-        exclude: |
-          **/.git*
-          **/node_modules
-          **/.DS_Store
