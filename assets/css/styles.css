@@ -291,6 +291,12 @@ p { color: var(--ink-soft); }
   align-items: center;
 }
 
+/* Logo do header cabe na barra (override do style inline 120px) */
+.header__logo-left img {
+  height: 60px !important;
+  width: auto;
+}
+
 .header__logo-right {
   flex-shrink: 0;
   display: flex;
