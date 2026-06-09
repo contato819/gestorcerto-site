@@ -693,8 +693,8 @@ p { color: var(--ink-soft); }
     background: #fff;
     border-top: 1px solid var(--line);
     box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
-    padding: 16px;
-    gap: 8px;
+    padding: 12px 12px;
+    gap: 4px;
     z-index: 50;
     max-height: 70vh;
     overflow-y: auto;
@@ -707,10 +707,12 @@ p { color: var(--ink-soft); }
   .nav__links a {
     padding: 12px 14px !important;
     border-radius: 8px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     display: block;
     color: var(--ink-soft);
     transition: all 0.25s var(--ease);
+    white-space: normal;
+    word-break: break-word;
   }
 
   .nav__links a:hover {
@@ -741,14 +743,24 @@ p { color: var(--ink-soft); }
     position: static !important;
     box-shadow: none !important;
     border: none !important;
-    padding: 12px 0 0 14px !important;
-    background: transparent !important;
+    padding: 16px 14px !important;
+    background: #f9fafb !important;
     display: none;
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
-    margin-top: 0 !important;
+    margin-top: 8px !important;
     min-width: auto !important;
+    border-radius: 8px !important;
+  }
+
+  .nav__drop-menu h5 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px 0;
+    letter-spacing: 0.1em;
   }
 
   .nav__drop.open .nav__drop-menu {
@@ -757,12 +769,28 @@ p { color: var(--ink-soft); }
 
   .nav__drop-menu a {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
-    padding: 12px 0;
-    font-size: 0.9rem;
+    padding: 12px 12px;
+    font-size: 0.85rem;
     border-bottom: 1px solid var(--line-2);
     color: var(--ink-soft);
+    border-radius: 6px;
+    margin-bottom: 4px;
+    word-break: break-word;
+  }
+
+  .nav__drop-menu a:hover {
+    background: #f0f4f8;
+    color: var(--blue-600);
+  }
+
+  .nav__drop-menu a small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.4;
   }
 
   .nav__drop-menu a:last-child {
@@ -793,6 +821,39 @@ p { color: var(--ink-soft); }
 
   .brand__text { display: none; }
   .brand__icon { width: 36px; height: 36px; }
+
+  /* Menu improvements for very small screens */
+  .nav__links a {
+    padding: 10px 12px !important;
+    font-size: 0.85rem;
+  }
+
+  .nav__drop-menu {
+    padding: 12px 10px !important;
+  }
+
+  .nav__drop-menu a {
+    padding: 10px 10px;
+    gap: 8px;
+  }
+
+  .nav__drop-menu a .di {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav__drop-menu a .dl {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .nav__drop-menu a span {
+    word-break: break-word;
+  }
 
   .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
