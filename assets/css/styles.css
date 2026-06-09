@@ -802,12 +802,17 @@ p { color: var(--ink-soft); }
 @media (max-width: 768px) {
   /* HEADER */
   .header-layout {
-    height: auto;
+    height: 72px;
     min-height: 72px;
   }
 
+  /* Logo menor no mobile para o header manter 72px e alinhar com o menu */
+  .header__logo-left img {
+    height: 52px !important;
+  }
+
   .header__logo-right {
-    display: none;
+    display: none !important;
   }
 
   /* MENU RESPONSIVO - PROFISSIONAL */
