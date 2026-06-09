@@ -37,11 +37,14 @@
 <body>
 <header class="site-header">
   <div class="container">
-    <div class="header-layout" style="justify-content: space-between; align-items: center;">
-      <!-- LOGO ESQUERDA: Grupo Gestor -->
-      <a href="index.html" aria-label="Grupo Gestor" style="display: flex; align-items: center; gap: 0; flex-shrink: 0;">
-        <img src="assets/img/logo-grupo-gestor.png" alt="Grupo Gestor" style="height: 48px; width: auto; object-fit: contain;">
-      </a>
+    <div class="header-layout">
+      <!-- LOGOS ESQUERDA: Grupo Gestor + Gestor Certo -->
+      <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+        <img src="assets/img/logo-grupo-gestor.png" alt="Grupo Gestor" style="height: 32px; width: auto; object-fit: contain;">
+        <div style="width: 1px; height: 24px; background: rgba(15,118,110,0.2);"></div>
+        <img src="assets/img/icon-gestor.png" alt="Gestor Certo" style="height: 32px; width: auto;">
+        <span style="font-size: 0.75rem; color: var(--ink-soft); font-weight: 700; white-space: nowrap;">Soluções e Cotações</span>
+      </div>
 
       <!-- MENU CENTRO -->
       <nav class="nav" aria-label="Navegação principal">
@@ -53,15 +56,6 @@
       </div>
     </div></div>
       </nav>
-
-      <!-- LOGO DIREITA: Gestor Certo Soluções e Cotações -->
-      <a class="brand" href="index.html" aria-label="Gestor Certo — Soluções e Cotações" style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
-        <img class="brand__icon" src="assets/img/icon-gestor.png" alt="" width="48" height="48">
-        <span class="brand__text">
-          <span class="brand__name">Gestor<span> Certo</span></span>
-          <span class="brand__tag">Soluções e Cotações</span>
-        </span>
-      </a>
 
       <div class="header-actions">
         <a class="btn btn--link" href="contato.html">Contatos</a>
