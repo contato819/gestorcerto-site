@@ -17,5 +17,7 @@ jobs:
         server: 89.117.9.202
         username: u881687053.gestorcerto.com.br
         password: ${{ secrets.FTP_PASSWORD }}
+        port: 21
+        protocol: ftp
         local-dir: ./
         server-dir: /public_html/
