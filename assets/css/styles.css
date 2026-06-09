@@ -719,33 +719,32 @@ p { color: var(--ink-soft); }
   }
 
   .nav {
+    display: none !important;
     position: fixed;
-    top: 72px;
+    top: 80px;
     left: 0;
     right: 0;
-    width: 100vw;
-    height: 0;
-    flex-direction: column;
+    width: 100%;
     background: #fff;
+    border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
-    overflow: hidden;
-    z-index: 50;
-    transition: height 0.3s ease;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+    z-index: 999;
+    padding: 0;
+    margin: 0;
   }
 
   .nav.open {
-    height: calc(100vh - 72px);
-    max-height: 80vh;
-    overflow-y: auto;
+    display: block !important;
   }
 
   .nav__links {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 16px 14px;
-    gap: 8px;
+    padding: 12px 0;
+    gap: 0;
+    background: #fff;
   }
 
   .nav.open .nav__links {
@@ -753,14 +752,15 @@ p { color: var(--ink-soft); }
   }
 
   .nav__links a {
-    padding: 14px 16px !important;
-    border-radius: 8px;
-    font-size: 0.95rem;
+    padding: 16px 20px !important;
+    border-radius: 0;
+    font-size: 1rem;
     display: block;
     color: var(--ink-soft);
-    transition: all 0.25s var(--ease);
+    transition: all 0.2s var(--ease);
     white-space: normal;
     word-break: break-word;
+    border-bottom: 1px solid var(--line-2);
   }
 
   .nav__links a:hover {
@@ -780,26 +780,33 @@ p { color: var(--ink-soft); }
   .nav__drop > button {
     width: 100%;
     justify-content: space-between;
-    padding: 12px 14px !important;
-    font-size: 0.95rem;
+    padding: 16px 20px !important;
+    font-size: 1rem;
     background: transparent;
     border: none;
+    border-bottom: 1px solid var(--line-2);
     text-align: left;
+    color: var(--ink-soft);
+  }
+
+  .nav__drop > button:hover {
+    background: var(--bg-soft);
+    color: var(--blue-600);
   }
 
   .nav__drop-menu {
     position: static !important;
     box-shadow: none !important;
     border: none !important;
-    padding: 16px 14px !important;
+    padding: 0 !important;
     background: #f9fafb !important;
     display: none;
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
-    margin-top: 8px !important;
+    margin: 0 !important;
     min-width: auto !important;
-    border-radius: 8px !important;
+    border-radius: 0 !important;
   }
 
   .nav__drop-menu h5 {
@@ -807,7 +814,8 @@ p { color: var(--ink-soft); }
     font-weight: 700;
     text-transform: uppercase;
     color: var(--muted);
-    margin: 0 0 12px 0;
+    margin: 0;
+    padding: 12px 20px 8px;
     letter-spacing: 0.1em;
   }
 
@@ -819,12 +827,12 @@ p { color: var(--ink-soft); }
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    padding: 12px 12px;
-    font-size: 0.85rem;
+    padding: 12px 20px;
+    font-size: 0.9rem;
     border-bottom: 1px solid var(--line-2);
     color: var(--ink-soft);
-    border-radius: 6px;
-    margin-bottom: 4px;
+    border-radius: 0;
+    margin: 0;
     word-break: break-word;
   }
 
