@@ -15,18 +15,25 @@
   const nav = document.querySelector('.nav');
   const toggle = document.querySelector('.nav__toggle');
   if (toggle && nav) {
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(open));
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    nav.querySelectorAll('.nav__links a').forEach((a) =>
-      a.addEventListener('click', () => {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      })
+    const closeMenu = () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+    nav.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', closeMenu)
     );
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && nav.classList.contains('open')) {
+        closeMenu();
+      }
+    });
   }
 
   // --- Dropdowns ---
