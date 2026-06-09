@@ -184,7 +184,34 @@ p { color: var(--ink-soft); }
 .header-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .header-actions .btn--link { display: none; font-size: 0.85rem; padding: 10px 16px; }
 .header-actions .btn--primary { padding: 10px 18px; font-size: 0.9rem; }
-.header-layout { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.header-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  height: 80px;
+}
+
+.header__logo-left {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
 @media (min-width: 1024px) {
   .header-actions .btn--link { display: inline-flex; color: var(--ink-soft); font-weight: 600; font-size: .9rem; transition: color .2s; }
@@ -682,22 +709,43 @@ p { color: var(--ink-soft); }
 /* ====================== MOBILE MENU (768px and below) ====================== */
 @media (max-width: 768px) {
   /* Header and layout */
-  .nav { position: relative; }
-  .nav__links {
+  .header-layout {
+    height: auto;
+    min-height: 72px;
+  }
+
+  .header__logo-right {
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
+  }
+
+  .nav {
+    position: fixed;
+    top: 72px;
     left: 0;
     right: 0;
+    width: 100vw;
+    height: 0;
+    flex-direction: column;
     background: #fff;
-    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
     box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+    overflow: hidden;
+    z-index: 50;
+    transition: height 0.3s ease;
+  }
+
+  .nav.open {
+    height: calc(100vh - 72px);
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .nav__links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     padding: 16px 14px;
     gap: 8px;
-    z-index: 50;
-    max-height: 70vh;
-    overflow-y: auto;
   }
 
   .nav.open .nav__links {
