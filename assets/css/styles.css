@@ -919,8 +919,9 @@ p { color: var(--ink-soft); }
   .section-head { margin-bottom: 32px; }
 
   .nav__links { top: 64px; }
-}
+
   .footer__bottom { flex-direction: column; text-align: center; }
   .hero__actions .btn { flex: 1; }
-  .eco-badge--tl { left: -6px; } .eco-badge--br { right: -4px; }
+  .eco-badge--tl { left: -6px; }
+  .eco-badge--br { right: -4px; }
 }
