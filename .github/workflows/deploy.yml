@@ -12,18 +12,10 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Deploy to Hostinger via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftp.hostinger.com
         username: u881687053.gestorcerto.com.br
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: /public_html/
-        dangerous-delete-include: "**/*"
-        exclude: |
-          **/.git*
-          **/.github
-          **/node_modules
-          **/*.md
-          **/._*
-          **/.DS_Store
