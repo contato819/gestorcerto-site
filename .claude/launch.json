@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "gestorcerto",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8090"],
-      "port": 8090
+      "name": "gestorcerto-real",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "serve", "-l", "8095", "C:/Users/abdal/gestorcerto-github"],
+      "port": 8095
     }
   ]
 }
