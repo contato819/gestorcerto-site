@@ -3,6 +3,7 @@ name: Deploy to Hostinger
 on:
   push:
     branches: [ main ]
+  workflow_dispatch: {}
 
 jobs:
   deploy:
@@ -11,7 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Deploy to Hostinger via FTP
+    # 1ª tentativa — não derruba o job se o FTP oscilar
+    - name: Deploy to Hostinger via FTP (tentativa 1)
+      id: ftp1
+      continue-on-error: true
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: 89.117.9.202
@@ -19,5 +23,20 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
         protocol: ftp
+        timeout: 120000
+        local-dir: ./
+        server-dir: /public_html/
+
+    # 2ª tentativa — só roda se a 1ª falhou (conexão FTP instável)
+    - name: Deploy to Hostinger via FTP (tentativa 2)
+      if: steps.ftp1.outcome == 'failure'
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: 89.117.9.202
+        username: u881687053.gestorcerto.com.br
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21
+        protocol: ftp
+        timeout: 120000
         local-dir: ./
         server-dir: /public_html/
