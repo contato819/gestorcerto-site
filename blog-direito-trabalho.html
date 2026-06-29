@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direito do Trabalho: rescisão e férias (com simuladores) | Gestor Certo</title>
+<meta name="description" content="Entenda seus direitos na rescisão e nas férias — com simuladores grátis de rescisão e de férias e seus reflexos no salário. Cada caso é um caso: fale com nosso RH.">
+<link rel="canonical" href="https://gestorcerto.com.br/blog-direito-trabalho.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0F766E">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Gestor Certo — Ecossistema Grupo Gestor">
+<meta property="og:title" content="Direito do Trabalho: rescisão e férias (com simuladores)">
+<meta property="og:description" content="Simuladores de rescisão e de férias, e como elas refletem no salário. Cada caso é um caso.">
+<meta property="og:url" content="https://gestorcerto.com.br/blog-direito-trabalho.html">
+<meta property="og:image" content="https://gestorcerto.com.br/assets/img/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .article{max-width:760px;margin:0 auto;padding:0 22px}
+  .article h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:34px 0 12px;color:var(--ink)}
+  .article p{color:var(--ink-soft);margin:0 0 14px;font-size:1.02rem;line-height:1.7}
+  .article ul{margin:0 0 16px 20px;color:var(--ink-soft);line-height:1.7}
+  .article li{margin-bottom:6px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:24px 0}
+  .toc b{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-500)}
+  .toc ul{list-style:none;margin:10px 0 0;padding:0}.toc li{margin:6px 0}
+  .toc a{color:var(--ink-soft);font-weight:600;font-size:.95rem;text-decoration:none}.toc a:hover{color:var(--teal-500)}
+  .calc-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-md);max-width:760px;margin:0 auto}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .cf.full{grid-column:1/-1}
+  .cf label{display:block;font-size:.84rem;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
+  .cf .inp{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+  .cf .inp:focus-within{border-color:var(--teal-400)}
+  .cf .pre{padding:0 0 0 12px;color:var(--muted);font-weight:600;font-size:.9rem}
+  .cf .suf{padding:0 12px 0 0;color:var(--muted);font-weight:600;font-size:.9rem}
+  .cf input,.cf select{width:100%;border:0;background:transparent;padding:11px 12px;font:inherit;font-weight:700;color:var(--ink)}
+  .cf input:focus,.cf select:focus{outline:none}
+  .cf .chk{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink-soft);font-size:.92rem;padding-top:6px}
+  .res{margin-top:18px;background:linear-gradient(135deg,rgba(45,212,191,.08),rgba(37,99,235,.08));border:1px solid rgba(45,212,191,.25);border-radius:14px;padding:18px}
+  .res .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem;color:var(--ink-soft)}
+  .res .row:last-child{border-bottom:0}
+  .res .row b{color:var(--ink)}
+  .res .total{display:flex;justify-content:space-between;align-items:center;margin-top:12px;background:var(--ink);color:#fff;border-radius:12px;padding:14px 16px}
+  .res .total .v{font-size:1.5rem;font-weight:800}
+  .reflexo{margin-top:14px;background:#EAF6FF;border:1px solid #BBDDF7;border-radius:12px;padding:14px 16px;font-size:.92rem;color:#0B3C66;line-height:1.55}
+  .disc{max-width:760px;margin:18px auto 0;background:#FEF6E7;border:1px solid #F6D58a;border-radius:12px;padding:14px 16px;font-size:.88rem;color:#7a5600;line-height:1.6}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="header-layout">
+      <!-- LOGO ESQUERDA: Grupo Gestor - EM DESTAQUE -->
+      <a href="index.html" aria-label="Grupo Gestor" class="header__logo-left" style="display: flex; align-items: center; flex-shrink: 0;">
+        <img src="assets/img/logo-grupo-gestor.png" alt="Grupo Gestor - Escritório de Contabilidade" style="height: 120px; width: auto; object-fit: contain;">
+      </a>
+
+      <!-- MENU RESPONSIVO PROFISSIONAL -->
+      <nav class="nav" id="menu" aria-label="Navegação principal">
+        <div class="nav-wrapper">
+          <a href="index.html" class="nav__link nav__link--active">Início</a>
+          <a href="contabilidade.html" class="nav__link">Contabilidade</a>
+          <a href="rh.html" class="nav__link">RH & Benefícios</a>
+          <a href="solucoes.html" class="nav__link">Soluções</a>
+          <a href="mei.html" class="nav__link">MEI</a>
+          <a href="tecnologia.html" class="nav__link">Tecnologia</a>
+          <a href="posts.html" class="nav__link">Blog</a>
+          <div class="nav__drop" data-drop>
+            <button type="button" class="nav__link" aria-haspopup="true" aria-expanded="false">Acessos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="nav__drop-menu">
+              <a href="https://app.grupogestormei.com.br/login" target="_blank" rel="noopener">App MEI</a>
+              <a href="https://sistemaweb.gestorcertositemasweb.com.br/sistema/" target="_blank" rel="noopener">Empresarial Web</a>
+              <a href="https://sistemaclinica.gestorcertositemasweb.com.br/acesso" target="_blank" rel="noopener">Clínica Web</a>
+              <a href="https://sistemapet.gestorcertositemasweb.com.br/sistema/" target="_blank" rel="noopener">Pet Web</a>
+              <a href="https://conectfameg.app.questorpublico.com.br/entrar" target="_blank" rel="noopener">Grupo Gestor Zen</a>
+              <a href="https://conectfameg.app.questorpublico.com.br/Authorize/LogOn?ReturnUrl=%2fempresa%2fqcolabore%3ffilter%3d1%26PluginSystemName%3dDocument.PayRoll&amp;filter=1&amp;PluginSystemName=Document.PayRoll" target="_blank" rel="noopener">Recibos de Pagamento</a>
+              <a href="https://portal.hubstrom.com/login" target="_blank" rel="noopener">Grupo Gestor HUB</a>
+              <a href="https://docs.gestorcerto.com.br" target="_blank" rel="noopener">Portal de Documentos</a>
+              <a href="https://formsgestor.gestorcerto.com.br" target="_blank" rel="noopener">Formulários</a>
+              <a href="https://extrato.gestorcerto.com.br" target="_blank" rel="noopener">Conversor de Extratos</a>
+              <a href="https://csgestor.gestorcerto.com.br" target="_blank" rel="noopener">Cofre de Senhas</a>
+              <a href="https://agenda.gestorcerto.com.br" target="_blank" rel="noopener">Secretaria Virtual</a>
+              <a href="https://contratos.gestorcerto.com.br" target="_blank" rel="noopener">Contratos</a>
+              <a href="https://ponto.gestorcerto.com.br" target="_blank" rel="noopener">Ponto Gestor</a>
+              <a href="https://irpf.gestorcerto.com.br" target="_blank" rel="noopener">Gestor IRPF</a>
+              <a href="https://agentefolha.gestorcerto.com.br" target="_blank" rel="noopener">Agente Folha</a>
+              <a href="https://erp.gestorcerto.com.br" target="_blank" rel="noopener">ERP Gestor</a>
+              <a href="https://fidelidade.gestorcerto.com.br" target="_blank" rel="noopener">Programa Fidelidade</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- LOGO DIREITA: Gestor Certo -->
+      <a href="index.html" aria-label="Gestor Certo - Soluções e Cotações" class="header__logo-right" style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
+        <img src="assets/img/icon-gestor.png" alt="Gestor Certo" style="height: 56px; width: auto;">
+        <span style="font-size: 0.8rem; color: var(--ink-soft); font-weight: 700; text-align: left; white-space: nowrap;">
+          Gestor Certo<br/><span style="font-size: 0.7rem; color: var(--teal-600);">Soluções e Cotações</span>
+        </span>
+      </a>
+
+      <!-- HAMBURGER MENU BUTTON -->
+      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="conteudo">
+<section class="hero-epic" style="background:linear-gradient(135deg,#0B2A6B 0%,#0E3A7A 45%,#0F766E 120%);min-height:auto">
+  <div class="hero-epic-bg"></div>
+  <div class="container" style="text-align:center;position:relative;z-index:2;padding:56px 22px">
+    <nav class="crumb" style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:14px"><a href="index.html" style="color:rgba(255,255,255,.85)">Início</a> / <a href="posts.html" style="color:rgba(255,255,255,.85)">Blog</a> / <span>Direito do Trabalho</span></nav>
+    <h1 style="font-size:clamp(1.8rem,5vw,2.8rem);max-width:820px;margin:0 auto 16px;color:#fff;line-height:1.18;font-weight:800">Direito do Trabalho: rescisão e férias sem mistério</h1>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,.9);max-width:640px;margin:0 auto">Entenda os principais direitos e use os simuladores de rescisão e de férias. Lembre: cada caso é um caso.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="article">
+    <div class="toc"><b>Neste post</b>
+      <ul>
+        <li><a href="#rescisao">→ Simulador de rescisão</a></li>
+        <li><a href="#ferias">→ Simulador de férias e reflexo no salário</a></li>
+        <li><a href="#verbas">As principais verbas da rescisão</a></li>
+        <li><a href="#sobre-ferias">Férias: como funciona o pagamento</a></li>
+      </ul>
+    </div>
+    <p>Na hora de uma demissão ou ao tirar férias, a conta nunca é só “o salário”. Entram aviso prévio, 13º proporcional, férias com 1/3, FGTS e regras que mudam conforme o motivo da saída — além de normas do sindicato da categoria. Aqui você entende o essencial e simula uma estimativa. <b>Para o cálculo oficial, conte com o RH da Gestor Certo.</b></p>
+  </div>
+</section>
+
+<!-- SIMULADOR RESCISAO -->
+<section class="section" id="rescisao" style="background:var(--bg-soft);scroll-margin-top:80px">
+  <div class="container" style="max-width:820px">
+    <div class="section-head center"><span class="eyebrow">Simulador</span><h2 style="margin-top:10px">Simulador de Rescisão</h2><p class="lead">Uma estimativa dos principais direitos. Não substitui o cálculo oficial.</p></div>
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="cf"><label>Salário bruto mensal</label><div class="inp"><span class="pre">R$</span><input id="rSal" type="number" value="3000" min="0" step="100"></div></div>
+        <div class="cf"><label>Motivo</label><div class="inp"><select id="rMotivo"><option value="sem_justa">Dispensa sem justa causa</option><option value="acordo">Acordo (distrato)</option><option value="pedido">Pedido de demissão</option></select></div></div>
+        <div class="cf"><label>Admissão</label><div class="inp"><input id="rAdm" type="date" value="2023-01-10"></div></div>
+        <div class="cf"><label>Desligamento</label><div class="inp"><input id="rDes" type="date" value="2025-06-20"></div></div>
+        <div class="cf"><label>Saldo FGTS (se souber) — opcional</label><div class="inp"><span class="pre">R$</span><input id="rFgts" type="number" placeholder="estimamos se vazio" min="0" step="100"></div></div>
+        <div class="cf"><label>&nbsp;</label><label class="chk"><input type="checkbox" id="rFerVenc"> Tenho férias vencidas (período já completo e não gozado)</label></div>
+      </div>
+      <div class="res" id="rRes"></div>
+    </div>
+    <div class="disc">⚠️ <b>Cada caso é um caso.</b> Esta simulação mostra apenas uma <b>ideia dos principais direitos</b> e não considera todas as particularidades: <b>normas e convenções do sindicato</b> da categoria, histórico do trabalhador na empresa, faltas, adicionais (insalubridade, periculosidade, horas extras, médias), descontos (INSS, IRRF, vale) e a multa do FGTS sobre o saldo real. O valor da multa é estimado quando você não informa o saldo do FGTS. <b>Para o cálculo oficial, fale com o RH da Gestor Certo.</b></div>
+  </div>
+</section>
+
+<!-- SIMULADOR FERIAS -->
+<section class="section" id="ferias" style="scroll-margin-top:80px">
+  <div class="container" style="max-width:820px">
+    <div class="section-head center"><span class="eyebrow">Simulador</span><h2 style="margin-top:10px">Simulador de Férias</h2><p class="lead">Quanto você recebe nas férias e como isso reflete no salário do retorno.</p></div>
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="cf"><label>Salário bruto mensal</label><div class="inp"><span class="pre">R$</span><input id="fSal" type="number" value="3000" min="0" step="100"></div></div>
+        <div class="cf"><label>Dias de férias</label><div class="inp"><select id="fDias"><option value="30">30 dias</option><option value="20">20 dias</option><option value="15">15 dias</option></select></div></div>
+        <div class="cf"><label>Início das férias (opcional)</label><div class="inp"><input id="fIni" type="date"></div></div>
+        <div class="cf"><label>&nbsp;</label><label class="chk"><input type="checkbox" id="fAbono"> Vender 1/3 (abono pecuniário, até 10 dias)</label></div>
+      </div>
+      <div class="res" id="fRes"></div>
+      <div class="reflexo" id="fReflexo"></div>
+    </div>
+    <div class="disc">⚠️ Valores <b>brutos</b> (antes de INSS e IRRF). As férias são pagas até 2 dias antes do início. Durante as férias você não recebe o salário normal — ele é substituído pelo pagamento das férias; por isso, <b>no mês do retorno o salário vem proporcional aos dias trabalhados</b>. Regras de período aquisitivo, faltas e convenção coletiva podem alterar os valores.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="article">
+    <h2 id="verbas">As principais verbas da rescisão</h2>
+    <p>Numa <b>dispensa sem justa causa</b>, o trabalhador costuma ter direito a: <b>saldo de salário</b> (dias trabalhados no mês), <b>aviso prévio</b> (30 dias + 3 por ano trabalhado, até 90), <b>13º proporcional</b>, <b>férias proporcionais + 1/3</b>, <b>férias vencidas + 1/3</b> (se houver), <b>multa de 40% do FGTS</b> e o saque do FGTS. No <b>pedido de demissão</b>, não há multa do FGTS, saque nem aviso indenizado a receber. No <b>acordo (distrato)</b>, o aviso e a multa do FGTS saem pela metade (20%) e o saque é de 80%.</p>
+    <h2 id="sobre-ferias">Férias: como funciona o pagamento</h2>
+    <p>As férias correspondem ao salário do período + <b>1/3 constitucional</b>. É possível <b>vender até 1/3</b> (abono pecuniário) — você trabalha esses dias e recebe por eles. Como o pagamento é antecipado, o mês de retorno vem proporcional aos dias efetivamente trabalhados. Entender isso evita o susto de “por que meu salário do retorno veio menor?”.</p>
+    <div class="card" style="margin-top:28px;background:linear-gradient(135deg,rgba(45,212,191,.08),rgba(37,99,235,.08));border:1px solid rgba(45,212,191,.25);border-radius:16px;padding:24px;text-align:center">
+      <h3 style="margin:0 0 8px">Precisa do cálculo oficial ou de RH completo?</h3>
+      <p style="color:var(--ink-soft);margin:0 0 16px">A Gestor Certo cuida de rescisões, férias, eSocial e toda a folha — com atenção às convenções do seu sindicato.</p>
+      <a href="https://wa.me/5511914040532?text=Ol%C3%A1!%20Vi%20o%20post%20de%20Direito%20do%20Trabalho%20e%20preciso%20de%20ajuda%20com%20rescis%C3%A3o%2Ff%C3%A9rias%2FRH." target="_blank" rel="noopener" class="btn btn--primary btn--lg">Falar com o RH da Gestor Certo</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="footer__logo" href="index.html" aria-label="Gestor Certo">
+          <img src="assets/img/icon-gestor.png" alt="" width="40" height="40">
+          <span><b>Gestor Certo</b><small>Escritório de Contabilidade · Grupo Gestor</small></span>
+        </a>
+        <p>Do CNPJ ao seguro, do RH ao crédito — tudo começa na contabilidade e o resto a gente também resolve.</p>
+        <div class="footer__social">
+          <a href="https://wa.me/5511914040532" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.744-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          <a href="https://instagram.com/grupo_gestorcontabil" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37ZM17.5 6.5h.01"/></svg></a>
+          <a href="https://facebook.com/GestorCerto/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://youtube.com/channel/UCdOHhl_W7kuxuEF56Lho0cQ" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://linkedin.com/company/gestor-certo/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Ecossistema</h4>
+        <ul><li><a href="contabilidade.html">Contabilidade</a></li><li><a href="rh.html">RH & Benefícios</a></li><li><a href="solucoes.html">Soluções</a></li><li><a href="mei.html">MEI</a></li><li><a href="tecnologia.html">Tecnologia</a></li><li><a href="posts.html">Blog</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Acesso</h4>
+        <ul>
+          <li><a href="contato.html">Fale conosco</a></li>
+          <li><a href="https://grupogestormei.com.br" target="_blank" rel="noopener">Portal MEI</a></li>
+          <li><a href="https://wa.me/5511914040532" target="_blank" rel="noopener">Orçamento no WhatsApp</a></li>
+          <li><a href="https://instagram.com/grupo_gestorcontabil" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <ul class="footer__contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Estr. Mun. Bela Vista, 917 — Sala 366, Alphaville, Santana de Parnaíba — CEP 06539-010</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span>(11) 91404-0532</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>comercial@gestorcerto.com.br</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37ZM17.5 6.5h.01"/></svg><span>@grupo_gestorcontabil</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap">
+        <span>© <span data-year>2026</span> Gestor Certo — Escritório de Contabilidade · CNPJ 44.066.941/0001-01. Todos os direitos reservados.</span>
+        <span>gestorcerto.com.br · grupogestormei.com.br</span>
+      </div>
+      <div style="margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,.1); display:flex; align-items:center; gap:12px; flex-wrap: wrap">
+        <span style="font-size:0.85rem; color:rgba(255,255,255,.6)">Parte do ecossistema:</span>
+        <img src="assets/img/logo-grupo-gestor.png" alt="Grupo Gestor - Escritório de Contabilidade" style="height: 32px; width: auto; object-fit: contain;">
+      </div>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/5511914040532" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.744-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+<script src="assets/js/main.js" defer></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var brl=function(v){return "R$ "+(Math.round(v*100)/100).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});};
+  var n=function(id){var e=$(id);if(!e)return 0;var v=parseFloat(e.value);return isNaN(v)?0:v;};
+  var pdate=function(id){var e=$(id);if(!e||!e.value)return null;var p=e.value.split("-");return new Date(+p[0],+p[1]-1,+p[2]);};
+  function avos(start,end){ // meses do periodo, regra dos 15 dias na fracao final; cap 12
+    if(!start||!end||end<start) return 0;
+    var m=(end.getFullYear()-start.getFullYear())*12+(end.getMonth()-start.getMonth());
+    if((end.getDate()-start.getDate())>=14) m+=1;
+    return Math.max(0,Math.min(12,m));
+  }
+  function row(k,v){return '<div class="row"><span>'+k+'</span><b>'+v+'</b></div>';}
+
+  function calcRes(){
+    var sal=n("rSal"), adm=pdate("rAdm"), des=pdate("rDes"), motivo=$("rMotivo").value;
+    var out=$("rRes");
+    if(sal<=0||!adm||!des||des<=adm){ out.innerHTML='<div class="row"><span>Preencha salário e datas válidas (desligamento após admissão).</span></div>'; return; }
+    var totalMeses=(des.getFullYear()-adm.getFullYear())*12+(des.getMonth()-adm.getMonth());
+    var anos=Math.floor(totalMeses/12);
+    var saldoDias=des.getDate();
+    var saldoSal=sal/30*saldoDias;
+    // 13o proporcional (ano do desligamento)
+    var ini13=new Date(des.getFullYear(),0,1); if(adm>ini13) ini13=adm;
+    var m13=avos(ini13,des); var d13=sal/12*m13;
+    // ferias proporcionais (periodo aquisitivo atual)
+    var aniv=new Date(des.getFullYear(),adm.getMonth(),adm.getDate());
+    if(aniv>des) aniv=new Date(des.getFullYear()-1,adm.getMonth(),adm.getDate());
+    var mFer=avos(aniv,des); var ferProp=sal/12*mFer; var ferPropT=ferProp*4/3;
+    // ferias vencidas
+    var ferVenc = $("rFerVenc").checked ? sal*4/3 : 0;
+    // aviso previo
+    var avisoDias=Math.min(90,30+3*anos); var avisoBase=sal/30*avisoDias;
+    var aviso=0; if(motivo==="sem_justa") aviso=avisoBase; else if(motivo==="acordo") aviso=avisoBase*0.5;
+    // multa fgts
+    var fgts = n("rFgts")>0 ? n("rFgts") : 0.08*sal*totalMeses;
+    var multa=0; if(motivo==="sem_justa") multa=fgts*0.40; else if(motivo==="acordo") multa=fgts*0.20;
+    var fgtsEstimado = n("rFgts")>0 ? "" : " (estimado)";
+
+    var html=row("Saldo de salário ("+saldoDias+" dias)",brl(saldoSal));
+    if(aviso>0) html+=row("Aviso prévio indenizado ("+avisoDias+" dias"+(motivo==="acordo"?", 50%":"")+")",brl(aviso));
+    html+=row("13º proporcional ("+m13+"/12)",brl(d13));
+    html+=row("Férias proporcionais + 1/3 ("+mFer+"/12)",brl(ferPropT));
+    if(ferVenc>0) html+=row("Férias vencidas + 1/3",brl(ferVenc));
+    if(multa>0) html+=row("Multa FGTS ("+(motivo==="acordo"?"20%":"40%")+")"+fgtsEstimado,brl(multa));
+    var total=saldoSal+aviso+d13+ferPropT+ferVenc+multa;
+    html+='<div class="total"><span>Total estimado<br><small style="font-weight:500;opacity:.7">verbas brutas, antes de descontos</small></span><span class="v">'+brl(total)+'</span></div>';
+    if(motivo==="pedido") html+='<div class="row" style="border:0;color:var(--muted)"><span>No pedido de demissão não há aviso indenizado a receber, multa nem saque do FGTS.</span></div>';
+    out.innerHTML=html;
+  }
+
+  function calcFer(){
+    var sal=n("fSal"), dias=parseInt($("fDias").value,10), abono=$("fAbono").checked;
+    var out=$("fRes"), refl=$("fReflexo");
+    if(sal<=0){ out.innerHTML='<div class="row"><span>Informe o salário.</span></div>'; refl.innerHTML=""; return; }
+    var vendidos = abono ? Math.min(10,Math.round(dias/3)) : 0;
+    var gozados = dias - vendidos;
+    var vGozo=sal/30*gozados, tGozo=vGozo/3;
+    var vAbono=sal/30*vendidos, tAbono=vAbono/3;
+    var total=vGozo+tGozo+vAbono+tAbono;
+    var html=row("Férias gozadas ("+gozados+" dias)",brl(vGozo))+row("1/3 constitucional",brl(tGozo));
+    if(vendidos>0){ html+=row("Abono pecuniário ("+vendidos+" dias vendidos)",brl(vAbono))+row("1/3 sobre o abono",brl(tAbono)); }
+    html+='<div class="total"><span>Total a receber nas férias<br><small style="font-weight:500;opacity:.7">bruto, antes de INSS/IRRF</small></span><span class="v">'+brl(total)+'</span></div>';
+    out.innerHTML=html;
+    // reflexo no retorno
+    var ini=pdate("fIni");
+    var base='<b>Reflexo no salário:</b> as férias são pagas adiantadas e substituem o salário do período. ';
+    if(ini){
+      var fim=new Date(ini); fim.setDate(fim.getDate()+gozados-1);
+      var retorno=new Date(fim); retorno.setDate(retorno.getDate()+1);
+      var fimMes=new Date(retorno.getFullYear(),retorno.getMonth()+1,0);
+      var diasTrab=fimMes.getDate()-retorno.getDate()+1;
+      var salRetorno=sal/30*diasTrab;
+      var fmt=function(d){return d.toLocaleDateString("pt-BR");};
+      refl.innerHTML=base+'Você retorna em <b>'+fmt(retorno)+'</b>. No mês do retorno trabalha '+diasTrab+' dias, então o salário virá proporcional: cerca de <b>'+brl(salRetorno)+'</b> (bruto).';
+    } else {
+      refl.innerHTML=base+'No mês do retorno, o salário vem <b>proporcional aos dias trabalhados</b> — informe a data de início para estimar esse valor.';
+    }
+  }
+
+  ["rSal","rMotivo","rAdm","rDes","rFgts","rFerVenc"].forEach(function(id){var e=$(id);if(e){e.addEventListener("input",calcRes);e.addEventListener("change",calcRes);}});
+  ["fSal","fDias","fIni","fAbono"].forEach(function(id){var e=$(id);if(e){e.addEventListener("input",calcFer);e.addEventListener("change",calcFer);}});
+  calcRes(); calcFer();
+})();
+</script>
+</body>
+</html>
