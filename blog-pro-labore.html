@@ -1,45 +1,63 @@
-﻿<!DOCTYPE html>
-<!-- Versão: 2026-01-09 12:30 CORRIGIDO MENU E TEXTO -->
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog: Dicas de Fiscal, RH e Soluções — Gestor Certo</title>
-<meta name="description" content="Acompanhe Grupo Gestor e Gestor Certo nas redes sociais">
-<link rel="canonical" href="https://gestorcerto.com.br/posts.html">
+<title>Pró-labore: quanto o sócio recebe e quanto custa à empresa | Gestor Certo</title>
+<meta name="description" content="Entenda o pró-labore — INSS (11%), Imposto de Renda e o custo patronal para a empresa, com diferença no Simples Nacional. Calculadora grátis com a tabela 2026.">
+<link rel="canonical" href="https://gestorcerto.com.br/blog-pro-labore.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="author" content="Grupo Gestor — Escritório de Contabilidade">
 <meta name="theme-color" content="#0F766E">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="Gestor Certo — Ecossistema Grupo Gestor">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Blog: Dicas de Fiscal, RH e Soluções — Gestor Certo">
-<meta property="og:description" content="Acompanhe Grupo Gestor e Gestor Certo nas redes sociais">
-<meta property="og:url" content="https://gestorcerto.com.br/posts.html">
+<meta property="og:title" content="Pró-labore: quanto o sócio recebe e quanto custa à empresa">
+<meta property="og:description" content="INSS, IR e custo patronal do pró-labore, com a diferença no Simples. Calculadora grátis (tabela 2026).">
+<meta property="og:url" content="https://gestorcerto.com.br/blog-pro-labore.html">
 <meta property="og:image" content="https://gestorcerto.com.br/assets/img/icon-512.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Blog: Dicas de Fiscal, RH e Soluções — Gestor Certo">
-<meta name="twitter:description" content="Acompanhe Grupo Gestor e Gestor Certo nas redes sociais">
-<meta name="twitter:image" content="https://gestorcerto.com.br/assets/img/icon-512.png">
-<!-- Favicons -->
 <link rel="icon" href="assets/img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
-
+<style>
+  .article{max-width:760px;margin:0 auto;padding:0 22px}
+  .article h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:34px 0 12px;color:var(--ink)}
+  .article p{color:var(--ink-soft);margin:0 0 14px;font-size:1.02rem;line-height:1.7}
+  .article ul{margin:0 0 16px 20px;color:var(--ink-soft);line-height:1.7}.article li{margin-bottom:6px}
+  .calc-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-md);max-width:760px;margin:0 auto}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .cf.full{grid-column:1/-1}
+  .cf label{display:block;font-size:.84rem;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
+  .cf .inp{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+  .cf .inp:focus-within{border-color:var(--teal-400)}
+  .cf .pre{padding:0 0 0 12px;color:var(--muted);font-weight:600;font-size:.9rem}
+  .cf input,.cf select{width:100%;border:0;background:transparent;padding:11px 12px;font:inherit;font-weight:700;color:var(--ink)}
+  .cf input:focus,.cf select:focus{outline:none}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+  .box{border-radius:14px;padding:18px}
+  .box.socio{background:linear-gradient(135deg,rgba(45,212,191,.10),rgba(37,99,235,.10));border:1px solid rgba(45,212,191,.28)}
+  .box.empresa{background:var(--ink);color:#fff}
+  .box h4{margin:0 0 10px;font-size:.95rem}
+  .box.empresa h4{color:#fff}
+  .box .row{display:flex;justify-content:space-between;padding:6px 0;font-size:.92rem;border-bottom:1px dashed rgba(0,0,0,.08)}
+  .box.empresa .row{border-color:rgba(255,255,255,.15);color:#dbe6f2}
+  .box .row b{color:var(--ink)}.box.empresa .row b{color:#fff}
+  .box .row.neg b{color:#C0392B}
+  .box .big{font-size:1.5rem;font-weight:800;margin-top:10px}
+  .box.socio .big{color:var(--ink)}.box.empresa .big{color:#fff}
+  .disc{max-width:760px;margin:18px auto 0;background:#FEF6E7;border:1px solid #F6D58a;border-radius:12px;padding:14px 16px;font-size:.88rem;color:#7a5600;line-height:1.6}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header class="site-header">
   <div class="container">
     <div class="header-layout">
-      <!-- LOGO ESQUERDA: Grupo Gestor -->
+      <!-- LOGO ESQUERDA: Grupo Gestor - EM DESTAQUE -->
       <a href="index.html" aria-label="Grupo Gestor" class="header__logo-left" style="display: flex; align-items: center; flex-shrink: 0;">
         <img src="assets/img/logo-grupo-gestor.png" alt="Grupo Gestor - Escritório de Contabilidade" style="height: 120px; width: auto; object-fit: contain;">
       </a>
@@ -96,112 +114,59 @@
   </div>
 </header>
 <main id="conteudo">
-<!-- HERO POSTS -->
-<section class="hero-epic" style="background: linear-gradient(135deg, #0B2A6B 0%, #0E3A7A 45%, #0F766E 120%);">
+<section class="hero-epic" style="background:linear-gradient(135deg,#0B2A6B 0%,#0E3A7A 45%,#0F766E 120%);min-height:auto">
   <div class="hero-epic-bg"></div>
-  <div class="container" style="text-align: center; position: relative; z-index: 2; padding: 60px 22px;">
-    <h1 style="font-size: clamp(1.8rem, 5vw, 2.8rem); max-width: 900px; margin: 0 auto 24px; color: #fff; line-height: 1.2; font-weight: 800;">
-      Blog: Dicas & Soluções
-    </h1>
-    <p style="font-size: 1rem; color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto;">
-      Acompanhe Grupo Gestor e Gestor Certo nas redes sociais. Dicas de fiscal, RH, crédito e muito mais.
-    </p>
+  <div class="container" style="text-align:center;position:relative;z-index:2;padding:56px 22px">
+    <nav class="crumb" style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:14px"><a href="index.html" style="color:rgba(255,255,255,.85)">Início</a> / <a href="posts.html" style="color:rgba(255,255,255,.85)">Blog</a> / <span>Pró-labore</span></nav>
+    <h1 style="font-size:clamp(1.8rem,5vw,2.8rem);max-width:820px;margin:0 auto 16px;color:#fff;line-height:1.18;font-weight:800">Pró-labore: o que o sócio recebe e o que custa à empresa</h1>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,.9);max-width:660px;margin:0 auto">INSS, Imposto de Renda e o custo patronal — com a diferença que o Simples Nacional faz. Simule com a tabela 2026.</p>
   </div>
 </section>
 
-<!-- MATERIA EM DESTAQUE -->
-<section class="section" style="padding-bottom: 0;">
-  <div class="container" style="max-width: 920px;">
-    <a href="blog-precificacao.html" style="display: block; text-decoration: none; background: linear-gradient(135deg, rgba(45,212,191,0.1) 0%, rgba(37,99,235,0.1) 100%); border: 1px solid rgba(45,212,191,0.3); border-radius: 18px; padding: 28px; transition: all 0.2s;">
-      <span class="chip" style="display:inline-block; background: var(--teal-400); color:#fff; font-size: 0.72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px;">Destaque · Ferramenta grátis</span>
-      <h2 style="margin: 14px 0 8px; font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--ink);">Como formar o preço de venda sem deixar lucro na mesa</h2>
-      <p style="margin: 0 0 14px; color: var(--ink-soft); font-size: 1rem; line-height: 1.6;">Markup, margem de contribuição, ponto de equilíbrio e ROI explicados de forma simples — com uma <b>calculadora de preço de venda</b> pra você usar na hora.</p>
-      <span style="display:inline-flex; align-items:center; gap:8px; color: var(--teal-600, #0C8A67); font-weight: 700; font-size: 0.95rem;">🧮 Abrir matéria + calculadora →</span>
-    </a>
-    <a href="blog-direito-trabalho.html" style="display:block;text-decoration:none;margin-top:18px;background:linear-gradient(135deg,rgba(37,99,235,0.1) 0%,rgba(45,212,191,0.1) 100%);border:1px solid rgba(37,99,235,0.25);border-radius:18px;padding:28px;">
-      <span class="chip" style="display:inline-block;background:var(--blue-500);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;">Destaque · Ferramentas grátis</span>
-      <h2 style="margin:14px 0 8px;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--ink);">Direito do Trabalho: rescisão e férias sem mistério</h2>
-      <p style="margin:0 0 14px;color:var(--ink-soft);font-size:1rem;line-height:1.6;">Entenda seus direitos e use os <b>simuladores de rescisão, férias e 13º</b> — já com INSS e IR pela tabela 2026. Cada caso é um caso.</p>
-      <span style="display:inline-flex;align-items:center;gap:8px;color:#0C8A67;font-weight:700;font-size:0.95rem;">⚖️ Abrir matéria + simuladores →</span>
-    </a>
-    <a href="blog-pro-labore.html" style="display:block;text-decoration:none;margin-top:18px;background:linear-gradient(135deg,rgba(15,118,110,0.1) 0%,rgba(37,99,235,0.1) 100%);border:1px solid rgba(15,118,110,0.25);border-radius:18px;padding:28px;">
-      <span class="chip" style="display:inline-block;background:var(--teal-500);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;">Destaque · Sócios e empresas</span>
-      <h2 style="margin:14px 0 8px;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--ink);">Pró-labore: o que o sócio recebe e o que custa à empresa</h2>
-      <p style="margin:0 0 14px;color:var(--ink-soft);font-size:1rem;line-height:1.6;">INSS, Imposto de Renda e o <b>custo patronal</b> — com a diferença que o <b>Simples Nacional</b> faz. Calculadora com a tabela 2026.</p>
-      <span style="display:inline-flex;align-items:center;gap:8px;color:#0C8A67;font-weight:700;font-size:0.95rem;">💼 Abrir matéria + calculadora →</span>
-    </a>
-  </div>
-</section>
-
-<!-- SELETOR DE CONTAS -->
 <section class="section">
-  <div class="container">
-    <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; padding: 0 16px;">
-      <button onclick="document.querySelector('.posts-grid').innerHTML=criarGrid('grupo_gestorcontabil')" class="btn btn--primary" style="background: var(--teal-400); color: #fff; border: none; cursor: pointer; font-weight: 600; padding: 12px 20px; min-width: auto; white-space: nowrap; font-size: 0.95rem;">
-        @grupo_gestorcontabil
-      </button>
-      <button onclick="document.querySelector('.posts-grid').innerHTML=criarGrid('gestorcertocotafacil')" class="btn btn--primary" style="background: var(--blue-500); color: #fff; border: none; cursor: pointer; font-weight: 600; padding: 12px 20px; min-width: auto; white-space: nowrap; font-size: 0.95rem;">
-        @gestorcertocotafacil
-      </button>
-    </div>
-    <div class="posts-grid"></div>
+  <div class="article">
+    <p>O <b>pró-labore</b> é a remuneração do sócio que trabalha na empresa — diferente da <b>distribuição de lucros</b> (que, com contabilidade regular, é <b>isenta de Imposto de Renda</b> e não tem INSS). Definir o pró-labore certo equilibra a carga de INSS/IR do sócio, o custo para a empresa e a aposentadoria de quem empreende. Veja como funciona e simule abaixo.</p>
+    <h2>Como o pró-labore é tributado</h2>
+    <ul>
+      <li><b>INSS do sócio (11%)</b>: descontado do pró-labore e recolhido pela empresa, limitado ao teto do INSS (R$ 8.475,55 em 2026 → desconto máximo de R$ 932,31).</li>
+      <li><b>Imposto de Renda</b>: incide sobre o pró-labore menos o INSS e as deduções (dependentes), pela tabela mensal de 2026 — que isenta rendimentos até R$ 5.000 e reduz o imposto até R$ 7.350.</li>
+      <li><b>INSS patronal (20%)</b>: é o custo da empresa sobre o pró-labore. <b>No Simples Nacional (Anexos I, II, III e V) ele não é cobrado à parte</b> — já está no DAS. Nas empresas do <b>Anexo IV</b>, no <b>Lucro Presumido</b> e no <b>Real</b>, a empresa paga os 20% por fora.</li>
+    </ul>
+    <p>Dica: muitos sócios combinam um pró-labore (respeitando o piso, em geral 1 salário mínimo quando há atividade) com a distribuição de lucros isenta — uma estratégia que a contabilidade ajuda a montar dentro da lei.</p>
   </div>
 </section>
 
-<script>
-const posts = {
-  "grupo_gestorcontabil": [
-    {"id": 1, "title": "Decimo Terceiro", "desc": "Como registrar corretamente no sistema", "cat": "RH", "date": "2026-05-15"},
-    {"id": 2, "title": "Imposto de Renda 2026", "desc": "Principais mudancas e como se preparar", "cat": "IR", "date": "2026-05-10"},
-    {"id": 3, "title": "Abertura de Empresa", "desc": "Passo a passo do CNPJ ao funcionamento", "cat": "Fiscal", "date": "2026-05-05"},
-    {"id": 4, "title": "Certificado Digital", "desc": "Quando sua empresa precisa de A1 ou A3", "cat": "Fiscal", "date": "2026-04-30"},
-    {"id": 5, "title": "MEI", "desc": "Tudo sobre enquadramento e obrigacoes", "cat": "MEI", "date": "2026-04-25"},
-    {"id": 6, "title": "Planejamento Tributario", "desc": "Estrategias para pagar menos imposto legalmente", "cat": "Fiscal", "date": "2026-04-20"}
-  ],
-  "gestorcertocotafacil": [
-    {"id": 1, "title": "Consorcios", "desc": "Como funciona e quando contratar", "cat": "Solucoes", "date": "2026-05-15"},
-    {"id": 2, "title": "Seguros", "desc": "Proteja seu patrimonio com as melhores opcoes", "cat": "Seguros", "date": "2026-05-10"},
-    {"id": 3, "title": "Credito Pessoal", "desc": "Linhas de credito com juros reduzidos", "cat": "Credito", "date": "2026-05-05"},
-    {"id": 4, "title": "Financiamento", "desc": "Realize seus sonhos com nossas opcoes", "cat": "Credito", "date": "2026-04-30"},
-    {"id": 5, "title": "Seguros Pessoais", "desc": "Vida, saude, acidente - voce protegido", "cat": "Seguros", "date": "2026-04-25"},
-    {"id": 6, "title": "Analise de Credito", "desc": "Entenda sua pontuacao e melhore seu score", "cat": "Credito", "date": "2026-04-20"}
-  ]
-};
-
-function criarGrid(conta) {
-  const items = posts[conta];
-  return items.map(p => `
-    <div style="padding: 24px; background: #fff; border-radius: 12px; border: 1px solid var(--line); cursor: pointer; transition: all 0.3s;">
-      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
-        <h3 style="margin: 0; font-size: 1.1rem; color: var(--dark-900);">${p.title}</h3>
-        <span class="chip" style="background: var(--teal-50); border-color: var(--teal-200); color: var(--teal-700); font-size: 0.75rem;">${p.cat}</span>
+<!-- CALCULADORA -->
+<section class="section" id="calculadora" style="background:var(--bg-soft);scroll-margin-top:80px">
+  <div class="container" style="max-width:820px">
+    <div class="section-head center"><span class="eyebrow">Calculadora</span><h2 style="margin-top:10px">Calculadora de Pró-labore</h2><p class="lead">Quanto o sócio recebe líquido e quanto a empresa gasta.</p></div>
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="cf"><label>Pró-labore bruto</label><div class="inp"><span class="pre">R$</span><input id="plValor" type="number" value="5000" min="0" step="100"></div></div>
+        <div class="cf"><label>Dependentes (IR)</label><div class="inp"><input id="plDep" type="number" value="0" min="0" step="1"></div></div>
+        <div class="cf full"><label>Regime da empresa</label><div class="inp"><select id="plRegime">
+          <option value="simples">Simples Nacional — Anexos I, II, III e V (sem patronal à parte)</option>
+          <option value="patronal">Anexo IV / Lucro Presumido / Real (com patronal 20%)</option>
+        </select></div></div>
       </div>
-      <p style="margin: 0 0 12px; color: var(--dark-600); font-size: 0.95rem;">${p.desc}</p>
-      <p style="margin: 0; color: var(--dark-400); font-size: 0.85rem;">${p.date}</p>
+      <div class="two">
+        <div class="box socio" id="plSocio"></div>
+        <div class="box empresa" id="plEmpresa"></div>
+      </div>
     </div>
-  `).join('');
-}
+    <div class="disc">⚠️ Estimativa com a <b>tabela de 2026</b>. INSS do sócio a 11% até o teto; IR com a isenção/redução até R$ 7.350; patronal 20% só quando devido (Anexo IV, Presumido e Real). Não inclui RAT/terceiros nem outras particularidades. A definição do pró-labore ideal (e a combinação com lucros) deve ser feita com a sua contabilidade. <b>Fale com a Gestor Certo.</b></div>
+  </div>
+</section>
 
-// Carregar grid padrao
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('.posts-grid').innerHTML = criarGrid('grupo_gestorcontabil');
-});
-</script>
-
-<style>
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-@media (max-width: 860px) {
-  .posts-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 620px) {
-  .posts-grid { grid-template-columns: 1fr; }
-}
-</style>
-
+<section class="section">
+  <div class="article">
+    <div class="card" style="background:linear-gradient(135deg,rgba(45,212,191,.08),rgba(37,99,235,.08));border:1px solid rgba(45,212,191,.25);border-radius:16px;padding:24px;text-align:center">
+      <h3 style="margin:0 0 8px">Qual o melhor pró-labore para a sua empresa?</h3>
+      <p style="color:var(--ink-soft);margin:0 0 16px">A Gestor Certo calcula o equilíbrio entre pró-labore e lucros, dentro da lei, para reduzir a carga e proteger o sócio.</p>
+      <a href="https://wa.me/5511914040532?text=Ol%C3%A1!%20Vi%20o%20post%20de%20pr%C3%B3-labore%20e%20quero%20ajuda%20para%20definir%20o%20valor%20ideal%20na%20minha%20empresa." target="_blank" rel="noopener" class="btn btn--primary btn--lg">Falar com a Gestor Certo</a>
+    </div>
+  </div>
+</section>
 </main>
 <footer class="footer">
   <div class="container">
@@ -257,14 +222,47 @@ document.addEventListener('DOMContentLoaded', function() {
 </footer>
 <a class="wa-float" href="https://wa.me/5511914040532" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.744-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
 <script src="assets/js/main.js" defer></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var brl=function(v){return "R$ "+(Math.round(v*100)/100).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});};
+  var n=function(id){var e=$(id);if(!e)return 0;var v=parseFloat(e.value);return isNaN(v)?0:v;};
+  var DEP=189.59, TETO=8475.55;
+  function irrf(trib, inssVal, dep){
+    var base=trib-inssVal-(dep||0)*DEP, imp;
+    if(base<=2428.80) imp=0;
+    else if(base<=2826.65) imp=base*0.075-182.16;
+    else if(base<=3751.05) imp=base*0.15-394.16;
+    else if(base<=4664.68) imp=base*0.225-675.49;
+    else imp=base*0.275-908.73;
+    if(imp<0) imp=0;
+    if(trib<=5000) imp=0;
+    else if(trib<=7350) imp=Math.max(0,imp-(978.62-0.133145*trib));
+    return imp;
+  }
+  function row(k,v,neg){return '<div class="row'+(neg?' neg':'')+'"><span>'+k+'</span><b>'+(neg?'− ':'')+v+'</b></div>';}
+  function calc(){
+    var pl=n("plValor"), dep=n("plDep"), regime=$("plRegime").value;
+    if(pl<=0){ $("plSocio").innerHTML='<div class="row"><span>Informe o pró-labore.</span></div>'; $("plEmpresa").innerHTML=''; return; }
+    var inssSocio=0.11*Math.min(pl,TETO);
+    var ir=irrf(pl,inssSocio,dep);
+    var liquido=pl-inssSocio-ir;
+    $("plSocio").innerHTML='<h4>👤 O sócio recebe</h4>'+
+      row("Pró-labore bruto",brl(pl))+
+      row("INSS (11%)",brl(inssSocio),true)+
+      row("Imposto de Renda",brl(ir),true)+
+      '<div class="big">'+brl(liquido)+'</div><div style="font-size:.8rem;color:var(--muted)">líquido na conta do sócio</div>';
+    var patronal = (regime==="patronal") ? 0.20*pl : 0;
+    var custo = pl + patronal;
+    var patrTxt = (regime==="patronal") ? brl(patronal) : "isento no Simples";
+    $("plEmpresa").innerHTML='<h4>🏢 Custo para a empresa</h4>'+
+      row("Pró-labore bruto",brl(pl))+
+      row("INSS patronal (20%)", patrTxt, regime==="patronal")+
+      '<div class="big">'+brl(custo)+'</div><div style="font-size:.8rem;color:#9FB6CE">desembolso total da empresa</div>';
+  }
+  ["plValor","plDep","plRegime"].forEach(function(id){var e=$(id);if(e){e.addEventListener("input",calc);e.addEventListener("change",calc);}});
+  calc();
+})();
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
