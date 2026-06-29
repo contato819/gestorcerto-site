@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quanto custa um empregado para a empresa (Simples x Presumido) | Gestor Certo</title>
+<meta name="description" content="Calcule o custo mensal real de um empregado: encargos, FGTS, 13º, férias, multa rescisória, VT e VR — comparando Simples e Lucro Presumido/Real. Calculadora e planilha grátis.">
+<link rel="canonical" href="https://gestorcerto.com.br/blog-custo-empregado.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0F766E">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Gestor Certo — Ecossistema Grupo Gestor">
+<meta property="og:title" content="Quanto custa um empregado para a empresa (Simples x Presumido)">
+<meta property="og:description" content="Custo mensal real do empregado com encargos, provisões, VT e VR — Simples x Presumido/Real. Calculadora e planilha grátis.">
+<meta property="og:url" content="https://gestorcerto.com.br/blog-custo-empregado.html">
+<meta property="og:image" content="https://gestorcerto.com.br/assets/img/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .article{max-width:760px;margin:0 auto;padding:0 22px}
+  .article h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:34px 0 12px;color:var(--ink)}
+  .article p{color:var(--ink-soft);margin:0 0 14px;font-size:1.02rem;line-height:1.7}
+  .article ul{margin:0 0 16px 20px;color:var(--ink-soft);line-height:1.7}.article li{margin-bottom:6px}
+  .calc-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-md);max-width:820px;margin:0 auto}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  .cf label{display:block;font-size:.82rem;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
+  .cf .inp{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+  .cf .inp:focus-within{border-color:var(--teal-400)}
+  .cf .pre{padding:0 0 0 10px;color:var(--muted);font-weight:600;font-size:.85rem}
+  .cf .suf{padding:0 10px 0 0;color:var(--muted);font-weight:600;font-size:.85rem}
+  .cf input{width:100%;border:0;background:transparent;padding:10px;font:inherit;font-weight:700;color:var(--ink)}
+  .cf input:focus{outline:none}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+  .box{border-radius:14px;padding:18px;text-align:center}
+  .box.s{background:linear-gradient(135deg,rgba(45,212,191,.12),rgba(37,99,235,.10));border:1px solid rgba(45,212,191,.3)}
+  .box.p{background:var(--ink);color:#fff}
+  .box .t{font-size:.85rem;font-weight:700;letter-spacing:.03em}
+  .box.p .t{color:#cfe0f0}
+  .box .big{font-size:1.7rem;font-weight:800;margin:4px 0 2px}
+  .box .pct{font-size:.82rem;color:var(--muted)}.box.p .pct{color:#9fb6ce}
+  .econ{margin-top:14px;background:#E6F5F0;border:1px solid #BFE7DA;border-radius:12px;padding:12px 16px;text-align:center;color:#0C8A67;font-weight:700}
+  table.brk{width:100%;border-collapse:collapse;margin-top:18px;font-size:.9rem}
+  table.brk th,table.brk td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:right}
+  table.brk th:first-child,table.brk td:first-child{text-align:left;color:var(--ink-soft)}
+  table.brk th{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.03em}
+  table.brk td b{color:var(--ink)}
+  table.brk tr.tot td{border-top:2px solid var(--ink);border-bottom:0;font-weight:800;color:var(--ink);padding-top:12px}
+  .dl-box{margin-top:26px;background:var(--ink);color:#fff;border-radius:18px;padding:26px 24px;text-align:center}
+  .dl-box .dl-ic{font-size:2rem}.dl-box h3{color:#fff;margin:6px 0 8px;font-size:1.3rem}
+  .dl-box>p{color:rgba(255,255,255,.85);max-width:540px;margin:0 auto 16px;font-size:.98rem;line-height:1.6}
+  .dl-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:580px;margin:0 auto}
+  .dl-form input{flex:1;min-width:180px;padding:13px 14px;border:0;border-radius:10px;font:inherit;font-weight:500}
+  .dl-form input.err{outline:2px solid #ff8a7a}
+  .dl-form button{background:var(--teal-400);color:#06281f;font-weight:800;border:0;border-radius:10px;padding:13px 22px;cursor:pointer;font:inherit;white-space:nowrap}
+  .dl-note{font-size:.82rem;color:rgba(255,255,255,.6);margin-top:12px}
+  .disc{max-width:820px;margin:18px auto 0;background:#FEF6E7;border:1px solid #F6D58a;border-radius:12px;padding:14px 16px;font-size:.88rem;color:#7a5600;line-height:1.6}
+  @media (max-width:600px){.calc-grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="header-layout">
+      <!-- LOGO ESQUERDA: Grupo Gestor - EM DESTAQUE -->
+      <a href="index.html" aria-label="Grupo Gestor" class="header__logo-left" style="display: flex; align-items: center; flex-shrink: 0;">
+        <img src="assets/img/logo-grupo-gestor.png" alt="Grupo Gestor - Escritório de Contabilidade" style="height: 120px; width: auto; object-fit: contain;">
+      </a>
+
+      <!-- MENU RESPONSIVO PROFISSIONAL -->
+      <nav class="nav" id="menu" aria-label="Navegação principal">
+        <div class="nav-wrapper">
+          <a href="index.html" class="nav__link nav__link--active">Início</a>
+          <a href="contabilidade.html" class="nav__link">Contabilidade</a>
+          <a href="rh.html" class="nav__link">RH & Benefícios</a>
+          <a href="solucoes.html" class="nav__link">Soluções</a>
+          <a href="mei.html" class="nav__link">MEI</a>
+          <a href="tecnologia.html" class="nav__link">Tecnologia</a>
+          <a href="posts.html" class="nav__link">Blog</a>
+          <div class="nav__drop" data-drop>
+            <button type="button" class="nav__link" aria-haspopup="true" aria-expanded="false">Acessos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="nav__drop-menu">
+              <a href="https://app.grupogestormei.com.br/login" target="_blank" rel="noopener">App MEI</a>
+              <a href="https://sistemaweb.gestorcertositemasweb.com.br/sistema/" target="_blank" rel="noopener">Empresarial Web</a>
+              <a href="https://sistemaclinica.gestorcertositemasweb.com.br/acesso" target="_blank" rel="noopener">Clínica Web</a>
+              <a href="https://sistemapet.gestorcertositemasweb.com.br/sistema/" target="_blank" rel="noopener">Pet Web</a>
+              <a href="https://conectfameg.app.questorpublico.com.br/entrar" target="_blank" rel="noopener">Grupo Gestor Zen</a>
+              <a href="https://conectfameg.app.questorpublico.com.br/Authorize/LogOn?ReturnUrl=%2fempresa%2fqcolabore%3ffilter%3d1%26PluginSystemName%3dDocument.PayRoll&amp;filter=1&amp;PluginSystemName=Document.PayRoll" target="_blank" rel="noopener">Recibos de Pagamento</a>
+              <a href="https://portal.hubstrom.com/login" target="_blank" rel="noopener">Grupo Gestor HUB</a>
+              <a href="https://docs.gestorcerto.com.br" target="_blank" rel="noopener">Portal de Documentos</a>
+              <a href="https://formsgestor.gestorcerto.com.br" target="_blank" rel="noopener">Formulários</a>
+              <a href="https://extrato.gestorcerto.com.br" target="_blank" rel="noopener">Conversor de Extratos</a>
+              <a href="https://csgestor.gestorcerto.com.br" target="_blank" rel="noopener">Cofre de Senhas</a>
+              <a href="https://agenda.gestorcerto.com.br" target="_blank" rel="noopener">Secretaria Virtual</a>
+              <a href="https://contratos.gestorcerto.com.br" target="_blank" rel="noopener">Contratos</a>
+              <a href="https://ponto.gestorcerto.com.br" target="_blank" rel="noopener">Ponto Gestor</a>
+              <a href="https://irpf.gestorcerto.com.br" target="_blank" rel="noopener">Gestor IRPF</a>
+              <a href="https://agentefolha.gestorcerto.com.br" target="_blank" rel="noopener">Agente Folha</a>
+              <a href="https://erp.gestorcerto.com.br" target="_blank" rel="noopener">ERP Gestor</a>
+              <a href="https://fidelidade.gestorcerto.com.br" target="_blank" rel="noopener">Programa Fidelidade</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- LOGO DIREITA: Gestor Certo -->
+      <a href="index.html" aria-label="Gestor Certo - Soluções e Cotações" class="header__logo-right" style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
+        <img src="assets/img/icon-gestor.png" alt="Gestor Certo" style="height: 56px; width: auto;">
+        <span style="font-size: 0.8rem; color: var(--ink-soft); font-weight: 700; text-align: left; white-space: nowrap;">
+          Gestor Certo<br/><span style="font-size: 0.7rem; color: var(--teal-600);">Soluções e Cotações</span>
+        </span>
+      </a>
+
+      <!-- HAMBURGER MENU BUTTON -->
+      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="conteudo">
+<section class="hero-epic" style="background:linear-gradient(135deg,#0B2A6B 0%,#0E3A7A 45%,#0F766E 120%);min-height:auto">
+  <div class="hero-epic-bg"></div>
+  <div class="container" style="text-align:center;position:relative;z-index:2;padding:56px 22px">
+    <nav class="crumb" style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:14px"><a href="index.html" style="color:rgba(255,255,255,.85)">Início</a> / <a href="posts.html" style="color:rgba(255,255,255,.85)">Blog</a> / <span>Custo do empregado</span></nav>
+    <h1 style="font-size:clamp(1.8rem,5vw,2.8rem);max-width:840px;margin:0 auto 16px;color:#fff;line-height:1.18;font-weight:800">Quanto custa, de verdade, um empregado para a empresa</h1>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,.9);max-width:680px;margin:0 auto">Salário é só o começo. Veja o custo mensal real com encargos, FGTS, 13º, férias, rescisão, VT e VR — e compare Simples x Presumido/Real.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="article">
+    <p>Contratar custa mais do que o salário combinado. Entram <b>encargos patronais</b>, <b>FGTS</b>, as <b>provisões</b> de 13º e férias, a <b>provisão da rescisão</b> (multa do FGTS) e os <b>benefícios</b> como vale-transporte e vale-refeição. O peso muda bastante conforme o regime: no <b>Simples Nacional (Anexos I, II, III e V)</b> o INSS patronal, o RAT e os Terceiros <b>não são cobrados à parte</b>; no <b>Lucro Presumido/Real</b> (e no Anexo IV), sim. Use a calculadora para ver a diferença.</p>
+  </div>
+</section>
+
+<!-- CALCULADORA -->
+<section class="section" id="calculadora" style="background:var(--bg-soft);scroll-margin-top:80px">
+  <div class="container" style="max-width:880px">
+    <div class="section-head center"><span class="eyebrow">Calculadora</span><h2 style="margin-top:10px">Custo Mensal do Empregado</h2><p class="lead">Preencha e compare o custo no Simples e no Presumido/Real.</p></div>
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="cf"><label>Salário base</label><div class="inp"><span class="pre">R$</span><input id="cSal" type="number" value="3000" min="0" step="100"></div></div>
+        <div class="cf"><label>Comissões / médias</label><div class="inp"><span class="pre">R$</span><input id="cCom" type="number" value="0" min="0" step="100"></div></div>
+        <div class="cf"><label>Vale-transporte (mês)</label><div class="inp"><span class="pre">R$</span><input id="cVT" type="number" value="300" min="0" step="20"></div></div>
+        <div class="cf"><label>Vale-refeição (mês)</label><div class="inp"><span class="pre">R$</span><input id="cVR" type="number" value="600" min="0" step="20"></div></div>
+        <div class="cf"><label>Desconto do VR</label><div class="inp"><input id="cVRd" type="number" value="20" min="0" max="100" step="1"><span class="suf">%</span></div></div>
+        <div class="cf"><label>RAT (fora do Simples)</label><div class="inp"><input id="cRat" type="number" value="2" min="0" step="0.5"><span class="suf">%</span></div></div>
+        <div class="cf"><label>Terceiros (fora do Simples)</label><div class="inp"><input id="cTerc" type="number" value="5.8" min="0" step="0.1"><span class="suf">%</span></div></div>
+      </div>
+
+      <div class="two">
+        <div class="box s"><div class="t">🟢 Empresa no SIMPLES<br><small style="font-weight:500;color:var(--muted)">Anexos I, II, III e V</small></div><div class="big" id="cTotS">—</div><div class="pct" id="cPctS"></div></div>
+        <div class="box p"><div class="t">🔵 LUCRO PRESUMIDO / REAL<br><small style="font-weight:500;color:#9fb6ce">e Anexo IV</small></div><div class="big" id="cTotP">—</div><div class="pct" id="cPctP"></div></div>
+      </div>
+      <div class="econ" id="cEcon"></div>
+
+      <table class="brk" id="cBrk"></table>
+
+      <div class="dl-box" id="planilha">
+        <div class="dl-ic">📊</div>
+        <h3>Baixe a Planilha de Custo do Empregado</h3>
+        <p>Excel com a nossa marca, comparando <b>Simples x Presumido/Real</b>, com encargos, provisões, VT e VR. Cadastre-se e baixe na hora.</p>
+        <div class="dl-form">
+          <input id="dlNome" type="text" placeholder="Seu nome" autocomplete="name">
+          <input id="dlWhats" type="tel" placeholder="Seu WhatsApp" autocomplete="tel" inputmode="numeric">
+          <button id="dlBtn" type="button">⬇️ Quero a planilha grátis</button>
+        </div>
+        <p class="dl-note">Um consultor da Gestor Certo pode te chamar para ajudar com a folha. Sem compromisso.</p>
+        <a id="dlLink" href="assets/downloads/planilha-custo-empregado-gestor-certo.xlsx" download hidden>baixar</a>
+      </div>
+    </div>
+    <div class="disc">⚠️ <b>Estimativa.</b> Encargos: INSS patronal 20%, RAT (1% a 3% × FAP) e Terceiros (~5,8%) só fora do Simples (Anexos I/II/III/V); FGTS 8% sempre; provisões de 13º, férias+1/3 e multa de 40% do FGTS. VT descontado até 6% do salário; VR conforme política/PAT e convenção. Não inclui adicionais (insalubridade, periculosidade, horas extras), plano de saúde nem outros benefícios. A folha real depende da <b>convenção coletiva</b>. <b>Fale com a Gestor Certo.</b></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="article">
+    <h2>O que compõe o custo</h2>
+    <ul>
+      <li><b>Remuneração:</b> salário + comissões/médias (que também entram nas provisões e nos encargos).</li>
+      <li><b>Encargos patronais:</b> INSS 20% + RAT + Terceiros — no Simples (I/II/III/V) já estão no DAS; fora dele, somam ~28% sobre a folha.</li>
+      <li><b>FGTS 8%:</b> depositado todo mês, inclusive sobre 13º e férias — vale para todos os regimes.</li>
+      <li><b>Provisões:</b> 13º (1/12 ao mês) e férias + 1/3 (1,333/12 ao mês), com seus encargos e FGTS.</li>
+      <li><b>Rescisão:</b> provisão da multa de 40% do FGTS para uma eventual dispensa sem justa causa.</li>
+      <li><b>Benefícios:</b> VT (desconta até 6% do salário do empregado) e VR/VA (desconto conforme política e convenção).</li>
+    </ul>
+    <div class="card" style="margin-top:24px;background:linear-gradient(135deg,rgba(45,212,191,.08),rgba(37,99,235,.08));border:1px solid rgba(45,212,191,.25);border-radius:16px;padding:24px;text-align:center">
+      <h3 style="margin:0 0 8px">Quer enxergar o custo real da sua folha?</h3>
+      <p style="color:var(--ink-soft);margin:0 0 16px">A Gestor Certo cuida da folha, eSocial, FGTS e benefícios — e ajuda a planejar contratações com previsibilidade.</p>
+      <a href="https://wa.me/5511914040532?text=Ol%C3%A1!%20Vi%20o%20post%20de%20custo%20do%20empregado%20e%20quero%20ajuda%20com%20a%20folha%20da%20minha%20empresa." target="_blank" rel="noopener" class="btn btn--primary btn--lg">Falar com a Gestor Certo</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="footer__logo" href="index.html" aria-label="Gestor Certo">
+          <img src="assets/img/icon-gestor.png" alt="" width="40" height="40">
+          <span><b>Gestor Certo</b><small>Escritório de Contabilidade · Grupo Gestor</small></span>
+        </a>
+        <p>Do CNPJ ao seguro, do RH ao crédito — tudo começa na contabilidade e o resto a gente também resolve.</p>
+        <div class="footer__social">
+          <a href="https://wa.me/5511914040532" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.744-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          <a href="https://instagram.com/grupo_gestorcontabil" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37ZM17.5 6.5h.01"/></svg></a>
+          <a href="https://facebook.com/GestorCerto/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://youtube.com/channel/UCdOHhl_W7kuxuEF56Lho0cQ" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://linkedin.com/company/gestor-certo/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Ecossistema</h4>
+        <ul><li><a href="contabilidade.html">Contabilidade</a></li><li><a href="rh.html">RH & Benefícios</a></li><li><a href="solucoes.html">Soluções</a></li><li><a href="mei.html">MEI</a></li><li><a href="tecnologia.html">Tecnologia</a></li><li><a href="posts.html">Blog</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Acesso</h4>
+        <ul>
+          <li><a href="contato.html">Fale conosco</a></li>
+          <li><a href="https://grupogestormei.com.br" target="_blank" rel="noopener">Portal MEI</a></li>
+          <li><a href="https://wa.me/5511914040532" target="_blank" rel="noopener">Orçamento no WhatsApp</a></li>
+          <li><a href="https://instagram.com/grupo_gestorcontabil" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <ul class="footer__contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Estr. Mun. Bela Vista, 917 — Sala 366, Alphaville, Santana de Parnaíba — CEP 06539-010</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span>(11) 91404-0532</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>comercial@gestorcerto.com.br</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37ZM17.5 6.5h.01"/></svg><span>@grupo_gestorcontabil</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap">
+        <span>© <span data-year>2026</span> Gestor Certo — Escritório de Contabilidade · CNPJ 44.066.941/0001-01. Todos os direitos reservados.</span>
+        <span>gestorcerto.com.br · grupogestormei.com.br</span>
+      </div>
+      <div style="margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,.1); display:flex; align-items:center; gap:12px; flex-wrap: wrap">
+        <span style="font-size:0.85rem; color:rgba(255,255,255,.6)">Parte do ecossistema:</span>
+        <img src="assets/img/logo-grupo-gestor.png" alt="Grupo Gestor - Escritório de Contabilidade" style="height: 32px; width: auto; object-fit: contain;">
+      </div>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/5511914040532" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.744-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+<script src="assets/js/main.js" defer></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var brl=function(v){return "R$ "+(Math.round(v*100)/100).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});};
+  var n=function(id){var e=$(id);if(!e)return 0;var v=parseFloat(e.value);return isNaN(v)?0:v;};
+  function reg(simples){
+    var sal=n("cSal"), com=n("cCom"), remun=sal+com;
+    var enc = simples?0:(0.20 + n("cRat")/100 + n("cTerc")/100);
+    var prov13=remun/12, provFer=remun*4/3/12, baseP=prov13+provFer;
+    var encRemun=remun*enc, fgtsRemun=remun*0.08;
+    var encProv=baseP*enc, fgtsProv=baseP*0.08;
+    var multa=0.40*0.08*(remun+baseP);
+    var vt=n("cVT"), vr=n("cVR"), vrd=n("cVRd");
+    var custoVT=Math.max(0, vt - Math.min(vt, 0.06*sal));
+    var custoVR=Math.max(0, vr - vr*vrd/100);
+    var total=remun+encRemun+fgtsRemun+prov13+provFer+encProv+fgtsProv+multa+custoVT+custoVR;
+    return {remun:remun, enc:encRemun, fgts:fgtsRemun, p13:prov13, pfer:provFer, encP:encProv, fgtsP:fgtsProv, multa:multa, vt:custoVT, vr:custoVR, total:total, sal:sal};
+  }
+  function calc(){
+    var s=reg(true), p=reg(false);
+    $("cTotS").textContent=brl(s.total); $("cTotP").textContent=brl(p.total);
+    if(s.sal>0){ $("cPctS").textContent=Math.round(s.total/s.sal*100)+"% do salário"; $("cPctP").textContent=Math.round(p.total/p.sal*100)+"% do salário"; }
+    var dif=p.total-s.total;
+    $("cEcon").textContent = dif>0 ? ("No Simples a empresa economiza "+brl(dif)+" por mês") : "Sem diferença de encargos neste cenário";
+    var lin=function(k,vs,vp){return '<tr><td>'+k+'</td><td>'+brl(vs)+'</td><td>'+brl(vp)+'</td></tr>';};
+    var html='<thead><tr><th>Componente</th><th>Simples</th><th>Presumido/Real</th></tr></thead><tbody>';
+    html+=lin("Remuneração",s.remun,p.remun);
+    html+=lin("INSS patronal + RAT + Terceiros",s.enc,p.enc);
+    html+=lin("FGTS 8%",s.fgts,p.fgts);
+    html+=lin("Provisão 13º",s.p13,p.p13);
+    html+=lin("Provisão férias + 1/3",s.pfer,p.pfer);
+    html+=lin("Encargos s/ provisões",s.encP,p.encP);
+    html+=lin("FGTS s/ provisões",s.fgtsP,p.fgtsP);
+    html+=lin("Provisão multa FGTS (40%)",s.multa,p.multa);
+    html+=lin("Custo VT (após desconto 6%)",s.vt,p.vt);
+    html+=lin("Custo VR (após desconto)",s.vr,p.vr);
+    html+='<tr class="tot"><td>Custo total mensal</td><td>'+brl(s.total)+'</td><td>'+brl(p.total)+'</td></tr>';
+    html+='</tbody>';
+    $("cBrk").innerHTML=html;
+  }
+  ["cSal","cCom","cVT","cVR","cVRd","cRat","cTerc"].forEach(function(id){var e=$(id);if(e){e.addEventListener("input",calc);e.addEventListener("change",calc);}});
+  calc();
+
+  // download cadastro
+  var onlyDigits=function(s){return (s||"").replace(/\D/g,"");};
+  var btn=$("dlBtn");
+  if(btn){ btn.addEventListener("click",function(){
+    var no=$("dlNome"), wh=$("dlWhats"); var nome=no.value.trim(), w=onlyDigits(wh.value), ok=true;
+    if(nome.length<2){no.classList.add("err");ok=false;}else no.classList.remove("err");
+    if(w.length<10){wh.classList.add("err");ok=false;}else wh.classList.remove("err");
+    if(!ok){(nome.length<2?no:wh).focus();return;}
+    $("dlLink").click();
+    var msg="Olá! Sou "+nome+", baixei a planilha de custo do empregado no site e quero ajuda com a folha da minha empresa.";
+    window.open("https://wa.me/5511914040532?text="+encodeURIComponent(msg),"_blank");
+  }); }
+})();
+</script>
+</body>
+</html>
