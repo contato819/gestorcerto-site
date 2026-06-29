@@ -1,45 +1,65 @@
-﻿<!DOCTYPE html>
-<!-- Versão: 2026-01-09 12:30 CORRIGIDO MENU E TEXTO -->
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog: Dicas de Fiscal, RH e Soluções — Gestor Certo</title>
-<meta name="description" content="Acompanhe Grupo Gestor e Gestor Certo nas redes sociais">
-<link rel="canonical" href="https://gestorcerto.com.br/posts.html">
+<title>Tributação de lucros e dividendos 2026: 10% na fonte e IRPF Mínimo | Gestor Certo</title>
+<meta name="description" content="A partir de 2026, dividendos acima de R$ 50 mil/mês têm 10% de IR na fonte e rendas acima de R$ 600 mil/ano entram no IRPF Mínimo. Entenda e simule com a calculadora grátis.">
+<link rel="canonical" href="https://gestorcerto.com.br/blog-dividendos-2026.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="author" content="Grupo Gestor — Escritório de Contabilidade">
 <meta name="theme-color" content="#0F766E">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="Gestor Certo — Ecossistema Grupo Gestor">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Blog: Dicas de Fiscal, RH e Soluções — Gestor Certo">
-<meta property="og:description" content="Acompanhe Grupo Gestor e Gestor Certo nas redes sociais">
-<meta property="og:url" content="https://gestorcerto.com.br/posts.html">
+<meta property="og:title" content="Tributação de lucros e dividendos 2026: 10% na fonte e IRPF Mínimo">
+<meta property="og:description" content="Dividendos acima de R$ 50 mil/mês e rendas acima de R$ 600 mil/ano na mira do IR em 2026. Calculadora grátis.">
+<meta property="og:url" content="https://gestorcerto.com.br/blog-dividendos-2026.html">
 <meta property="og:image" content="https://gestorcerto.com.br/assets/img/icon-512.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Blog: Dicas de Fiscal, RH e Soluções — Gestor Certo">
-<meta name="twitter:description" content="Acompanhe Grupo Gestor e Gestor Certo nas redes sociais">
-<meta name="twitter:image" content="https://gestorcerto.com.br/assets/img/icon-512.png">
-<!-- Favicons -->
 <link rel="icon" href="assets/img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
-
+<style>
+  .article{max-width:760px;margin:0 auto;padding:0 22px}
+  .article h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:34px 0 12px;color:var(--ink)}
+  .article p{color:var(--ink-soft);margin:0 0 14px;font-size:1.02rem;line-height:1.7}
+  .article ul{margin:0 0 16px 20px;color:var(--ink-soft);line-height:1.7}.article li{margin-bottom:6px}
+  .article .formula{background:var(--bg-soft);border:1px solid var(--line);border-left:4px solid var(--teal-400);border-radius:10px;padding:14px 16px;margin:14px 0;font-weight:600;color:var(--ink)}
+  .article .formula small{display:block;font-weight:500;color:var(--muted);margin-top:6px;font-size:.85rem}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:24px 0}
+  .toc b{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-500)}
+  .toc ul{list-style:none;margin:10px 0 0;padding:0}.toc li{margin:6px 0}
+  .toc a{color:var(--ink-soft);font-weight:600;font-size:.95rem;text-decoration:none}.toc a:hover{color:var(--teal-500)}
+  .calc-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-md);max-width:760px;margin:0 auto}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .cf.full{grid-column:1/-1}
+  .cf label{display:block;font-size:.84rem;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
+  .cf .inp{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+  .cf .inp:focus-within{border-color:var(--teal-400)}
+  .cf .pre{padding:0 0 0 12px;color:var(--muted);font-weight:600;font-size:.9rem}
+  .cf input{width:100%;border:0;background:transparent;padding:11px 12px;font:inherit;font-weight:700;color:var(--ink)}
+  .cf input:focus{outline:none}
+  .blk{margin-top:18px;border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff}
+  .blk h4{margin:0 0 10px;font-size:.98rem;color:var(--ink)}
+  .blk .row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.94rem;color:var(--ink-soft)}
+  .blk .row:last-child{border-bottom:0}.blk .row b{color:var(--ink)}.blk .row.neg b{color:#C0392B}
+  .blk .big{font-size:1.35rem;font-weight:800;color:var(--ink);margin-top:8px}
+  .blk.hl{background:linear-gradient(135deg,rgba(45,212,191,.08),rgba(37,99,235,.08));border-color:rgba(45,212,191,.28)}
+  .pill{display:inline-block;font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.03em}
+  .pill.on{background:#FBE9E5;color:#C0392B}.pill.off{background:#E6F5F0;color:#0C8A67}
+  .disc{max-width:760px;margin:18px auto 0;background:#FEF6E7;border:1px solid #F6D58a;border-radius:12px;padding:14px 16px;font-size:.88rem;color:#7a5600;line-height:1.6}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header class="site-header">
   <div class="container">
     <div class="header-layout">
-      <!-- LOGO ESQUERDA: Grupo Gestor -->
+      <!-- LOGO ESQUERDA: Grupo Gestor - EM DESTAQUE -->
       <a href="index.html" aria-label="Grupo Gestor" class="header__logo-left" style="display: flex; align-items: center; flex-shrink: 0;">
         <img src="assets/img/logo-grupo-gestor.png" alt="Grupo Gestor - Escritório de Contabilidade" style="height: 120px; width: auto; object-fit: contain;">
       </a>
@@ -96,118 +116,73 @@
   </div>
 </header>
 <main id="conteudo">
-<!-- HERO POSTS -->
-<section class="hero-epic" style="background: linear-gradient(135deg, #0B2A6B 0%, #0E3A7A 45%, #0F766E 120%);">
+<section class="hero-epic" style="background:linear-gradient(135deg,#0B2A6B 0%,#0E3A7A 45%,#0F766E 120%);min-height:auto">
   <div class="hero-epic-bg"></div>
-  <div class="container" style="text-align: center; position: relative; z-index: 2; padding: 60px 22px;">
-    <h1 style="font-size: clamp(1.8rem, 5vw, 2.8rem); max-width: 900px; margin: 0 auto 24px; color: #fff; line-height: 1.2; font-weight: 800;">
-      Blog: Dicas & Soluções
-    </h1>
-    <p style="font-size: 1rem; color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto;">
-      Acompanhe Grupo Gestor e Gestor Certo nas redes sociais. Dicas de fiscal, RH, crédito e muito mais.
-    </p>
+  <div class="container" style="text-align:center;position:relative;z-index:2;padding:56px 22px">
+    <nav class="crumb" style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:14px"><a href="index.html" style="color:rgba(255,255,255,.85)">Início</a> / <a href="posts.html" style="color:rgba(255,255,255,.85)">Blog</a> / <span>Dividendos 2026</span></nav>
+    <h1 style="font-size:clamp(1.8rem,5vw,2.8rem);max-width:840px;margin:0 auto 16px;color:#fff;line-height:1.18;font-weight:800">Lucros e dividendos em 2026: o que muda para quem recebe</h1>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,.9);max-width:680px;margin:0 auto">10% de IR na fonte acima de R$ 50 mil por mês e o novo IRPF Mínimo para rendas acima de R$ 600 mil no ano. Entenda e simule.</p>
   </div>
 </section>
 
-<!-- MATERIA EM DESTAQUE -->
-<section class="section" style="padding-bottom: 0;">
-  <div class="container" style="max-width: 920px;">
-    <a href="blog-precificacao.html" style="display: block; text-decoration: none; background: linear-gradient(135deg, rgba(45,212,191,0.1) 0%, rgba(37,99,235,0.1) 100%); border: 1px solid rgba(45,212,191,0.3); border-radius: 18px; padding: 28px; transition: all 0.2s;">
-      <span class="chip" style="display:inline-block; background: var(--teal-400); color:#fff; font-size: 0.72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px;">Destaque · Ferramenta grátis</span>
-      <h2 style="margin: 14px 0 8px; font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--ink);">Como formar o preço de venda sem deixar lucro na mesa</h2>
-      <p style="margin: 0 0 14px; color: var(--ink-soft); font-size: 1rem; line-height: 1.6;">Markup, margem de contribuição, ponto de equilíbrio e ROI explicados de forma simples — com uma <b>calculadora de preço de venda</b> pra você usar na hora.</p>
-      <span style="display:inline-flex; align-items:center; gap:8px; color: var(--teal-600, #0C8A67); font-weight: 700; font-size: 0.95rem;">🧮 Abrir matéria + calculadora →</span>
-    </a>
-    <a href="blog-direito-trabalho.html" style="display:block;text-decoration:none;margin-top:18px;background:linear-gradient(135deg,rgba(37,99,235,0.1) 0%,rgba(45,212,191,0.1) 100%);border:1px solid rgba(37,99,235,0.25);border-radius:18px;padding:28px;">
-      <span class="chip" style="display:inline-block;background:var(--blue-500);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;">Destaque · Ferramentas grátis</span>
-      <h2 style="margin:14px 0 8px;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--ink);">Direito do Trabalho: rescisão e férias sem mistério</h2>
-      <p style="margin:0 0 14px;color:var(--ink-soft);font-size:1rem;line-height:1.6;">Entenda seus direitos e use os <b>simuladores de rescisão, férias e 13º</b> — já com INSS e IR pela tabela 2026. Cada caso é um caso.</p>
-      <span style="display:inline-flex;align-items:center;gap:8px;color:#0C8A67;font-weight:700;font-size:0.95rem;">⚖️ Abrir matéria + simuladores →</span>
-    </a>
-    <a href="blog-pro-labore.html" style="display:block;text-decoration:none;margin-top:18px;background:linear-gradient(135deg,rgba(15,118,110,0.1) 0%,rgba(37,99,235,0.1) 100%);border:1px solid rgba(15,118,110,0.25);border-radius:18px;padding:28px;">
-      <span class="chip" style="display:inline-block;background:var(--teal-500);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;">Destaque · Sócios e empresas</span>
-      <h2 style="margin:14px 0 8px;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--ink);">Pró-labore: o que o sócio recebe e o que custa à empresa</h2>
-      <p style="margin:0 0 14px;color:var(--ink-soft);font-size:1rem;line-height:1.6;">INSS, Imposto de Renda e o <b>custo patronal</b> — com a diferença que o <b>Simples Nacional</b> faz. Calculadora com a tabela 2026.</p>
-      <span style="display:inline-flex;align-items:center;gap:8px;color:#0C8A67;font-weight:700;font-size:0.95rem;">💼 Abrir matéria + calculadora →</span>
-    </a>
-    <a href="blog-dividendos-2026.html" style="display:block;text-decoration:none;margin-top:18px;background:linear-gradient(135deg,rgba(224,85,65,0.08) 0%,rgba(37,99,235,0.10) 100%);border:1px solid rgba(224,85,65,0.22);border-radius:18px;padding:28px;">
-      <span class="chip" style="display:inline-block;background:#E05541;color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;">Novo · Reforma do IR 2026</span>
-      <h2 style="margin:14px 0 8px;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--ink);">Lucros e dividendos em 2026: o que muda para quem recebe</h2>
-      <p style="margin:0 0 14px;color:var(--ink-soft);font-size:1rem;line-height:1.6;">10% de IR na fonte acima de <b>R$ 50 mil/mês</b> e o novo <b>IRPF Mínimo</b> para rendas acima de <b>R$ 600 mil/ano</b>. Entenda e simule o impacto.</p>
-      <span style="display:inline-flex;align-items:center;gap:8px;color:#0C8A67;font-weight:700;font-size:0.95rem;">📈 Abrir matéria + calculadora →</span>
-    </a>
-  </div>
-</section>
-
-<!-- SELETOR DE CONTAS -->
 <section class="section">
-  <div class="container">
-    <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; padding: 0 16px;">
-      <button onclick="document.querySelector('.posts-grid').innerHTML=criarGrid('grupo_gestorcontabil')" class="btn btn--primary" style="background: var(--teal-400); color: #fff; border: none; cursor: pointer; font-weight: 600; padding: 12px 20px; min-width: auto; white-space: nowrap; font-size: 0.95rem;">
-        @grupo_gestorcontabil
-      </button>
-      <button onclick="document.querySelector('.posts-grid').innerHTML=criarGrid('gestorcertocotafacil')" class="btn btn--primary" style="background: var(--blue-500); color: #fff; border: none; cursor: pointer; font-weight: 600; padding: 12px 20px; min-width: auto; white-space: nowrap; font-size: 0.95rem;">
-        @gestorcertocotafacil
-      </button>
+  <div class="article">
+    <div class="toc"><b>Neste post</b>
+      <ul>
+        <li><a href="#calculadora">→ Calculadora de dividendos 2026</a></li>
+        <li><a href="#fonte">1. 10% na fonte acima de R$ 50 mil/mês</a></li>
+        <li><a href="#irpfm">2. IRPF Mínimo acima de R$ 600 mil/ano</a></li>
+        <li><a href="#transicao">3. Regra de transição e planejamento</a></li>
+      </ul>
     </div>
-    <div class="posts-grid"></div>
+    <p>Durante anos os lucros e dividendos distribuídos por empresas com contabilidade regular foram <b>isentos</b> de Imposto de Renda na pessoa física. A <b>Lei nº 15.270/2025</b> mudou isso a partir de <b>2026</b> com duas novas regras que atingem quem recebe valores altos. Veja como funcionam — e use a calculadora para ter uma ideia do impacto.</p>
   </div>
 </section>
 
-<script>
-const posts = {
-  "grupo_gestorcontabil": [
-    {"id": 1, "title": "Decimo Terceiro", "desc": "Como registrar corretamente no sistema", "cat": "RH", "date": "2026-05-15"},
-    {"id": 2, "title": "Imposto de Renda 2026", "desc": "Principais mudancas e como se preparar", "cat": "IR", "date": "2026-05-10"},
-    {"id": 3, "title": "Abertura de Empresa", "desc": "Passo a passo do CNPJ ao funcionamento", "cat": "Fiscal", "date": "2026-05-05"},
-    {"id": 4, "title": "Certificado Digital", "desc": "Quando sua empresa precisa de A1 ou A3", "cat": "Fiscal", "date": "2026-04-30"},
-    {"id": 5, "title": "MEI", "desc": "Tudo sobre enquadramento e obrigacoes", "cat": "MEI", "date": "2026-04-25"},
-    {"id": 6, "title": "Planejamento Tributario", "desc": "Estrategias para pagar menos imposto legalmente", "cat": "Fiscal", "date": "2026-04-20"}
-  ],
-  "gestorcertocotafacil": [
-    {"id": 1, "title": "Consorcios", "desc": "Como funciona e quando contratar", "cat": "Solucoes", "date": "2026-05-15"},
-    {"id": 2, "title": "Seguros", "desc": "Proteja seu patrimonio com as melhores opcoes", "cat": "Seguros", "date": "2026-05-10"},
-    {"id": 3, "title": "Credito Pessoal", "desc": "Linhas de credito com juros reduzidos", "cat": "Credito", "date": "2026-05-05"},
-    {"id": 4, "title": "Financiamento", "desc": "Realize seus sonhos com nossas opcoes", "cat": "Credito", "date": "2026-04-30"},
-    {"id": 5, "title": "Seguros Pessoais", "desc": "Vida, saude, acidente - voce protegido", "cat": "Seguros", "date": "2026-04-25"},
-    {"id": 6, "title": "Analise de Credito", "desc": "Entenda sua pontuacao e melhore seu score", "cat": "Credito", "date": "2026-04-20"}
-  ]
-};
-
-function criarGrid(conta) {
-  const items = posts[conta];
-  return items.map(p => `
-    <div style="padding: 24px; background: #fff; border-radius: 12px; border: 1px solid var(--line); cursor: pointer; transition: all 0.3s;">
-      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
-        <h3 style="margin: 0; font-size: 1.1rem; color: var(--dark-900);">${p.title}</h3>
-        <span class="chip" style="background: var(--teal-50); border-color: var(--teal-200); color: var(--teal-700); font-size: 0.75rem;">${p.cat}</span>
+<!-- CALCULADORA -->
+<section class="section" id="calculadora" style="background:var(--bg-soft);scroll-margin-top:80px">
+  <div class="container" style="max-width:820px">
+    <div class="section-head center"><span class="eyebrow">Calculadora</span><h2 style="margin-top:10px">Calculadora de Dividendos 2026</h2><p class="lead">Estime o IR na fonte (mensal) e o IRPF Mínimo (anual).</p></div>
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="cf"><label>Dividendos por mês (mesma empresa → mesmo sócio)</label><div class="inp"><span class="pre">R$</span><input id="dMes" type="number" value="60000" min="0" step="1000"></div></div>
+        <div class="cf"><label>Total de rendimentos no ano (inclui dividendos)</label><div class="inp"><span class="pre">R$</span><input id="dAno" type="number" value="720000" min="0" step="10000"></div></div>
       </div>
-      <p style="margin: 0 0 12px; color: var(--dark-600); font-size: 0.95rem;">${p.desc}</p>
-      <p style="margin: 0; color: var(--dark-400); font-size: 0.85rem;">${p.date}</p>
+
+      <div class="blk" id="blkMes"></div>
+      <div class="blk hl" id="blkAno"></div>
     </div>
-  `).join('');
-}
+    <div class="disc">⚠️ <b>Estimativa</b> com base na Lei 15.270/2025. O IR de 10% na fonte é apurado <b>mês a mês</b> e por empresa pagadora; aqui assumimos 12 meses iguais. O IRPF Mínimo é apurado na <b>declaração anual</b>: o IR retido nos dividendos é <b>antecipação</b> dele, e existe um <b>redutor</b> para a soma da tributação da empresa + sócio não passar de 34% (que pode reduzir o valor). Não considera todas as deduções e demais rendimentos. <b>Planejamento de distribuição deve ser feito com a sua contabilidade — fale com a Gestor Certo.</b></div>
+  </div>
+</section>
 
-// Carregar grid padrao
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('.posts-grid').innerHTML = criarGrid('grupo_gestorcontabil');
-});
-</script>
+<section class="section">
+  <div class="article">
+    <h2 id="fonte">1. IR de 10% na fonte acima de R$ 50 mil/mês</h2>
+    <p>Quando a <b>mesma empresa</b> paga lucros/dividendos a um <b>mesmo sócio</b> (pessoa física) em valor que <b>ultrapassa R$ 50.000 num mesmo mês</b>, há retenção de <b>10% de IR na fonte</b>. Atenção: o imposto incide sobre o <b>valor total</b> do mês, não só sobre o que passa dos R$ 50 mil.</p>
+    <div class="formula">IR na fonte = 10% × (dividendos do mês), quando o mês ultrapassa R$ 50.000
+      <small>Ex.: recebeu R$ 60.000 no mês → IR retido de R$ 6.000. Se houver mais de um pagamento no mês, soma-se tudo para verificar o limite.</small></div>
 
-<style>
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-@media (max-width: 860px) {
-  .posts-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 620px) {
-  .posts-grid { grid-template-columns: 1fr; }
-}
-</style>
+    <h2 id="irpfm">2. IRPF Mínimo acima de R$ 600 mil/ano</h2>
+    <p>Pessoas físicas com <b>rendimentos anuais acima de R$ 600 mil</b> passam a ter um imposto mínimo (IRPFM), apurado na declaração. A alíquota é progressiva:</p>
+    <div class="formula">Alíquota IRPFM (%) = (renda anual ÷ 60.000) − 10
+      <small>Vale entre R$ 600 mil e R$ 1,2 milhão (de 0% a 10%). Acima de R$ 1,2 milhão, a alíquota é fixa de 10%. Ex.: R$ 750 mil → 12,5 − 10 = 2,5%.</small></div>
+    <p>O IRPFM é um <b>mínimo</b>: o IR que você já pagou no ano — inclusive os 10% retidos nos dividendos — é abatido. Se o mínimo for maior, você complementa na declaração; se for menor, não há complemento (e pode haver restituição do que foi retido a mais).</p>
 
+    <h2 id="transicao">3. Transição e planejamento</h2>
+    <ul>
+      <li><b>Transição:</b> lucros apurados até 2025 e cuja distribuição foi aprovada até 31/12/2025 ficam <b>isentos</b> se pagos em 2026, 2027 ou 2028 — o que abre espaço para planejamento.</li>
+      <li><b>Redutor anti-bitributação:</b> a soma das alíquotas efetivas da empresa + sócio não pode passar de 34% (40% seguradoras, 45% bancos); o excedente vira crédito na declaração.</li>
+      <li><b>Pró-labore × lucros, calendário de distribuição, antecipações:</b> decisões que a contabilidade ajuda a montar dentro da lei para reduzir o impacto.</li>
+    </ul>
+    <div class="card" style="margin-top:28px;background:linear-gradient(135deg,rgba(45,212,191,.08),rgba(37,99,235,.08));border:1px solid rgba(45,212,191,.25);border-radius:16px;padding:24px;text-align:center">
+      <h3 style="margin:0 0 8px">Vai distribuir lucros em 2026? Planeje antes.</h3>
+      <p style="color:var(--ink-soft);margin:0 0 16px">A Gestor Certo simula o seu cenário real e monta a melhor estratégia de retiradas dentro da lei.</p>
+      <a href="https://wa.me/5511914040532?text=Ol%C3%A1!%20Vi%20o%20post%20sobre%20dividendos%202026%20e%20quero%20planejar%20a%20distribui%C3%A7%C3%A3o%20de%20lucros%20da%20minha%20empresa." target="_blank" rel="noopener" class="btn btn--primary btn--lg">Planejar com a Gestor Certo</a>
+    </div>
+    <p style="font-size:.82rem;color:var(--muted);margin-top:24px;text-align:center;line-height:1.6">Conteúdo educativo, baseado na Lei nº 15.270/2025. Regras podem ter ajustes na regulamentação. Não constitui consultoria tributária individual.</p>
+  </div>
+</section>
 </main>
 <footer class="footer">
   <div class="container">
@@ -263,14 +238,50 @@ document.addEventListener('DOMContentLoaded', function() {
 </footer>
 <a class="wa-float" href="https://wa.me/5511914040532" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.744-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
 <script src="assets/js/main.js" defer></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var brl=function(v){return "R$ "+(Math.round(v*100)/100).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});};
+  var n=function(id){var e=$(id);if(!e)return 0;var v=parseFloat(e.value);return isNaN(v)?0:v;};
+  function row(k,v,neg){return '<div class="row'+(neg?' neg':'')+'"><span>'+k+'</span><b>'+(neg?'− ':'')+v+'</b></div>';}
+  function calc(){
+    var dMes=n("dMes"), dAno=n("dAno");
+    // bloco mensal
+    var acima = dMes>50000;
+    var irMes = acima ? 0.10*dMes : 0;
+    var liqMes = dMes - irMes;
+    var irAno = irMes*12;
+    var pill = acima ? '<span class="pill on">acima de R$ 50 mil</span>' : '<span class="pill off">abaixo de R$ 50 mil — isento na fonte</span>';
+    $("blkMes").innerHTML='<h4>📅 IR na fonte (mensal) '+pill+'</h4>'+
+      row("Dividendos no mês",brl(dMes))+
+      row("IR na fonte (10%)"+(acima?"":" — não incide"),brl(irMes),acima)+
+      '<div class="big">'+brl(liqMes)+'</div><div style="font-size:.8rem;color:var(--muted)">líquido no mês · retido no ano: '+brl(irAno)+'</div>';
+    // bloco anual IRPFM
+    var aliq=0;
+    if(dAno>1200000) aliq=10;
+    else if(dAno>600000) aliq=dAno/60000-10;
+    if(aliq<0) aliq=0; if(aliq>10) aliq=10;
+    var irpfm = dAno*aliq/100;
+    var saldo = irpfm - irAno;
+    var pill2 = dAno>600000 ? '<span class="pill on">sujeito ao IRPF Mínimo</span>' : '<span class="pill off">abaixo de R$ 600 mil — fora do IRPFM</span>';
+    var concil;
+    if(dAno<=600000){
+      concil=row("IRPF Mínimo devido","R$ 0,00");
+    } else if(saldo>=0){
+      concil=row("IRPF Mínimo devido",brl(irpfm))+row("(−) IR já retido nos dividendos",brl(irAno),true)+
+        '<div class="big">'+brl(saldo)+'</div><div style="font-size:.8rem;color:var(--muted)">complemento estimado a pagar na declaração</div>';
+    } else {
+      concil=row("IRPF Mínimo devido",brl(irpfm))+row("(−) IR já retido nos dividendos",brl(irAno),true)+
+        '<div class="big">'+brl(Math.abs(saldo))+'</div><div style="font-size:.8rem;color:var(--muted)">retido a mais — possível restituição estimada</div>';
+    }
+    $("blkAno").innerHTML='<h4>📆 IRPF Mínimo (anual) '+pill2+'</h4>'+
+      row("Total de rendimentos no ano",brl(dAno))+
+      row("Alíquota IRPFM",(Math.round(aliq*100)/100).toLocaleString("pt-BR")+"%")+
+      concil;
+  }
+  ["dMes","dAno"].forEach(function(id){var e=$(id);if(e){e.addEventListener("input",calc);e.addEventListener("change",calc);}});
+  calc();
+})();
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
