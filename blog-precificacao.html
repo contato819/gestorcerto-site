@@ -70,6 +70,19 @@
   .calc-item.hl{background:var(--ink);border-color:var(--ink)}
   .calc-item.hl .k{color:#BFD2E6}.calc-item.hl .v{color:#fff}.calc-item.hl .v small{color:#9FB6CE}
   .calc-warn{background:#FEF3C7;border:1px solid #FCD34D;color:#8a5a00;padding:12px 14px;border-radius:10px;margin-top:16px;font-size:.9rem;font-weight:600}
+  .calc-seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--bg-soft);padding:5px;border-radius:12px;border:1px solid var(--line);margin-bottom:18px}
+  .calc-seg button{border:0;background:transparent;cursor:pointer;font:inherit;font-weight:700;color:var(--ink-soft);padding:11px;border-radius:9px;transition:.15s}
+  .calc-seg button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(14,37,64,.14)}
+  .dl-box{margin-top:26px;background:var(--ink);color:#fff;border-radius:18px;padding:26px 24px;text-align:center}
+  .dl-box .dl-ic{font-size:2rem}
+  .dl-box h3{color:#fff;margin:6px 0 8px;font-size:1.3rem}
+  .dl-box>p{color:rgba(255,255,255,.85);max-width:540px;margin:0 auto 16px;font-size:.98rem;line-height:1.6}
+  .dl-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:580px;margin:0 auto}
+  .dl-form input{flex:1;min-width:180px;padding:13px 14px;border:0;border-radius:10px;font:inherit;font-weight:500}
+  .dl-form input.err{outline:2px solid #ff8a7a}
+  .dl-form button{background:var(--teal-400);color:#06281f;font-weight:800;border:0;border-radius:10px;padding:13px 22px;cursor:pointer;font:inherit;white-space:nowrap}
+  .dl-form button:hover{background:#26d0ad}
+  .dl-note{font-size:.82rem;color:rgba(255,255,255,.6);margin-top:12px}
   @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-rows{grid-template-columns:1fr}}
 </style>
 </head>
@@ -172,14 +185,26 @@
     </div>
 
     <div class="calc-card">
+      <div class="calc-seg" id="calcSeg" role="group" aria-label="Tipo">
+        <button type="button" data-modo="produto" aria-pressed="true">🛍️ Produto</button>
+        <button type="button" data-modo="servico" aria-pressed="false">🛠️ Serviço</button>
+      </div>
       <div class="calc-grid">
         <div class="cf full">
-          <label for="pNome">Nome do produto</label>
+          <label for="pNome" id="lblNome">Nome do produto</label>
           <div class="inp"><input id="pNome" type="text" placeholder="Ex.: Camiseta básica"></div>
         </div>
-        <div class="cf">
+        <div class="cf grp-produto">
           <label for="pCusto">Custo unitário</label>
           <div class="inp"><span class="pre">R$</span><input id="pCusto" type="number" value="20" min="0" step="0.01"></div>
+        </div>
+        <div class="cf grp-servico" style="display:none">
+          <label for="pCustoHora">Custo por hora</label>
+          <div class="inp"><span class="pre">R$</span><input id="pCustoHora" type="number" value="50" min="0" step="0.01"></div>
+        </div>
+        <div class="cf grp-servico" style="display:none">
+          <label for="pHoras">Horas por serviço</label>
+          <div class="inp"><input id="pHoras" type="number" value="8" min="0" step="0.5"><span class="suf">h</span></div>
         </div>
         <div class="cf">
           <label for="pFixo">Custo fixo mensal (total)</label>
@@ -202,6 +227,19 @@
     </div>
 
     <div class="calc-result" id="calcResult" aria-live="polite"></div>
+
+    <div class="dl-box" id="planilha">
+      <div class="dl-ic">📊</div>
+      <h3>Baixe a Planilha de Preço de Vendas</h3>
+      <p>Planilha em Excel com fórmulas prontas para <b>produtos e serviços</b>: preço de venda, markup, margem de contribuição e ponto de equilíbrio. Cadastre-se e baixe na hora.</p>
+      <div class="dl-form">
+        <input id="dlNome" type="text" placeholder="Seu nome" autocomplete="name">
+        <input id="dlWhats" type="tel" placeholder="Seu WhatsApp" autocomplete="tel" inputmode="numeric">
+        <button id="dlBtn" type="button">⬇️ Quero a planilha grátis</button>
+      </div>
+      <p class="dl-note">Ao baixar, um consultor da Gestor Certo pode te chamar pra ajudar na precificação. Sem compromisso.</p>
+      <a id="dlLink" href="assets/downloads/planilha-preco-venda-gestor-certo.xlsx" download hidden>baixar</a>
+    </div>
   </div>
 </section>
 
@@ -301,39 +339,73 @@
 (function(){
   var $=function(id){return document.getElementById(id);};
   var brl=function(v){return "R$ "+(Math.round(v*100)/100).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});};
-  var num=function(id){var v=parseFloat($(id).value);return isNaN(v)?0:v;};
+  var num=function(id){var e=$(id); if(!e) return 0; var v=parseFloat(e.value); return isNaN(v)?0:v;};
+  var modo="produto";
+  function setModo(m){
+    modo=m;
+    var btns=document.querySelectorAll("#calcSeg button");
+    for(var i=0;i<btns.length;i++){ btns[i].setAttribute("aria-pressed", btns[i].getAttribute("data-modo")===m); }
+    document.querySelectorAll(".grp-produto").forEach(function(e){ e.style.display=(m==="produto")?"":"none"; });
+    document.querySelectorAll(".grp-servico").forEach(function(e){ e.style.display=(m==="servico")?"":"none"; });
+    $("lblNome").textContent=(m==="servico")?"Nome do serviço":"Nome do produto";
+    $("pNome").placeholder=(m==="servico")?"Ex.: Consultoria mensal":"Ex.: Camiseta básica";
+    if(m==="servico" && $("pTrib").value==="6"){ $("pTrib").value="5"; }
+    if(m==="produto" && $("pTrib").value==="5"){ $("pTrib").value="6"; }
+    calc();
+  }
   function calc(){
-    var nome=($("pNome").value||"").trim()||"Seu produto";
-    var custo=num("pCusto"), fixo=num("pFixo");
+    var serv=(modo==="servico");
+    var nome=($("pNome").value||"").trim() || (serv?"Seu serviço":"Seu produto");
+    var custo = serv ? (num("pCustoHora")*num("pHoras")) : num("pCusto");
+    var custoLbl = serv ? "Custo do serviço" : "Custo unitário";
+    var fixo=num("pFixo");
     var trib=num("pTrib")/100, desp=num("pDesp")/100, marg=num("pMargem")/100;
     var soma=trib+desp+marg;
     var out=$("calcResult");
-    if(custo<=0){ out.innerHTML='<div class="calc-warn">Informe um custo unitário maior que zero.</div>'; return; }
+    if(custo<=0){ out.innerHTML='<div class="calc-warn">Informe um custo maior que zero'+(serv?" (custo por hora × horas)":"")+'.</div>'; return; }
     if(soma>=1){ out.innerHTML='<div class="calc-warn">A soma de tributos + comissões + margem chegou a '+Math.round(soma*100)+'%. Como tudo incide sobre o preço, o total precisa ser menor que 100%. Reduza algum percentual.</div>'; return; }
     var pv=custo/(1-soma);
     var tribR=pv*trib, despR=pv*desp;
     var mcUn=pv-custo-tribR-despR;
     var mcPct=mcUn/pv;
     var markup=pv/custo;
-    var peUn=Infinity, peR=Infinity;
-    if(mcUn>0){ peUn=fixo/mcUn; peR=fixo/mcPct; }
-    var peTxt = (mcUn>0) ? (Math.ceil(peUn).toLocaleString("pt-BR")+' un/mês') : '—';
-    var peRTxt = (mcUn>0) ? brl(peR)+'/mês' : 'margem negativa';
+    var unidade = serv ? "serviços/mês" : "un/mês";
+    var peTxt = (mcUn>0) ? (Math.ceil(fixo/mcUn).toLocaleString("pt-BR")+" "+unidade) : "—";
+    var peRTxt = (mcUn>0) ? brl(fixo/mcPct)+"/mês" : "margem negativa";
+    var pvLbl = serv ? "Preço do serviço sugerido" : "Preço de venda sugerido";
     out.innerHTML =
       '<div class="calc-prodname">'+nome.replace(/</g,"&lt;")+'</div>'+
-      '<div class="calc-pv"><div class="lbl">Preço de venda sugerido</div>'+
+      '<div class="calc-pv"><div class="lbl">'+pvLbl+'</div>'+
         '<div class="big">'+brl(pv)+'</div>'+
         '<div class="mk">markup '+ (Math.round(markup*100)/100).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2}) +'× sobre o custo</div></div>'+
       '<div class="calc-rows">'+
-        '<div class="calc-item"><div class="k">Custo unitário</div><div class="v">'+brl(custo)+'</div></div>'+
+        '<div class="calc-item"><div class="k">'+custoLbl+'</div><div class="v">'+brl(custo)+'</div></div>'+
         '<div class="calc-item"><div class="k">Custo fixo mensal</div><div class="v">'+brl(fixo)+'</div></div>'+
-        '<div class="calc-item hl"><div class="k">Margem de contribuição</div><div class="v">'+brl(mcUn)+' <small>/un · '+Math.round(mcPct*100)+'%</small></div></div>'+
+        '<div class="calc-item hl"><div class="k">Margem de contribuição</div><div class="v">'+brl(mcUn)+' <small>· '+Math.round(mcPct*100)+'%</small></div></div>'+
         '<div class="calc-item hl"><div class="k">Ponto de equilíbrio contábil</div><div class="v">'+peTxt+' <small>'+peRTxt+'</small></div></div>'+
       '</div>';
   }
-  ["pNome","pCusto","pFixo","pTrib","pDesp","pMargem"].forEach(function(id){
+  var segBtns=document.querySelectorAll("#calcSeg button");
+  for(var i=0;i<segBtns.length;i++){ segBtns[i].addEventListener("click", function(){ setModo(this.getAttribute("data-modo")); }); }
+  ["pNome","pCusto","pCustoHora","pHoras","pFixo","pTrib","pDesp","pMargem"].forEach(function(id){
     var el=$(id); if(el){ el.addEventListener("input",calc); el.addEventListener("change",calc);} });
   calc();
+
+  // ---- download da planilha (cadastro) ----
+  var onlyDigits=function(s){return (s||"").replace(/\D/g,"");};
+  var btn=$("dlBtn");
+  if(btn){
+    btn.addEventListener("click", function(){
+      var n=$("dlNome"), w=$("dlWhats");
+      var nome=n.value.trim(), wh=onlyDigits(w.value), ok=true;
+      if(nome.length<2){n.classList.add("err");ok=false;} else n.classList.remove("err");
+      if(wh.length<10){w.classList.add("err");ok=false;} else w.classList.remove("err");
+      if(!ok){ (nome.length<2?n:w).focus(); return; }
+      $("dlLink").click();  // baixa a planilha
+      var msg="Olá! Sou "+nome+", baixei a Planilha de Preço de Vendas no site e gostaria de ajuda com a precificação (produtos/serviços).";
+      window.open("https://wa.me/5511914040532?text="+encodeURIComponent(msg),"_blank");
+    });
+  }
 })();
 </script>
 </body>
