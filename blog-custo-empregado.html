@@ -46,6 +46,16 @@
   .box .big{font-size:1.7rem;font-weight:800;margin:4px 0 2px}
   .box .pct{font-size:.82rem;color:var(--muted)}.box.p .pct{color:#9fb6ce}
   .econ{margin-top:14px;background:#E6F5F0;border:1px solid #BFE7DA;border-radius:12px;padding:12px 16px;text-align:center;color:#0C8A67;font-weight:700}
+  .dash{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+  .dash h4{margin:0 0 14px;color:var(--ink);font-size:1rem}
+  .dash-row{margin-bottom:16px}
+  .dash-row .lbl{font-size:.85rem;font-weight:700;color:var(--ink-soft);margin-bottom:6px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .dash-row .lbl .enc{color:#C0392B}
+  .dashbar{display:flex;height:30px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+  .dashbar .sal{background:var(--teal-400);display:flex;align-items:center;justify-content:center;color:#06281f;font-size:.74rem;font-weight:800;min-width:0}
+  .dashbar .enc{background:var(--blue-600);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.74rem;font-weight:800;min-width:0}
+  .dash-leg{display:flex;gap:18px;font-size:.82rem;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+  .dash-leg i{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
   table.brk{width:100%;border-collapse:collapse;margin-top:18px;font-size:.9rem}
   table.brk th,table.brk td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:right}
   table.brk th:first-child,table.brk td:first-child{text-align:left;color:var(--ink-soft)}
@@ -160,6 +170,8 @@
         <div class="box p"><div class="t">🔵 LUCRO PRESUMIDO / REAL<br><small style="font-weight:500;color:#9fb6ce">e Anexo IV</small></div><div class="big" id="cTotP">—</div><div class="pct" id="cPctP"></div></div>
       </div>
       <div class="econ" id="cEcon"></div>
+
+      <div class="dash" id="cDash"></div>
 
       <table class="brk" id="cBrk"></table>
 
@@ -277,6 +289,14 @@
     if(s.sal>0){ $("cPctS").textContent=Math.round(s.total/s.sal*100)+"% do salário"; $("cPctP").textContent=Math.round(p.total/p.sal*100)+"% do salário"; }
     var dif=p.total-s.total;
     $("cEcon").textContent = dif>0 ? ("No Simples a empresa economiza "+brl(dif)+" por mês") : "Sem diferença de encargos neste cenário";
+    // dashboard Salário x Encargos
+    var dashRow=function(nome,sal,total){
+      var enc=total-sal, ps=total>0?sal/total*100:0, pe=100-ps;
+      return '<div class="dash-row"><div class="lbl"><span>'+nome+'</span><span class="enc">Encargos: '+Math.round(enc/Math.max(sal,1)*100)+'% do salário</span></div>'
+        +'<div class="dashbar"><div class="sal" style="width:'+ps.toFixed(1)+'%">'+(ps>=16?"Salário":"")+'</div><div class="enc" style="width:'+pe.toFixed(1)+'%">'+(pe>=16?"Encargos":"")+'</div></div>'
+        +'<div class="dash-leg"><span><i style="background:var(--teal-400)"></i>Salário '+brl(sal)+' ('+Math.round(ps)+'%)</span><span><i style="background:var(--blue-600)"></i>Encargos '+brl(enc)+' ('+Math.round(pe)+'%)</span></div></div>';
+    };
+    $("cDash").innerHTML='<h4>📊 Salário × Encargos</h4>'+dashRow("No Simples",s.remun,s.total)+dashRow("No Presumido/Real",p.remun,p.total);
     var lin=function(k,vs,vp){return '<tr><td>'+k+'</td><td>'+brl(vs)+'</td><td>'+brl(vp)+'</td></tr>';};
     var html='<thead><tr><th>Componente</th><th>Simples</th><th>Presumido/Real</th></tr></thead><tbody>';
     html+=lin("Remuneração",s.remun,p.remun);
