@@ -37,18 +37,40 @@
   }
 
   // --- Dropdowns ---
+  const closeSubs = (root) => {
+    (root || document).querySelectorAll('[data-sub].open').forEach((s) => {
+      s.classList.remove('open');
+      s.querySelector('.nav__sub-btn')?.setAttribute('aria-expanded', 'false');
+    });
+  };
   document.querySelectorAll('[data-drop]').forEach((d) => {
-    const btn = d.querySelector('button');
+    const btn = d.querySelector(':scope > button');
     if (!btn) return;
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const open = d.classList.toggle('open');
       btn.setAttribute('aria-expanded', String(open));
-      document.querySelectorAll('[data-drop].open').forEach((o) => { if (o !== d) o.classList.remove('open'); });
+      if (!open) closeSubs(d);
+      document.querySelectorAll('[data-drop].open').forEach((o) => { if (o !== d) { o.classList.remove('open'); closeSubs(o); } });
+    });
+  });
+  // Submenus (Clientes / Equipe · Escritório)
+  document.querySelectorAll('[data-sub] > .nav__sub-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const sub = btn.parentElement;
+      const willOpen = !sub.classList.contains('open');
+      sub.parentElement.querySelectorAll('[data-sub].open').forEach((o) => {
+        o.classList.remove('open');
+        o.querySelector('.nav__sub-btn')?.setAttribute('aria-expanded', 'false');
+      });
+      sub.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', String(willOpen));
     });
   });
   document.addEventListener('click', () => {
     document.querySelectorAll('[data-drop].open').forEach((o) => o.classList.remove('open'));
+    closeSubs();
   });
 
   // --- Reveal on scroll ---
