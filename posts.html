@@ -173,40 +173,46 @@
 </section>
 
 <script>
+const INSTA = {
+  "grupo_gestorcontabil": "https://instagram.com/grupo_gestorcontabil",
+  "gestorcertocotafacil": "https://instagram.com/gestorcertocotafacil"
+};
 const posts = {
   "grupo_gestorcontabil": [
-    {"id": 1, "title": "Decimo Terceiro", "desc": "Como registrar corretamente no sistema", "cat": "RH", "date": "2026-05-15"},
-    {"id": 2, "title": "Imposto de Renda 2026", "desc": "Principais mudancas e como se preparar", "cat": "IR", "date": "2026-05-10"},
-    {"id": 3, "title": "Abertura de Empresa", "desc": "Passo a passo do CNPJ ao funcionamento", "cat": "Fiscal", "date": "2026-05-05"},
-    {"id": 4, "title": "Certificado Digital", "desc": "Quando sua empresa precisa de A1 ou A3", "cat": "Fiscal", "date": "2026-04-30"},
-    {"id": 5, "title": "MEI", "desc": "Tudo sobre enquadramento e obrigacoes", "cat": "MEI", "date": "2026-04-25"},
-    {"id": 6, "title": "Planejamento Tributario", "desc": "Estrategias para pagar menos imposto legalmente", "cat": "Fiscal", "date": "2026-04-20"}
+    {"title": "Décimo Terceiro", "desc": "Prazos, cálculo das parcelas e como evitar erros na folha.", "cat": "RH", "date": "2026-05-15"},
+    {"title": "Imposto de Renda 2026", "desc": "O que muda neste ano e como organizar seus documentos.", "cat": "IR", "date": "2026-05-10"},
+    {"title": "Abertura de Empresa", "desc": "Do CNPJ ao alvará: o passo a passo para começar certo.", "cat": "Fiscal", "date": "2026-05-05"},
+    {"title": "Certificado Digital", "desc": "A1 ou A3? Entenda qual a sua empresa precisa e por quê.", "cat": "Fiscal", "date": "2026-04-30"},
+    {"title": "MEI", "desc": "Limites, enquadramento e as obrigações que você não pode esquecer.", "cat": "MEI", "date": "2026-04-25"},
+    {"title": "Planejamento Tributário", "desc": "Pague só o necessário, dentro da lei, com a estratégia certa.", "cat": "Fiscal", "date": "2026-04-20"}
   ],
   "gestorcertocotafacil": [
-    {"id": 1, "title": "Consorcios", "desc": "Como funciona e quando contratar", "cat": "Solucoes", "date": "2026-05-15"},
-    {"id": 2, "title": "Seguros", "desc": "Proteja seu patrimonio com as melhores opcoes", "cat": "Seguros", "date": "2026-05-10"},
-    {"id": 3, "title": "Credito Pessoal", "desc": "Linhas de credito com juros reduzidos", "cat": "Credito", "date": "2026-05-05"},
-    {"id": 4, "title": "Financiamento", "desc": "Realize seus sonhos com nossas opcoes", "cat": "Credito", "date": "2026-04-30"},
-    {"id": 5, "title": "Seguros Pessoais", "desc": "Vida, saude, acidente - voce protegido", "cat": "Seguros", "date": "2026-04-25"},
-    {"id": 6, "title": "Analise de Credito", "desc": "Entenda sua pontuacao e melhore seu score", "cat": "Credito", "date": "2026-04-20"}
+    {"title": "Consórcios", "desc": "Como funciona, quando vale a pena e como dar lances.", "cat": "Soluções", "date": "2026-05-15"},
+    {"title": "Seguros", "desc": "Auto, vida e empresarial: proteja o que importa pagando o justo.", "cat": "Seguros", "date": "2026-05-10"},
+    {"title": "Crédito Pessoal", "desc": "Linhas com juros menores e como contratar com segurança.", "cat": "Crédito", "date": "2026-05-05"},
+    {"title": "Financiamento", "desc": "Veículo, imóvel ou equipamento: compare antes de decidir.", "cat": "Crédito", "date": "2026-04-30"},
+    {"title": "Seguros Pessoais", "desc": "Vida, saúde e acidentes: tranquilidade para você e a família.", "cat": "Seguros", "date": "2026-04-25"},
+    {"title": "Análise de Crédito", "desc": "Entenda seu score e melhore suas chances de aprovação.", "cat": "Crédito", "date": "2026-04-20"}
   ]
 };
 
 function criarGrid(conta) {
-  const items = posts[conta];
-  return items.map(p => `
-    <div style="padding: 24px; background: #fff; border-radius: 12px; border: 1px solid var(--line); cursor: pointer; transition: all 0.3s;">
-      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
-        <h3 style="margin: 0; font-size: 1.1rem; color: var(--dark-900);">${p.title}</h3>
-        <span class="chip" style="background: var(--teal-50); border-color: var(--teal-200); color: var(--teal-700); font-size: 0.75rem;">${p.cat}</span>
+  const url = INSTA[conta];
+  return posts[conta].map(p => `
+    <a href="${url}" target="_blank" rel="noopener" style="display:block; text-decoration:none; padding: 22px; background: #fff; border-radius: 12px; border: 1px solid var(--line); transition: transform .2s, box-shadow .2s, border-color .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)';this.style.borderColor='var(--teal-300)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='var(--line)'">
+      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px; gap:10px;">
+        <h3 style="margin: 0; font-size: 1.08rem; color: var(--ink);">${p.title}</h3>
+        <span class="chip" style="background: var(--teal-50); border-color: var(--teal-200); color: var(--teal-700); font-size: 0.72rem; white-space:nowrap;">${p.cat}</span>
       </div>
-      <p style="margin: 0 0 12px; color: var(--dark-600); font-size: 0.95rem;">${p.desc}</p>
-      <p style="margin: 0; color: var(--dark-400); font-size: 0.85rem;">${p.date}</p>
-    </div>
+      <p style="margin: 0 0 14px; color: var(--ink-soft); font-size: 0.95rem; line-height:1.55;">${p.desc}</p>
+      <span style="display:inline-flex; align-items:center; gap:7px; color: var(--teal-600,#0C8A67); font-weight:700; font-size:0.85rem;">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37ZM17.5 6.5h.01"/></svg>
+        Ver no Instagram →
+      </span>
+    </a>
   `).join('');
 }
 
-// Carregar grid padrao
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('.posts-grid').innerHTML = criarGrid('grupo_gestorcontabil');
 });
