@@ -888,7 +888,7 @@ p { color: var(--ink-soft); }
 
   .nav__drop-menu {
     position: static;
-    background: #fafafa;
+    background: #fff;
     padding: 0;
     margin: 0;
     border: none;
@@ -909,6 +909,7 @@ p { color: var(--ink-soft); }
     font-size: 0.95rem;
     margin: 0;
     transform: none;
+    color: var(--ink);
   }
 
   .nav__drop-menu a:hover {
