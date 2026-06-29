@@ -29,7 +29,23 @@ jobs:
 
     # 2ª tentativa — só roda se a 1ª falhou (conexão FTP instável)
     - name: Deploy to Hostinger via FTP (tentativa 2)
+      id: ftp2
       if: steps.ftp1.outcome == 'failure'
+      continue-on-error: true
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: 89.117.9.202
+        username: u881687053.gestorcerto.com.br
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21
+        protocol: ftp
+        timeout: 120000
+        local-dir: ./
+        server-dir: /public_html/
+
+    # 3ª tentativa — só roda se a 2ª também falhou
+    - name: Deploy to Hostinger via FTP (tentativa 3)
+      if: steps.ftp1.outcome == 'failure' && steps.ftp2.outcome == 'failure'
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: 89.117.9.202
