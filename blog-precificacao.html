@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como formar o preço de venda: tributos, margem e ponto de equilíbrio | Gestor Certo</title>
+<meta name="description" content="Aprenda a precificar com markup, margem de contribuição, ponto de equilíbrio e ROI — e use a calculadora de preço de venda grátis da Gestor Certo.">
+<link rel="canonical" href="https://gestorcerto.com.br/blog-precificacao.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Grupo Gestor — Escritório de Contabilidade">
+<meta name="theme-color" content="#0F766E">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Gestor Certo — Ecossistema Grupo Gestor">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Como formar o preço de venda: tributos, margem e ponto de equilíbrio">
+<meta property="og:description" content="Markup, margem de contribuição, ponto de equilíbrio e ROI — com calculadora de preço de venda grátis.">
+<meta property="og:url" content="https://gestorcerto.com.br/blog-precificacao.html">
+<meta property="og:image" content="https://gestorcerto.com.br/assets/img/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .article{max-width:760px;margin:0 auto;padding:0 22px}
+  .article h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:38px 0 12px;color:var(--ink)}
+  .article h3{font-size:1.15rem;margin:26px 0 8px;color:var(--ink)}
+  .article p{color:var(--ink-soft);margin:0 0 14px;font-size:1.02rem;line-height:1.7}
+  .article ul{margin:0 0 16px 20px;color:var(--ink-soft);line-height:1.7}
+  .article li{margin-bottom:6px}
+  .article .formula{background:var(--bg-soft);border:1px solid var(--line);border-left:4px solid var(--teal-400);
+    border-radius:10px;padding:14px 16px;margin:14px 0;font-weight:600;color:var(--ink)}
+  .article .formula small{display:block;font-weight:500;color:var(--muted);margin-top:6px;font-size:.85rem}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:24px 0}
+  .toc b{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-500)}
+  .toc ul{list-style:none;margin:10px 0 0;padding:0}
+  .toc li{margin:6px 0}
+  .toc a{color:var(--ink-soft);font-weight:600;font-size:.95rem;text-decoration:none}
+  .toc a:hover{color:var(--teal-500)}
+
+  /* calculadora */
+  .calc-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-md)}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .cf.full{grid-column:1 / -1}
+  .cf label{display:block;font-size:.85rem;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
+  .cf .inp{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;transition:.15s}
+  .cf .inp:focus-within{border-color:var(--teal-400)}
+  .cf .inp .pre{padding:0 0 0 12px;color:var(--muted);font-weight:600;font-size:.9rem}
+  .cf .inp .suf{padding:0 12px 0 0;color:var(--muted);font-weight:600;font-size:.9rem}
+  .cf input{width:100%;border:0;background:transparent;padding:12px 12px;font:inherit;font-weight:700;color:var(--ink)}
+  .cf input:focus{outline:none}
+  .calc-hint{font-size:.8rem;color:var(--muted);margin-top:14px;line-height:1.5}
+  .calc-result{margin-top:22px;background:linear-gradient(135deg,rgba(45,212,191,.08),rgba(37,99,235,.08));
+    border:1px solid rgba(45,212,191,.28);border-radius:16px;padding:24px}
+  .calc-prodname{text-align:center;font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--teal-500)}
+  .calc-pv{text-align:center;margin:6px 0 2px}
+  .calc-pv .lbl{font-size:.9rem;color:var(--muted);font-weight:600}
+  .calc-pv .big{font-size:clamp(2rem,7vw,3rem);font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.05}
+  .calc-pv .mk{font-size:.85rem;color:var(--muted);font-weight:600}
+  .calc-rows{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .calc-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+  .calc-item .k{font-size:.76rem;color:var(--muted);font-weight:600;letter-spacing:.02em}
+  .calc-item .v{font-size:1.2rem;font-weight:800;color:var(--ink);margin-top:2px}
+  .calc-item .v small{font-size:.8rem;font-weight:600;color:var(--muted)}
+  .calc-item.hl{background:var(--ink);border-color:var(--ink)}
+  .calc-item.hl .k{color:#BFD2E6}.calc-item.hl .v{color:#fff}.calc-item.hl .v small{color:#9FB6CE}
+  .calc-warn{background:#FEF3C7;border:1px solid #FCD34D;color:#8a5a00;padding:12px 14px;border-radius:10px;margin-top:16px;font-size:.9rem;font-weight:600}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-rows{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="header-layout">
+      <!-- LOGO ESQUERDA: Grupo Gestor - EM DESTAQUE -->
+      <a href="index.html" aria-label="Grupo Gestor" class="header__logo-left" style="display: flex; align-items: center; flex-shrink: 0;">
+        <img src="assets/img/logo-grupo-gestor.png" alt="Grupo Gestor - Escritório de Contabilidade" style="height: 120px; width: auto; object-fit: contain;">
+      </a>
+
+      <!-- MENU RESPONSIVO PROFISSIONAL -->
+      <nav class="nav" id="menu" aria-label="Navegação principal">
+        <div class="nav-wrapper">
+          <a href="index.html" class="nav__link nav__link--active">Início</a>
+          <a href="contabilidade.html" class="nav__link">Contabilidade</a>
+          <a href="rh.html" class="nav__link">RH & Benefícios</a>
+          <a href="solucoes.html" class="nav__link">Soluções</a>
+          <a href="mei.html" class="nav__link">MEI</a>
+          <a href="tecnologia.html" class="nav__link">Tecnologia</a>
+          <a href="posts.html" class="nav__link">Blog</a>
+          <div class="nav__drop" data-drop>
+            <button type="button" class="nav__link" aria-haspopup="true" aria-expanded="false">Acessos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="nav__drop-menu">
+              <a href="https://app.grupogestormei.com.br/login" target="_blank" rel="noopener">App MEI</a>
+              <a href="https://sistemaweb.gestorcertositemasweb.com.br/sistema/" target="_blank" rel="noopener">Empresarial Web</a>
+              <a href="https://sistemaclinica.gestorcertositemasweb.com.br/acesso" target="_blank" rel="noopener">Clínica Web</a>
+              <a href="https://sistemapet.gestorcertositemasweb.com.br/sistema/" target="_blank" rel="noopener">Pet Web</a>
+              <a href="https://conectfameg.app.questorpublico.com.br/entrar" target="_blank" rel="noopener">Grupo Gestor Zen</a>
+              <a href="https://conectfameg.app.questorpublico.com.br/Authorize/LogOn?ReturnUrl=%2fempresa%2fqcolabore%3ffilter%3d1%26PluginSystemName%3dDocument.PayRoll&amp;filter=1&amp;PluginSystemName=Document.PayRoll" target="_blank" rel="noopener">Recibos de Pagamento</a>
+              <a href="https://portal.hubstrom.com/login" target="_blank" rel="noopener">Grupo Gestor HUB</a>
+              <a href="https://docs.gestorcerto.com.br" target="_blank" rel="noopener">Portal de Documentos</a>
+              <a href="https://formsgestor.gestorcerto.com.br" target="_blank" rel="noopener">Formulários</a>
+              <a href="https://extrato.gestorcerto.com.br" target="_blank" rel="noopener">Conversor de Extratos</a>
+              <a href="https://csgestor.gestorcerto.com.br" target="_blank" rel="noopener">Cofre de Senhas</a>
+              <a href="https://agenda.gestorcerto.com.br" target="_blank" rel="noopener">Secretaria Virtual</a>
+              <a href="https://contratos.gestorcerto.com.br" target="_blank" rel="noopener">Contratos</a>
+              <a href="https://ponto.gestorcerto.com.br" target="_blank" rel="noopener">Ponto Gestor</a>
+              <a href="https://irpf.gestorcerto.com.br" target="_blank" rel="noopener">Gestor IRPF</a>
+              <a href="https://agentefolha.gestorcerto.com.br" target="_blank" rel="noopener">Agente Folha</a>
+              <a href="https://erp.gestorcerto.com.br" target="_blank" rel="noopener">ERP Gestor</a>
+              <a href="https://fidelidade.gestorcerto.com.br" target="_blank" rel="noopener">Programa Fidelidade</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- LOGO DIREITA: Gestor Certo -->
+      <a href="index.html" aria-label="Gestor Certo - Soluções e Cotações" class="header__logo-right" style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
+        <img src="assets/img/icon-gestor.png" alt="Gestor Certo" style="height: 56px; width: auto;">
+        <span style="font-size: 0.8rem; color: var(--ink-soft); font-weight: 700; text-align: left; white-space: nowrap;">
+          Gestor Certo<br/><span style="font-size: 0.7rem; color: var(--teal-600);">Soluções e Cotações</span>
+        </span>
+      </a>
+
+      <!-- HAMBURGER MENU BUTTON -->
+      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="conteudo">
+<section class="hero-epic" style="background:linear-gradient(135deg,#0B2A6B 0%,#0E3A7A 45%,#0F766E 120%);min-height:auto">
+  <div class="hero-epic-bg"></div>
+  <div class="container" style="text-align:center;position:relative;z-index:2;padding:56px 22px">
+    <nav class="crumb" style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:14px"><a href="index.html" style="color:rgba(255,255,255,.85)">Início</a> / <a href="posts.html" style="color:rgba(255,255,255,.85)">Blog</a> / <span>Precificação</span></nav>
+    <h1 style="font-size:clamp(1.8rem,5vw,2.8rem);max-width:820px;margin:0 auto 16px;color:#fff;line-height:1.18;font-weight:800">Como formar o preço de venda sem deixar lucro na mesa</h1>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,.9);max-width:640px;margin:0 auto">Tributos, margem, ponto de equilíbrio e ROI explicados de forma simples — com uma calculadora pra você usar agora.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="article">
+
+    <div class="toc">
+      <b>Neste post</b>
+      <ul>
+        <li><a href="#calculadora">→ Calculadora de preço de venda (use agora)</a></li>
+        <li><a href="#markup">1. Markup: embutindo custos, tributos e margem</a></li>
+        <li><a href="#mc">2. Margem de contribuição</a></li>
+        <li><a href="#pe">3. Ponto de equilíbrio</a></li>
+        <li><a href="#roi">4. ROI: o retorno do seu negócio</a></li>
+      </ul>
+    </div>
+
+    <p>Muita empresa fecha as portas sem perceber que o problema estava no preço. Vender muito não adianta se cada venda sai no prejuízo — ou se a margem não cobre os custos fixos no fim do mês. Precificar bem é juntar três coisas: <b>cobrir o custo</b>, <b>embutir os tributos e despesas</b> e <b>garantir a margem de lucro</b>. Abaixo explicamos os conceitos e logo no topo você encontra a calculadora pronta.</p>
+
+  </div>
+</section>
+
+<!-- CALCULADORA -->
+<section class="section" id="calculadora" style="background:var(--bg-soft);scroll-margin-top:80px">
+  <div class="container" style="max-width:820px">
+    <div class="section-head center">
+      <span class="eyebrow">Ferramenta grátis</span>
+      <h2>Calculadora de Preço de Venda</h2>
+      <p class="lead">Preencha os dados do produto. Preço, margem de contribuição e ponto de equilíbrio atualizam na hora.</p>
+    </div>
+
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="cf full">
+          <label for="pNome">Nome do produto</label>
+          <div class="inp"><input id="pNome" type="text" placeholder="Ex.: Camiseta básica"></div>
+        </div>
+        <div class="cf">
+          <label for="pCusto">Custo unitário</label>
+          <div class="inp"><span class="pre">R$</span><input id="pCusto" type="number" value="20" min="0" step="0.01"></div>
+        </div>
+        <div class="cf">
+          <label for="pFixo">Custo fixo mensal (total)</label>
+          <div class="inp"><span class="pre">R$</span><input id="pFixo" type="number" value="5000" min="0" step="1"></div>
+        </div>
+        <div class="cf">
+          <label for="pTrib">Tributos sobre a venda</label>
+          <div class="inp"><input id="pTrib" type="number" value="6" min="0" step="0.1"><span class="suf">%</span></div>
+        </div>
+        <div class="cf">
+          <label for="pDesp">Comissões / desp. variáveis</label>
+          <div class="inp"><input id="pDesp" type="number" value="3" min="0" step="0.1"><span class="suf">%</span></div>
+        </div>
+        <div class="cf">
+          <label for="pMargem">Margem de lucro desejada</label>
+          <div class="inp"><input id="pMargem" type="number" value="20" min="0" step="0.1"><span class="suf">%</span></div>
+        </div>
+      </div>
+      <p class="calc-hint">As porcentagens incidem sobre o <b>preço de venda</b> (método do markup divisor) — é assim que tributos e comissões realmente funcionam. A margem de lucro é o que sobra <b>depois</b> de todos os custos e impostos.</p>
+    </div>
+
+    <div class="calc-result" id="calcResult" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="article">
+
+    <h2 id="markup">1. Markup: embutindo custos, tributos e margem</h2>
+    <p>O <b>markup</b> é o índice que você aplica sobre o custo para chegar ao preço de venda já com tudo embutido. O erro mais comum é “somar uma margem por cima do custo” — isso ignora que tributos e comissões incidem sobre o <b>preço final</b>, não sobre o custo. Por isso usamos o <b>markup divisor</b>:</p>
+    <div class="formula">Preço de venda = Custo ÷ [ 1 − (Tributos% + Despesas variáveis% + Margem de lucro%) ]
+      <small>Todos os percentuais sobre o preço de venda. Ex.: custo R$ 20, tributos 6%, comissões 3%, margem 20% → divisor = 1 − 0,29 = 0,71 → preço = 20 ÷ 0,71 = <b>R$ 28,17</b>.</small></div>
+    <p>Repare: se você simplesmente somasse 20% ao custo (R$ 24), os impostos e a comissão comeriam quase toda a margem e o lucro real seria muito menor que o planejado.</p>
+
+    <h2 id="mc">2. Margem de contribuição</h2>
+    <p>A <b>margem de contribuição</b> é quanto sobra de cada venda <b>depois</b> de pagar os custos e despesas variáveis (custo do produto + tributos + comissões) — ou seja, o valor que “contribui” para pagar os custos fixos e, depois deles, virar lucro.</p>
+    <div class="formula">Margem de contribuição = Preço de venda − Custo − Tributos − Comissões
+      <small>Em percentual: Margem de contribuição ÷ Preço de venda.</small></div>
+    <p>É um dos números mais importantes do negócio: produtos com margem de contribuição maior “puxam” a empresa para o lucro mais rápido.</p>
+
+    <h2 id="pe">3. Ponto de equilíbrio</h2>
+    <p>O <b>ponto de equilíbrio contábil</b> é o quanto você precisa vender para não ter lucro nem prejuízo — o momento em que a soma das margens de contribuição cobre todo o custo fixo.</p>
+    <div class="formula">Ponto de equilíbrio (R$) = Custo fixo ÷ Margem de contribuição (%)
+      <small>Em unidades: Custo fixo ÷ Margem de contribuição por unidade. Acima desse ponto, cada venda é lucro; abaixo, é prejuízo.</small></div>
+    <p>Existem variações (econômico, que inclui o custo de oportunidade; e financeiro, que desconta despesas não-desembolsáveis como depreciação). Aqui usamos o <b>contábil</b>, o mais usado no dia a dia.</p>
+
+    <h2 id="roi">4. ROI: o retorno do seu negócio</h2>
+    <p>O <b>ROI</b> (retorno sobre o investimento) mostra quanto o dinheiro investido devolveu em resultado. Serve para avaliar uma campanha, uma loja nova ou o negócio todo.</p>
+    <div class="formula">ROI = (Ganho obtido − Investimento) ÷ Investimento × 100
+      <small>Ex.: investiu R$ 10.000 e teve R$ 13.000 de retorno → ROI = 30%.</small></div>
+    <p>Precificar bem melhora diretamente o ROI: mais margem por venda, ponto de equilíbrio atingido mais cedo e mais lucro sobre o capital aplicado.</p>
+
+    <div class="card" style="margin-top:32px;background:linear-gradient(135deg,rgba(45,212,191,.08),rgba(37,99,235,.08));border:1px solid rgba(45,212,191,.25);border-radius:16px;padding:24px;text-align:center">
+      <h3 style="margin:0 0 8px">Quer revisar a precificação da sua empresa com a gente?</h3>
+      <p style="color:var(--ink-soft);margin:0 0 16px">A Gestor Certo ajuda a montar o markup certo, analisar margens e planejar o seu ponto de equilíbrio.</p>
+      <a href="https://wa.me/5511914040532?text=Ol%C3%A1!%20Vi%20o%20post%20de%20precifica%C3%A7%C3%A3o%20e%20quero%20ajuda%20com%20o%20pre%C3%A7o%20de%20venda%20da%20minha%20empresa." target="_blank" rel="noopener" class="btn btn--primary btn--lg"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.744-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> Falar com a Gestor Certo</a>
+    </div>
+
+    <p style="font-size:.82rem;color:var(--muted);margin-top:28px;line-height:1.6;text-align:center">Conteúdo educativo. Os resultados da calculadora são estimativas e dependem do regime tributário, do setor e da realidade de cada empresa. Para uma análise precisa, fale com a contabilidade.</p>
+
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="footer__logo" href="index.html" aria-label="Gestor Certo">
+          <img src="assets/img/icon-gestor.png" alt="" width="40" height="40">
+          <span><b>Gestor Certo</b><small>Escritório de Contabilidade · Grupo Gestor</small></span>
+        </a>
+        <p>Do CNPJ ao seguro, do RH ao crédito — tudo começa na contabilidade e o resto a gente também resolve.</p>
+        <div class="footer__social">
+          <a href="https://wa.me/5511914040532" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.744-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          <a href="https://instagram.com/grupo_gestorcontabil" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37ZM17.5 6.5h.01"/></svg></a>
+          <a href="https://facebook.com/GestorCerto/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://youtube.com/channel/UCdOHhl_W7kuxuEF56Lho0cQ" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://linkedin.com/company/gestor-certo/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Ecossistema</h4>
+        <ul><li><a href="contabilidade.html">Contabilidade</a></li><li><a href="rh.html">RH & Benefícios</a></li><li><a href="solucoes.html">Soluções</a></li><li><a href="mei.html">MEI</a></li><li><a href="tecnologia.html">Tecnologia</a></li><li><a href="posts.html">Blog</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Acesso</h4>
+        <ul>
+          <li><a href="contato.html">Fale conosco</a></li>
+          <li><a href="https://grupogestormei.com.br" target="_blank" rel="noopener">Portal MEI</a></li>
+          <li><a href="https://wa.me/5511914040532" target="_blank" rel="noopener">Orçamento no WhatsApp</a></li>
+          <li><a href="https://instagram.com/grupo_gestorcontabil" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <ul class="footer__contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Estr. Mun. Bela Vista, 917 — Sala 366, Alphaville, Santana de Parnaíba — CEP 06539-010</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span>(11) 91404-0532</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>comercial@gestorcerto.com.br</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37ZM17.5 6.5h.01"/></svg><span>@grupo_gestorcontabil</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap">
+        <span>© <span data-year>2026</span> Gestor Certo — Escritório de Contabilidade · CNPJ 44.066.941/0001-01. Todos os direitos reservados.</span>
+        <span>gestorcerto.com.br · grupogestormei.com.br</span>
+      </div>
+      <div style="margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,.1); display:flex; align-items:center; gap:12px; flex-wrap: wrap">
+        <span style="font-size:0.85rem; color:rgba(255,255,255,.6)">Parte do ecossistema:</span>
+        <img src="assets/img/logo-grupo-gestor.png" alt="Grupo Gestor - Escritório de Contabilidade" style="height: 32px; width: auto; object-fit: contain;">
+      </div>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/5511914040532" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.744-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+<script src="assets/js/main.js" defer></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var brl=function(v){return "R$ "+(Math.round(v*100)/100).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});};
+  var num=function(id){var v=parseFloat($(id).value);return isNaN(v)?0:v;};
+  function calc(){
+    var nome=($("pNome").value||"").trim()||"Seu produto";
+    var custo=num("pCusto"), fixo=num("pFixo");
+    var trib=num("pTrib")/100, desp=num("pDesp")/100, marg=num("pMargem")/100;
+    var soma=trib+desp+marg;
+    var out=$("calcResult");
+    if(custo<=0){ out.innerHTML='<div class="calc-warn">Informe um custo unitário maior que zero.</div>'; return; }
+    if(soma>=1){ out.innerHTML='<div class="calc-warn">A soma de tributos + comissões + margem chegou a '+Math.round(soma*100)+'%. Como tudo incide sobre o preço, o total precisa ser menor que 100%. Reduza algum percentual.</div>'; return; }
+    var pv=custo/(1-soma);
+    var tribR=pv*trib, despR=pv*desp;
+    var mcUn=pv-custo-tribR-despR;
+    var mcPct=mcUn/pv;
+    var markup=pv/custo;
+    var peUn=Infinity, peR=Infinity;
+    if(mcUn>0){ peUn=fixo/mcUn; peR=fixo/mcPct; }
+    var peTxt = (mcUn>0) ? (Math.ceil(peUn).toLocaleString("pt-BR")+' un/mês') : '—';
+    var peRTxt = (mcUn>0) ? brl(peR)+'/mês' : 'margem negativa';
+    out.innerHTML =
+      '<div class="calc-prodname">'+nome.replace(/</g,"&lt;")+'</div>'+
+      '<div class="calc-pv"><div class="lbl">Preço de venda sugerido</div>'+
+        '<div class="big">'+brl(pv)+'</div>'+
+        '<div class="mk">markup '+ (Math.round(markup*100)/100).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2}) +'× sobre o custo</div></div>'+
+      '<div class="calc-rows">'+
+        '<div class="calc-item"><div class="k">Custo unitário</div><div class="v">'+brl(custo)+'</div></div>'+
+        '<div class="calc-item"><div class="k">Custo fixo mensal</div><div class="v">'+brl(fixo)+'</div></div>'+
+        '<div class="calc-item hl"><div class="k">Margem de contribuição</div><div class="v">'+brl(mcUn)+' <small>/un · '+Math.round(mcPct*100)+'%</small></div></div>'+
+        '<div class="calc-item hl"><div class="k">Ponto de equilíbrio contábil</div><div class="v">'+peTxt+' <small>'+peRTxt+'</small></div></div>'+
+      '</div>';
+  }
+  ["pNome","pCusto","pFixo","pTrib","pDesp","pMargem"].forEach(function(id){
+    var el=$(id); if(el){ el.addEventListener("input",calc); el.addEventListener("change",calc);} });
+  calc();
+})();
+</script>
+</body>
+</html>
