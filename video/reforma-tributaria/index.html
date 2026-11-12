@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Reforma Tributária para prestadores de serviço — vídeo</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --teal-300: #2DD4BF; --teal-400: #14B8A6; --teal-500: #0F9488;
+    --blue-400: #3B82F6; --blue-500: #2563EB; --blue-900: #0B2A6B;
+    --ink: #0F172A; --amber: #FBBF24; --red: #F87171;
+    --grad-brand: linear-gradient(135deg, #2DD4BF 0%, #14B8A6 35%, #2563EB 100%);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; }
+  html, body { background: #000; overflow: hidden; }
+  body { font-family: 'Inter', system-ui, Arial, sans-serif; color: #fff; -webkit-font-smoothing: antialiased; }
+
+  #stage {
+    position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden;
+    transform-origin: 0 0;
+    background: linear-gradient(150deg, #071B47 0%, #0B2A6B 40%, #0E3A7A 70%, #0C5F63 115%);
+  }
+  .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .5; }
+  #blob1 { width: 760px; height: 760px; background: #14B8A6; left: -220px; top: 520px; }
+  #blob2 { width: 680px; height: 680px; background: #2563EB; left: 1420px; top: -260px; }
+  .grid {
+    position: absolute; inset: 0; opacity: .07;
+    background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px);
+    background-size: 96px 96px;
+  }
+
+  .scene { position: absolute; inset: 0; padding: 96px 120px 120px; opacity: 0; visibility: hidden; display: flex; flex-direction: column; justify-content: center; }
+  .scene > .kicker { align-self: flex-start; }
+  .kicker {
+    display: inline-block; font-size: 26px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--teal-300); padding: 10px 22px; border: 2px solid rgba(45, 212, 191, .45); border-radius: 999px;
+    background: rgba(45, 212, 191, .08);
+  }
+  h1 { font-size: 104px; line-height: 1.05; font-weight: 800; letter-spacing: -.03em; }
+  h2 { font-size: 72px; line-height: 1.1; font-weight: 800; letter-spacing: -.025em; margin-top: 26px; }
+  .hl { background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { font-size: 40px; line-height: 1.35; color: #C7D7F2; font-weight: 500; }
+  .card {
+    background: rgba(255, 255, 255, .07); border: 1.5px solid rgba(255, 255, 255, .16);
+    border-radius: 28px; padding: 40px 44px;
+  }
+  .card.light { background: #fff; color: var(--ink); border-color: #fff; box-shadow: 0 24px 60px rgba(0, 0, 0, .28); }
+  .tag { font-size: 24px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #94A3B8; }
+  .note { font-size: 24px; color: #9FB4D9; }
+
+  /* Cena 1 */
+  #s1 { display: flex; flex-direction: column; justify-content: center; }
+  #s1 h1 { margin-top: 36px; max-width: 1500px; }
+  #s1 .sub { margin-top: 36px; max-width: 1300px; }
+  .logo-chip { position: absolute; right: 120px; top: 84px; background: #fff; border-radius: 22px; padding: 16px 26px; }
+  .logo-chip img { display: block; height: 96px; }
+
+  /* Cena 2 */
+  .cols { display: grid; grid-template-columns: 1fr 120px 1fr; gap: 0; align-items: stretch; margin-top: 56px; }
+  .cols .arrow { display: flex; align-items: center; justify-content: center; font-size: 84px; color: var(--teal-300); font-weight: 800; }
+  .tax { display: flex; align-items: baseline; gap: 22px; padding: 22px 0; border-top: 1.5px solid rgba(255, 255, 255, .14); }
+  .tax:first-of-type { border-top: 0; }
+  .tax b { font-size: 60px; font-weight: 800; min-width: 370px; }
+  .tax span { font-size: 30px; color: #C7D7F2; line-height: 1.3; }
+  .card.light .tax { border-color: #E2E8F0; }
+  .card.light .tax span { color: #475569; }
+  .card.light .tax b { color: var(--blue-900); }
+  .pill-row { display: flex; gap: 20px; margin-top: 44px; }
+  .pill { font-size: 30px; font-weight: 700; padding: 16px 30px; border-radius: 999px; background: rgba(45, 212, 191, .14); border: 1.5px solid rgba(45, 212, 191, .5); color: #CFFAF2; }
+
+  /* Cena 3 */
+  .timeline { position: relative; margin-top: 130px; height: 440px; }
+  .tl-track { position: absolute; left: 0; right: 0; top: 60px; height: 10px; border-radius: 6px; background: rgba(255, 255, 255, .16); }
+  .tl-fill { position: absolute; left: 0; top: 60px; height: 10px; border-radius: 6px; width: 100%; background: var(--grad-brand); transform-origin: 0 50%; }
+  .tl-item { position: absolute; top: 0; width: 400px; }
+  .tl-dot { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 9px solid var(--teal-400); margin-top: 43px; }
+  .tl-year { font-size: 68px; font-weight: 800; margin-top: 34px; letter-spacing: -.02em; }
+  .tl-txt { font-size: 30px; line-height: 1.35; color: #C7D7F2; margin-top: 14px; }
+  .tl-txt strong { color: #fff; }
+  .here { position: absolute; top: -66px; left: -30px; font-size: 24px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--amber); color: #1F2937; padding: 10px 20px; border-radius: 12px; white-space: nowrap; }
+  .here::after { content: ''; position: absolute; left: 42px; bottom: -12px; border: 12px solid transparent; border-top-color: var(--amber); border-bottom: 0; }
+
+  /* Cena 4 */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; margin-top: 50px; }
+  .big { font-size: 96px; font-weight: 800; letter-spacing: -.03em; line-height: 1; margin-top: 18px; }
+  .big small { font-size: 44px; font-weight: 700; }
+  .desc { font-size: 30px; color: #C7D7F2; margin-top: 16px; line-height: 1.35; }
+  .card.light .desc { color: #475569; }
+  .costbar { display: flex; height: 92px; border-radius: 20px; overflow: hidden; margin-top: 22px; }
+  .costbar div { display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800; transform-origin: 0 50%; white-space: nowrap; }
+  .seg-a { width: 60%; background: #F87171; color: #450A0A; }
+  .seg-b { width: 25%; background: #2DD4BF; color: #042F2E; }
+  .seg-c { width: 15%; background: rgba(255, 255, 255, .22); color: #fff; }
+  .legend { display: flex; gap: 44px; margin-top: 20px; font-size: 28px; color: #E2E8F0; font-weight: 600; }
+  .legend i { display: inline-block; width: 22px; height: 22px; border-radius: 6px; margin-right: 12px; vertical-align: -2px; }
+
+  /* Cena 5 */
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 60px; }
+  .three .card { min-height: 480px; }
+  .cut { font-size: 120px; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+  .three h3 { font-size: 42px; font-weight: 800; margin-top: 26px; line-height: 1.15; }
+  .three p { font-size: 29px; color: #C7D7F2; margin-top: 16px; line-height: 1.4; }
+
+  /* Cena 6 / 7 */
+  .list { margin-top: 50px; display: flex; flex-direction: column; gap: 26px; }
+  .row { display: flex; align-items: center; gap: 34px; padding: 30px 40px; }
+  .num { flex: none; width: 92px; height: 92px; border-radius: 26px; background: var(--grad-brand); display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: 800; }
+  .row h3 { font-size: 44px; font-weight: 800; line-height: 1.15; }
+  .row p { font-size: 31px; color: #C7D7F2; margin-top: 8px; line-height: 1.35; }
+  .check { flex: none; width: 64px; height: 64px; border-radius: 50%; background: var(--teal-400); display: flex; align-items: center; justify-content: center; }
+  .check svg { width: 36px; height: 36px; }
+  #s7 .list { gap: 18px; margin-top: 44px; }
+  #s7 .row { padding: 22px 36px; gap: 28px; }
+  #s7 .row h3 { font-size: 40px; font-weight: 700; }
+
+  /* Cena 8 */
+  #s8 { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  #s8 .logo-big { background: #fff; border-radius: 32px; padding: 30px 48px; }
+  #s8 .logo-big img { display: block; height: 210px; }
+  #s8 h2 { font-size: 80px; margin-top: 56px; }
+  .cta-row { display: flex; gap: 28px; margin-top: 50px; }
+  .cta { font-size: 40px; font-weight: 800; padding: 24px 44px; border-radius: 999px; background: var(--grad-brand); }
+  .cta.ghost { background: rgba(255, 255, 255, .08); border: 2px solid rgba(255, 255, 255, .35); }
+  #s8 .note { margin-top: 54px; max-width: 1300px; line-height: 1.5; }
+
+  /* Rodapé fixo */
+  #foot { position: absolute; left: 120px; right: 120px; bottom: 44px; display: flex; align-items: center; gap: 28px; font-size: 24px; color: #9FB4D9; font-weight: 600; }
+  #bar { flex: 1; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, .14); overflow: hidden; }
+  #bar i { display: block; height: 100%; width: 100%; background: var(--grad-brand); transform-origin: 0 50%; transform: scaleX(0); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="blob" id="blob1"></div>
+  <div class="blob" id="blob2"></div>
+  <div class="grid"></div>
+
+  <!-- CENA 1 — Abertura -->
+  <section class="scene" id="s1" data-start="0" data-end="8">
+    <div class="logo-chip" data-at="0.3" data-fx="fade"><img src="../../assets/img/logo-full.png" alt="Grupo Gestor"></div>
+    <div><span class="kicker" data-at="0.5">Reforma Tributária</span></div>
+    <h1 data-at="0.9">O que muda para quem<br><span class="hl">presta serviço</span></h1>
+    <p class="sub" data-at="2.2">IBS, CBS, novas alíquotas e créditos: entenda o impacto no seu negócio em menos de 2 minutos.</p>
+  </section>
+
+  <!-- CENA 2 — Hoje x Novo modelo -->
+  <section class="scene" id="s2" data-start="8" data-end="21">
+    <span class="kicker" data-at="8.3">O que muda</span>
+    <h2 data-at="8.6">Cinco tributos viram um <span class="hl">IVA dual</span></h2>
+    <div class="cols">
+      <div class="card" data-at="9.6" data-fx="left">
+        <div class="tag">Hoje, no serviço</div>
+        <div class="tax"><b>ISS</b><span>Municipal · 2% a 5%</span></div>
+        <div class="tax"><b>PIS/Cofins</b><span>Federal · 3,65% ou 9,25%</span></div>
+      </div>
+      <div class="arrow" data-at="11.6" data-fx="scale">→</div>
+      <div class="card light" data-at="12.2" data-fx="right">
+        <div class="tag">Novo modelo</div>
+        <div class="tax"><b>IBS</b><span>Estados e municípios · substitui ISS e ICMS</span></div>
+        <div class="tax"><b>CBS</b><span>Federal · substitui PIS e Cofins</span></div>
+      </div>
+    </div>
+    <div class="pill-row">
+      <div class="pill" data-at="15.2">Mesma base de cálculo</div>
+      <div class="pill" data-at="15.8">Cobrança "por fora"</div>
+      <div class="pill" data-at="16.4">Crédito amplo nas compras</div>
+    </div>
+  </section>
+
+  <!-- CENA 3 — Cronograma -->
+  <section class="scene" id="s3" data-start="21" data-end="36">
+    <span class="kicker" data-at="21.3">Cronograma</span>
+    <h2 data-at="21.6">A transição vai <span class="hl">até 2033</span></h2>
+    <div class="timeline">
+      <div class="tl-track" data-at="22.4" data-fx="fade"></div>
+      <div class="tl-fill" data-at="22.8" data-fx="growx" data-dur="8"></div>
+      <div class="tl-item" style="left:0" data-at="23">
+        <div class="tl-dot" style="position:relative"><div class="here" data-at="24.2" data-fx="scale">Estamos aqui</div></div>
+        <div class="tl-year">2026</div>
+        <div class="tl-txt"><strong>Ano de teste.</strong> CBS de 0,9% e IBS de 0,1% destacados na nota.</div>
+      </div>
+      <div class="tl-item" style="left:430px" data-at="25.6">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2027</div>
+        <div class="tl-txt"><strong>CBS entra de vez.</strong> PIS e Cofins deixam de existir.</div>
+      </div>
+      <div class="tl-item" style="left:860px" data-at="28.4">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2029–32</div>
+        <div class="tl-txt"><strong>ISS cai ano a ano</strong> e o IBS sobe na mesma proporção.</div>
+      </div>
+      <div class="tl-item" style="left:1290px" data-at="31">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2033</div>
+        <div class="tl-txt"><strong>ISS e ICMS extintos.</strong> Novo modelo valendo por completo.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENA 4 — Por que serviços sentem mais -->
+  <section class="scene" id="s4" data-start="36" data-end="51">
+    <span class="kicker" data-at="36.3">Ponto de atenção</span>
+    <h2 data-at="36.6">Por que o setor de serviços <span class="hl">sente mais</span></h2>
+    <div class="two">
+      <div class="card" data-at="37.8" data-fx="left">
+        <div class="tag">Hoje · Lucro Presumido</div>
+        <div class="big">5,65<small>%</small> a 8,65<small>%</small></div>
+        <div class="desc">ISS + PIS/Cofins sobre o faturamento</div>
+      </div>
+      <div class="card light" data-at="39.6" data-fx="right">
+        <div class="tag">Novo modelo · alíquota padrão estimada</div>
+        <div class="big" style="color:#0B2A6B">26,5<small>%</small> a 28<small>%</small></div>
+        <div class="desc">IBS + CBS, descontando os créditos das compras</div>
+      </div>
+    </div>
+    <div style="margin-top:44px" data-at="42.6">
+      <div class="sub" style="font-size:34px;color:#fff;font-weight:700">O crédito vem das compras. E o maior custo do serviço é gente.</div>
+      <div class="costbar">
+        <div class="seg-a" data-at="43.4" data-fx="growx" data-dur="1">Folha de pagamento · não gera crédito</div>
+        <div class="seg-b" data-at="44.4" data-fx="growx" data-dur="0.8">Insumos · gera crédito</div>
+        <div class="seg-c" data-at="45.1" data-fx="growx" data-dur="0.6">Outros</div>
+      </div>
+      <div class="note" style="margin-top:16px" data-at="45.6" data-fx="fade">Composição de custos meramente ilustrativa. O efeito real depende da atividade, do regime e do perfil de clientes.</div>
+    </div>
+  </section>
+
+  <!-- CENA 5 — Quem tem alívio -->
+  <section class="scene" id="s5" data-start="51" data-end="63">
+    <span class="kicker" data-at="51.3">Regras diferenciadas</span>
+    <h2 data-at="51.6">Nem todo serviço paga a <span class="hl">alíquota cheia</span></h2>
+    <div class="three">
+      <div class="card" data-at="52.8">
+        <div class="cut hl">−60%</div>
+        <h3>Saúde e educação</h3>
+        <p>Redução de 60% nas alíquotas de IBS e CBS para os serviços listados na lei.</p>
+      </div>
+      <div class="card" data-at="55">
+        <div class="cut hl">−30%</div>
+        <h3>Profissões regulamentadas</h3>
+        <p>Advocacia, contabilidade, engenharia, arquitetura e outras profissões fiscalizadas por conselho.</p>
+      </div>
+      <div class="card light" data-at="57.4">
+        <div class="cut" style="color:#0F9488;font-size:84px;padding:18px 0">Simples</div>
+        <h3>Simples Nacional continua</h3>
+        <p style="color:#475569">Com a opção de recolher IBS e CBS por fora para repassar crédito integral ao cliente empresa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENA 6 — Mudanças práticas -->
+  <section class="scene" id="s6" data-start="63" data-end="76">
+    <span class="kicker" data-at="63.3">No dia a dia</span>
+    <h2 data-at="63.6">Três mudanças <span class="hl">práticas</span></h2>
+    <div class="list">
+      <div class="card row" data-at="64.8" data-fx="left">
+        <div class="num">1</div>
+        <div><h3>Imposto no destino</h3><p>Vale o local do cliente, e não mais o município da sua sede.</p></div>
+      </div>
+      <div class="card row" data-at="67.8" data-fx="left">
+        <div class="num">2</div>
+        <div><h3>Split payment</h3><p>O imposto é separado no pagamento e vai direto ao Fisco. Muda o fluxo de caixa.</p></div>
+      </div>
+      <div class="card row" data-at="71" data-fx="left">
+        <div class="num">3</div>
+        <div><h3>Seu cliente empresa toma crédito</h3><p>O preço passa a ser negociado antes dos tributos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENA 7 — O que fazer agora -->
+  <section class="scene" id="s7" data-start="76" data-end="89">
+    <span class="kicker" data-at="76.3">Plano de ação</span>
+    <h2 data-at="76.6">O que fazer <span class="hl">agora</span></h2>
+    <div class="list">
+      <div class="card row" data-at="77.8" data-fx="left"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Simule sua carga com IBS e CBS</h3></div>
+      <div class="card row" data-at="79.6" data-fx="left"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Revise preços e contratos de longo prazo</h3></div>
+      <div class="card row" data-at="81.4" data-fx="left"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Mapeie fornecedores e créditos possíveis</h3></div>
+      <div class="card row" data-at="83.2" data-fx="left"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Reavalie o regime: Simples, Presumido ou Real</h3></div>
+      <div class="card row" data-at="85" data-fx="left"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Ajuste a emissão de notas e os sistemas</h3></div>
+    </div>
+  </section>
+
+  <!-- CENA 8 — Encerramento -->
+  <section class="scene" id="s8" data-start="89" data-end="98">
+    <div class="logo-big" data-at="89.3" data-fx="scale"><img src="../../assets/img/logo-full.png" alt="Grupo Gestor"></div>
+    <h2 data-at="90">Quer saber o impacto<br>na <span class="hl">sua empresa</span>?</h2>
+    <div class="cta-row">
+      <div class="cta" data-at="91.4">gestorcerto.com.br</div>
+      <div class="cta ghost" data-at="91.9">WhatsApp (11) 91404-0532</div>
+    </div>
+    <p class="note" data-at="92.8" data-fx="fade">Conteúdo informativo, com base na Emenda Constitucional 132/2023 e na Lei Complementar 214/2025. Alíquotas de referência são estimativas e podem mudar.</p>
+  </section>
+
+  <div id="foot"><span>Gestor Certo · Reforma Tributária para prestadores de serviço</span><div id="bar"><i></i></div></div>
+</div>
+
+<script>
+(function () {
+  var DURATION = 98, FADE_IN = 0.5, FADE_OUT = 0.45;
+  var scenes = [].slice.call(document.querySelectorAll('.scene'));
+  var items = [].slice.call(document.querySelectorAll('[data-at]'));
+  var bar = document.querySelector('#bar i');
+  var blob1 = document.getElementById('blob1'), blob2 = document.getElementById('blob2');
+  var foot = document.getElementById('foot');
+
+  function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function ease(p) { return 1 - Math.pow(1 - p, 3); }
+
+  function render(t) {
+    scenes.forEach(function (s) {
+      var a = +s.dataset.start, b = +s.dataset.end;
+      var on = t >= a && t < b;
+      var o = on ? Math.min(clamp((t - a) / FADE_IN), b >= DURATION ? 1 : clamp((b - t) / FADE_OUT)) : 0;
+      s.style.visibility = on ? 'visible' : 'hidden';
+      s.style.opacity = o;
+    });
+    items.forEach(function (el) {
+      var p = ease(clamp((t - +el.dataset.at) / (+el.dataset.dur || 0.7)));
+      var fx = el.dataset.fx || 'up', tr = '';
+      if (fx === 'up') tr = 'translateY(' + (1 - p) * 40 + 'px)';
+      else if (fx === 'left') tr = 'translateX(' + (p - 1) * 70 + 'px)';
+      else if (fx === 'right') tr = 'translateX(' + (1 - p) * 70 + 'px)';
+      else if (fx === 'scale') tr = 'scale(' + (0.6 + 0.4 * p) + ')';
+      else if (fx === 'growx') tr = 'scaleX(' + p + ')';
+      el.style.opacity = fx === 'growx' ? (p > 0 ? 1 : 0) : p;
+      el.style.transform = tr;
+    });
+    bar.style.transform = 'scaleX(' + clamp(t / DURATION) + ')';
+    foot.style.opacity = t < 1 ? t : (t > 89 ? clamp(1 - (t - 89) * 2) : 1);
+    blob1.style.transform = 'translate(' + Math.sin(t / 9) * 140 + 'px,' + Math.cos(t / 11) * 90 + 'px)';
+    blob2.style.transform = 'translate(' + Math.cos(t / 10) * 120 + 'px,' + Math.sin(t / 8) * 100 + 'px)';
+  }
+
+  window.VIDEO = { duration: DURATION, render: render };
+
+  // Pré-visualização no navegador: toca em tempo real e ajusta ao tamanho da janela.
+  // O renderizador (render.js) abre com ?render e controla o tempo quadro a quadro.
+  if (location.search.indexOf('render') === -1) {
+    var stage = document.getElementById('stage');
+    var fit = function () {
+      var k = Math.min(innerWidth / 1920, innerHeight / 1080);
+      stage.style.transform = 'scale(' + k + ')';
+    };
+    fit(); addEventListener('resize', fit);
+    var t0 = performance.now() - (parseFloat(new URLSearchParams(location.search).get('t')) || 0) * 1000;
+    (function loop() {
+      render(((performance.now() - t0) / 1000) % DURATION);
+      requestAnimationFrame(loop);
+    })();
+  } else {
+    render(0);
+  }
+})();
+</script>
+</body>
+</html>
