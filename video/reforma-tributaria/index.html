@@ -50,8 +50,8 @@
 
   /* Cena 1 */
   #s1 { display: flex; flex-direction: column; justify-content: center; }
-  #s1 h1 { margin-top: 36px; max-width: 1500px; }
-  #s1 .sub { margin-top: 36px; max-width: 1300px; }
+  #s1 h1 { margin-top: 36px; }
+  #s1 .sub { margin-top: 36px; }
   .logo-chip { position: absolute; right: 120px; top: 84px; background: #fff; border-radius: 22px; padding: 16px 26px; }
   .logo-chip img { display: block; height: 96px; }
 
@@ -123,6 +123,19 @@
   .cta.ghost { background: rgba(255, 255, 255, .08); border: 2px solid rgba(255, 255, 255, .35); }
   #s8 .note { margin-top: 54px; max-width: 1300px; line-height: 1.5; }
 
+
+  /* Apresentador */
+  .host { position: absolute; right: 120px; top: 236px; width: 500px; }
+  .host img { display: block; width: 500px; height: 640px; object-fit: cover; object-position: 50% 0; border-radius: 32px; border: 4px solid rgba(255,255,255,.9); box-shadow: 0 30px 70px rgba(0,0,0,.4); }
+  .host .name { position: absolute; left: 24px; right: 24px; bottom: 24px; background: rgba(7,27,71,.88); border: 1.5px solid rgba(45,212,191,.5); border-radius: 20px; padding: 16px 22px; }
+  .host .name b { display: block; font-size: 36px; font-weight: 800; }
+  .host .name span { font-size: 24px; color: #9FE8DC; font-weight: 600; }
+  #s1 h1 { font-size: 96px; max-width: 1120px; }
+  #s1 .sub { max-width: 1060px; }
+  #foot img { width: 68px; height: 68px; border-radius: 50%; border: 3px solid var(--teal-300); object-fit: cover; }
+  #s8bg { position: absolute; inset: 0; background: url(img/estande.jpg) center/cover; opacity: 0; }
+  #s8bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,27,71,.80), rgba(7,27,71,.93)); }
+
   /* Rodapé fixo */
   #foot { position: absolute; left: 120px; right: 120px; bottom: 44px; display: flex; align-items: center; gap: 28px; font-size: 24px; color: #9FB4D9; font-weight: 600; }
   #bar { flex: 1; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, .14); overflow: hidden; }
@@ -135,9 +148,12 @@
   <div class="blob" id="blob2"></div>
   <div class="grid"></div>
 
+  <div id="s8bg"></div>
+
   <!-- CENA 1 — Abertura -->
   <section class="scene" id="s1" data-start="0" data-end="8">
     <div class="logo-chip" data-at="0.3" data-fx="fade"><img src="../../assets/img/logo-full.png" alt="Grupo Gestor"></div>
+    <div class="host" data-at="1.4" data-fx="right"><img src="img/jefferson-retrato.jpg" alt="Jefferson"><div class="name"><b>Jefferson</b><span>Grupo Gestor · Contabilidade</span></div></div>
     <div><span class="kicker" data-at="0.5">Reforma Tributária</span></div>
     <h1 data-at="0.9">O que muda para quem<br><span class="hl">presta serviço</span></h1>
     <p class="sub" data-at="2.2">IBS, CBS, novas alíquotas e créditos: entenda o impacto no seu negócio em menos de 2 minutos.</p>
@@ -291,7 +307,7 @@
     <p class="note" data-at="92.8" data-fx="fade">Conteúdo informativo, com base na Emenda Constitucional 132/2023 e na Lei Complementar 214/2025. Alíquotas de referência são estimativas e podem mudar.</p>
   </section>
 
-  <div id="foot"><span>Gestor Certo · Reforma Tributária para prestadores de serviço</span><div id="bar"><i></i></div></div>
+  <div id="foot"><img src="img/jefferson-avatar.jpg" alt=""><span>Jefferson · Grupo Gestor</span><div id="bar"><i></i></div></div>
 </div>
 
 <script>
@@ -301,7 +317,7 @@
   var items = [].slice.call(document.querySelectorAll('[data-at]'));
   var bar = document.querySelector('#bar i');
   var blob1 = document.getElementById('blob1'), blob2 = document.getElementById('blob2');
-  var foot = document.getElementById('foot');
+  var foot = document.getElementById('foot'), s8bg = document.getElementById('s8bg');
 
   function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
   function ease(p) { return 1 - Math.pow(1 - p, 3); }
@@ -326,7 +342,8 @@
       el.style.transform = tr;
     });
     bar.style.transform = 'scaleX(' + clamp(t / DURATION) + ')';
-    foot.style.opacity = t < 1 ? t : (t > 89 ? clamp(1 - (t - 89) * 2) : 1);
+    foot.style.opacity = t < 8 ? clamp((t - 7.6) * 2.5) : (t > 89 ? clamp(1 - (t - 89) * 2) : 1);
+    s8bg.style.opacity = clamp((t - 88.8) / 0.8);
     blob1.style.transform = 'translate(' + Math.sin(t / 9) * 140 + 'px,' + Math.cos(t / 11) * 90 + 'px)';
     blob2.style.transform = 'translate(' + Math.cos(t / 10) * 120 + 'px,' + Math.sin(t / 8) * 100 + 'px)';
   }
