@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Nova lei do MEI — vídeo</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --teal-300:#2DD4BF; --teal-400:#14B8A6; --blue-900:#0B2A6B; --ink:#0F172A; --amber:#FBBF24;
+    --grad-brand: linear-gradient(135deg,#2DD4BF 0%,#14B8A6 35%,#2563EB 100%); }
+  *,*::before,*::after { box-sizing:border-box; margin:0; }
+  html,body { background:#000; overflow:hidden; }
+  body { font-family:'Inter',system-ui,Arial,sans-serif; color:#fff; -webkit-font-smoothing:antialiased; }
+  #stage { position:absolute; left:0; top:0; width:1920px; height:1080px; overflow:hidden; transform-origin:0 0;
+    background:linear-gradient(150deg,#071B47 0%,#0B2A6B 40%,#0E3A7A 70%,#0C5F63 115%); }
+  .blob { position:absolute; border-radius:50%; filter:blur(90px); opacity:.5; }
+  #blob1 { width:760px; height:760px; background:#14B8A6; left:-220px; top:520px; }
+  #blob2 { width:680px; height:680px; background:#2563EB; left:1420px; top:-260px; }
+  .grid { position:absolute; inset:0; opacity:.07;
+    background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px); background-size:96px 96px; }
+
+  /* Moldura do vídeo do apresentador (o vídeo é sobreposto pelo ffmpeg em x=110 y=70, 524x940) */
+  #frame { position:absolute; left:102px; top:62px; width:540px; height:956px; border-radius:36px;
+    border:8px solid rgba(255,255,255,.92); background:#0A1A3F; box-shadow:0 30px 70px rgba(0,0,0,.45); }
+
+  .scene { position:absolute; left:720px; right:100px; top:60px; bottom:110px; opacity:0; visibility:hidden;
+    display:flex; flex-direction:column; justify-content:center; }
+  .scene > .kicker { align-self:flex-start; }
+  .kicker { display:inline-block; font-size:25px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--teal-300);
+    padding:10px 22px; border:2px solid rgba(45,212,191,.45); border-radius:999px; background:rgba(45,212,191,.08); }
+  h1 { font-size:92px; line-height:1.05; font-weight:800; letter-spacing:-.03em; margin-top:30px; }
+  h2 { font-size:66px; line-height:1.1; font-weight:800; letter-spacing:-.025em; margin-top:24px; }
+  .hl { background:var(--grad-brand); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { font-size:36px; line-height:1.35; color:#C7D7F2; font-weight:500; margin-top:24px; }
+  .pill-row { display:flex; flex-wrap:wrap; gap:18px; margin-top:38px; }
+  .pill { font-size:32px; font-weight:700; padding:16px 30px; border-radius:999px; background:rgba(45,212,191,.14); border:1.5px solid rgba(45,212,191,.5); color:#CFFAF2; }
+  .list { margin-top:36px; display:flex; flex-direction:column; gap:18px; }
+  .row { display:flex; align-items:center; gap:26px; padding:22px 30px; background:rgba(255,255,255,.07); border:1.5px solid rgba(255,255,255,.16); border-radius:24px; }
+  .row h3 { font-size:38px; font-weight:700; line-height:1.2; }
+  .row.warn { background:rgba(251,191,36,.12); border-color:rgba(251,191,36,.55); }
+  .check { flex:none; width:58px; height:58px; border-radius:50%; background:var(--teal-400); display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:800; }
+  .row.warn .check { background:var(--amber); color:#1F2937; }
+  .upd { margin-top:34px; background:#fff; color:var(--ink); border-radius:26px; padding:28px 32px; box-shadow:0 24px 60px rgba(0,0,0,.3); border-left:12px solid var(--amber); }
+  .upd .tag { display:inline-block; font-size:22px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; background:var(--amber); color:#1F2937; padding:7px 16px; border-radius:10px; }
+  .upd p { font-size:31px; line-height:1.38; margin-top:14px; color:#1E293B; font-weight:500; }
+  .upd p b { color:var(--blue-900); }
+  .bars { display:flex; align-items:flex-end; gap:34px; height:430px; margin-top:44px; }
+  .bar { flex:1; display:flex; flex-direction:column; justify-content:flex-end; height:100%; }
+  .bar .col { border-radius:22px 22px 8px 8px; background:rgba(255,255,255,.2); transform-origin:50% 100%; display:flex; align-items:flex-start; justify-content:center; padding-top:22px; font-size:50px; font-weight:800; letter-spacing:-.02em; }
+  .bar .col small { font-size:26px; font-weight:700; margin-right:8px; align-self:flex-start; margin-top:14px; }
+  .bar.b2 .col, .bar.b3 .col { background:var(--grad-brand); }
+  .bar .lbl { text-align:center; font-size:30px; font-weight:700; margin-top:14px; color:#E2E8F0; }
+  .big { font-size:210px; font-weight:800; line-height:1; letter-spacing:-.04em; }
+  .note { font-size:25px; color:#9FB4D9; margin-top:20px; line-height:1.45; }
+  .cta-row { display:flex; flex-wrap:wrap; gap:22px; margin-top:40px; }
+  .cta { font-size:38px; font-weight:800; padding:22px 40px; border-radius:999px; background:var(--grad-brand); }
+  .cta.ghost { background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.35); }
+  .logo-chip { align-self:flex-start; background:#fff; border-radius:24px; padding:18px 30px; }
+  .logo-chip img { display:block; height:130px; }
+
+  #end { left:0; right:0; top:0; bottom:0; align-items:center; text-align:center;
+    background:linear-gradient(150deg,#071B47 0%,#0B2A6B 45%,#0C5F63 120%); }
+  #end .logo-chip { align-self:center; padding:30px 48px; border-radius:32px; }
+  #end .logo-chip img { height:230px; }
+
+  #foot { position:absolute; left:720px; right:100px; bottom:48px; display:flex; align-items:center; gap:24px; font-size:23px; color:#9FB4D9; font-weight:600; }
+  #bar { flex:1; height:6px; border-radius:3px; background:rgba(255,255,255,.14); overflow:hidden; }
+  #bar i { display:block; height:100%; width:100%; background:var(--grad-brand); transform-origin:0 50%; transform:scaleX(0); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="blob" id="blob1"></div><div class="blob" id="blob2"></div><div class="grid"></div>
+  <div id="frame"></div>
+
+  <section class="scene" data-start="0" data-end="14.1">
+    <span class="kicker" data-at="0.4">Lei Complementar 238/2026</span>
+    <h1 data-at="0.8">O que mudou<br>para o <span class="hl">MEI</span></h1>
+    <p class="sub" data-at="5.7">Sancionada em 21 de outubro de 2026.</p>
+    <div class="pill-row">
+      <div class="pill" data-at="8.6">Novo teto de faturamento</div>
+      <div class="pill" data-at="10.2">Perdão de dívidas</div>
+      <div class="pill" data-at="11.9">Até 2 funcionários</div>
+    </div>
+  </section>
+
+  <section class="scene" data-start="14.1" data-end="32.3">
+    <span class="kicker" data-at="14.4">Primeiro ponto</span>
+    <h2 data-at="14.8">Perdão das <span class="hl">dívidas federais</span></h2>
+    <div class="list">
+      <div class="row" data-at="18" data-fx="right"><div class="check">✓</div><h3>Inclui multas e juros</h3></div>
+      <div class="row" data-at="19.8" data-fx="right"><div class="check">✓</div><h3>Débitos até 13 de outubro de 2026</h3></div>
+      <div class="row warn" data-at="22.6" data-fx="right"><div class="check">!</div><h3>Condição: pagar o DAS em dia pelos próximos 6 meses</h3></div>
+      <div class="row warn" data-at="28.6" data-fx="right"><div class="check">!</div><h3>Quem tem ação na Justiça precisa desistir dela</h3></div>
+    </div>
+  </section>
+
+  <section class="scene" data-start="32.3" data-end="43.6">
+    <span class="kicker" data-at="32.6">Atenção</span>
+    <h2 data-at="33">ICMS e ISS ficam <span class="hl">fora do perdão</span></h2>
+    <p class="sub" data-at="35.4">São tributos estaduais e municipais: a negociação é direto com o estado e com o município.</p>
+    <div class="upd" data-at="37.4">
+      <span class="tag">Atualização · novembro de 2026</span>
+      <p>O governo já avisou os MEIs pelo <b>gov.br</b> (22 e 26/10). A baixa é <b>automática em 1º/01/2027</b> e dá para conferir no <b>Regularize</b>, da PGFN. Desconfie de links: há golpes circulando.</p>
+    </div>
+  </section>
+
+  <section class="scene" data-start="43.6" data-end="57.6">
+    <span class="kicker" data-at="43.9">Segundo ponto</span>
+    <h2 data-at="44.3">O limite do MEI <span class="hl">subiu</span></h2>
+    <div class="bars">
+      <div class="bar b1"><div class="col" style="height:52%" data-at="46.4" data-fx="growy"><small>R$</small>81 mil</div><div class="lbl" data-at="46.4" data-fx="fade">Hoje</div></div>
+      <div class="bar b2"><div class="col" style="height:74%" data-at="50.4" data-fx="growy"><small>R$</small>110 mil</div><div class="lbl" data-at="50.4" data-fx="fade">A partir de 1º/01/2027</div></div>
+      <div class="bar b3"><div class="col" style="height:96%" data-at="53.2" data-fx="growy"><small>R$</small>140 mil</div><div class="lbl" data-at="53.2" data-fx="fade">A partir de 1º/01/2028</div></div>
+    </div>
+    <p class="note" data-at="55" data-fx="fade">Em 2026, o teto continua em R$ 81 mil.</p>
+  </section>
+
+  <section class="scene" data-start="57.6" data-end="65">
+    <span class="kicker" data-at="57.9">Para quem quer crescer</span>
+    <div style="display:flex;align-items:center;gap:36px;margin-top:20px" data-at="60">
+      <div class="big hl">2</div>
+      <h2 style="margin:0">funcionários<br>registrados</h2>
+    </div>
+    <p class="sub" style="margin-top:6px" data-at="61.6">E não apenas um. Vale a partir de 1º de janeiro de 2027.</p>
+    <div class="upd" data-at="62.2" style="margin-top:26px">
+      <span class="tag">Atualização · Decreto 13.140/2026</span>
+      <p>A partir de 2027, o MEI poderá usar a <b>declaração anual</b> no lugar da nota nas vendas a <b>pessoas físicas</b>. Para empresas, a nota continua obrigatória.</p>
+    </div>
+  </section>
+
+  <section class="scene" data-start="65" data-end="75.8">
+    <span class="kicker" data-at="65.3">Como voltar ao MEI</span>
+    <h2 data-at="65.7">Pedido até <span class="hl">29 de janeiro</span></h2>
+    <p class="sub" data-at="68.4">Com as dívidas em ordem, a opção pelo SIMEI é feita em janeiro de 2027.</p>
+    <div class="upd" data-at="70.4">
+      <span class="tag">Atualização · novembro de 2026</span>
+      <p>A volta ao MEI <b>já com o novo teto</b> ainda depende de regra do Comitê Gestor do Simples Nacional.</p>
+    </div>
+  </section>
+
+  <section class="scene" data-start="75.8" data-end="91">
+    <div class="logo-chip" data-at="76.1" data-fx="scale"><img src="../../assets/img/logo-full.png" alt="Grupo Gestor"></div>
+    <h2 data-at="76.8" style="margin-top:40px">Quer saber se entrou no <span class="hl">perdão da dívida</span>?</h2>
+    <p class="sub" data-at="83.4">Fale com o Grupo Gestor: um dos nossos especialistas orienta o crescimento do seu negócio.</p>
+    <div class="cta-row">
+      <div class="cta" data-at="84.6">gestorcerto.com.br</div>
+      <div class="cta ghost" data-at="85.2">WhatsApp (11) 91404-0532</div>
+    </div>
+  </section>
+
+  <section class="scene" id="end" data-start="90.7" data-end="96">
+    <div class="logo-chip" data-at="90.9" data-fx="scale"><img src="../../assets/img/logo-full.png" alt="Grupo Gestor"></div>
+    <h2 data-at="91.4" style="margin-top:48px">A base para a tomada de decisões</h2>
+    <p class="note" data-at="92" data-fx="fade" style="max-width:1200px">Conteúdo informativo, com base na Lei Complementar 238/2026 e no Decreto 13.140/2026. Atualizações conferidas em novembro de 2026.</p>
+  </section>
+
+  <div id="foot"><span>Grupo Gestor · Nova lei do MEI</span><div id="bar"><i></i></div></div>
+</div>
+<script>
+(function () {
+  var DURATION = 96, FADE_IN = 0.45, FADE_OUT = 0.4;
+  var scenes = [].slice.call(document.querySelectorAll('.scene'));
+  var items = [].slice.call(document.querySelectorAll('[data-at]'));
+  var bar = document.querySelector('#bar i'), foot = document.getElementById('foot'), frame = document.getElementById('frame');
+  var blob1 = document.getElementById('blob1'), blob2 = document.getElementById('blob2');
+  function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function ease(p) { return 1 - Math.pow(1 - p, 3); }
+  function render(t) {
+    scenes.forEach(function (s) {
+      var a = +s.dataset.start, b = +s.dataset.end, on = t >= a && t < b;
+      var o = on ? Math.min(clamp((t - a) / FADE_IN), b >= DURATION ? 1 : clamp((b - t) / FADE_OUT)) : 0;
+      s.style.visibility = on ? 'visible' : 'hidden'; s.style.opacity = o;
+    });
+    items.forEach(function (el) {
+      var p = ease(clamp((t - +el.dataset.at) / (+el.dataset.dur || 0.7))), fx = el.dataset.fx || 'up', tr = '';
+      if (fx === 'up') tr = 'translateY(' + (1 - p) * 40 + 'px)';
+      else if (fx === 'right') tr = 'translateX(' + (1 - p) * 70 + 'px)';
+      else if (fx === 'scale') tr = 'scale(' + (0.6 + 0.4 * p) + ')';
+      else if (fx === 'growy') tr = 'scaleY(' + p + ')';
+      el.style.opacity = fx === 'growy' ? (p > 0 ? 1 : 0) : p; el.style.transform = tr;
+    });
+    bar.style.transform = 'scaleX(' + clamp(t / DURATION) + ')';
+    foot.style.opacity = t > 90.5 ? clamp(1 - (t - 90.5) * 3) : 1;
+    frame.style.opacity = t > 91.1 ? 0 : 1;
+    blob1.style.transform = 'translate(' + Math.sin(t / 9) * 140 + 'px,' + Math.cos(t / 11) * 90 + 'px)';
+    blob2.style.transform = 'translate(' + Math.cos(t / 10) * 120 + 'px,' + Math.sin(t / 8) * 100 + 'px)';
+  }
+  window.VIDEO = { duration: DURATION, render: render };
+  if (location.search.indexOf('render') === -1) {
+    var stage = document.getElementById('stage');
+    var fit = function () { stage.style.transform = 'scale(' + Math.min(innerWidth / 1920, innerHeight / 1080) + ')'; };
+    fit(); addEventListener('resize', fit);
+    var t0 = performance.now() - (parseFloat(new URLSearchParams(location.search).get('t')) || 0) * 1000;
+    (function loop() { render(((performance.now() - t0) / 1000) % DURATION); requestAnimationFrame(loop); })();
+  } else { render(0); }
+})();
+</script>
+</body>
+</html>
