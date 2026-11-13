@@ -64,12 +64,13 @@ function run(cmd, args) {
   const list = path.join(tmp, 'list.txt');
   fs.writeFileSync(list, parts.map(p => `file '${p}'`).join('\n'));
   // Junta as partes da animação, sobrepõe o vídeo do apresentador (com cantos arredondados) e usa o áudio original.
+  // O vídeo do apresentador sai em CUT (antes da vinheta original); o áudio segue 0,8 s para não cortar a última palavra.
   const CUT = 90.7, total_s = total / FPS, src = path.join(__dirname, 'fonte-jefferson.mp4'), mask = path.join(__dirname, 'mascara.png');
-  await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-t', String(CUT), '-i', src, '-loop', '1', '-i', mask,
+  await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-t', String(CUT + 0.8), '-i', src, '-loop', '1', '-i', mask,
     '-filter_complex',
-    `[1:v]fps=${FPS},scale=524:940:flags=lanczos,format=yuva420p[v];[2:v]format=gray[m];[v][m]alphamerge,fade=out:st=${CUT - 0.3}:d=0.3:alpha=1[pv];` +
+    `[1:v]trim=duration=${CUT},fps=${FPS},scale=524:940:flags=lanczos,format=yuva420p[v];[2:v]format=gray[m];[v][m]alphamerge,fade=out:st=${CUT - 0.3}:d=0.3:alpha=1[pv];` +
     `[0:v][pv]overlay=110:70:eof_action=pass[out];` +
-    `[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,afade=out:st=${CUT - 0.3}:d=0.3,apad=whole_dur=${total_s},aresample=48000[a]`,
+    `[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,afade=out:st=${CUT + 0.4}:d=0.4,apad=whole_dur=${total_s},aresample=48000[a]`,
     '-map', '[out]', '-map', '[a]', '-t', String(total_s), '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p',
     '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', out]);
   fs.rmSync(tmp, { recursive: true, force: true });
