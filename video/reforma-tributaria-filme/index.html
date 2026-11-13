@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Reforma Tributária — filme</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --cyan:#38BDF8; --teal:#2DD4BF; --navy:#050B1F; --grad:linear-gradient(100deg,#2DD4BF 0%,#38BDF8 45%,#3B82F6 100%); }
+  *,*::before,*::after { box-sizing:border-box; margin:0; }
+  html,body { background:#000; overflow:hidden; }
+  body { font-family:'Inter Display','Inter',system-ui,Arial,sans-serif; color:#fff; -webkit-font-smoothing:antialiased; }
+  #stage { position:absolute; left:0; top:0; width:1920px; height:1080px; overflow:hidden; transform-origin:0 0; background:#000; }
+  .scene { position:absolute; inset:0; opacity:0; visibility:hidden; overflow:hidden; background:radial-gradient(1300px 800px at 70% 30%,#0E2A66 0%,#050B1F 65%); }
+  .scene.black { background:#000; }
+  .bg { position:absolute; left:-4%; top:0; width:108%; height:112%; object-fit:cover; object-position:50% 0; transform-origin:50% 30%; }
+  .dim::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(5,11,31,.82),rgba(5,11,31,.9)); }
+  .center { position:absolute; inset:96px 0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 140px; }
+  em { font-style:normal; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .small { font-size:30px; font-weight:600; letter-spacing:.42em; text-transform:uppercase; color:#9CC7F5; }
+  .year { font-size:260px; font-weight:900; letter-spacing:-.04em; line-height:1; }
+  .line { font-size:56px; font-weight:500; color:#D6E4FA; margin-top:26px; line-height:1.25; }
+  .title { position:relative; font-size:178px; font-weight:900; line-height:.95; text-transform:uppercase; margin-top:28px; }
+  .sweep { position:absolute; top:-10%; bottom:-10%; width:260px; background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent); mix-blend-mode:overlay; filter:blur(6px); }
+  .subtitle { font-size:50px; font-weight:500; color:#D6E4FA; margin-top:34px; }
+  .lower { position:absolute; left:140px; bottom:170px; }
+  .lower .bar { width:120px; height:8px; border-radius:4px; background:var(--grad); transform-origin:0 50%; }
+  .lower h3 { font-size:86px; font-weight:900; letter-spacing:-.02em; line-height:1; margin-top:22px; text-shadow:0 6px 30px rgba(0,0,0,.6); }
+  .lower p { font-size:42px; font-weight:500; color:#E2ECFB; margin-top:14px; text-shadow:0 4px 20px rgba(0,0,0,.7); }
+  .shade { position:absolute; inset:0; background:linear-gradient(180deg,rgba(5,11,31,.15) 40%,rgba(5,11,31,.88) 100%); }
+
+  .beat .frame { position:absolute; top:190px; width:700px; height:700px; border-radius:30px; overflow:hidden; border:3px solid rgba(56,189,248,.85);
+    box-shadow:0 0 0 10px rgba(56,189,248,.10), 0 0 90px rgba(56,189,248,.35), 0 40px 80px rgba(0,0,0,.6); }
+  .beat .frame img { display:block; width:100%; height:100%; object-fit:cover; transform-origin:50% 40%; }
+  .beat .frame .num { position:absolute; left:26px; top:18px; font-style:normal; font-size:44px; font-weight:900; letter-spacing:.06em; color:#fff; opacity:.9; text-shadow:0 2px 12px rgba(0,0,0,.6); }
+  .beat .txt { position:absolute; top:190px; height:700px; width:880px; display:flex; flex-direction:column; justify-content:center; }
+  .beat.l .frame { left:130px; } .beat.l .txt { left:910px; }
+  .beat.r .frame { right:130px; } .beat.r .txt { left:130px; }
+  .kicker { font-size:30px; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--cyan); }
+  .rule { width:110px; height:7px; border-radius:4px; background:var(--grad); margin-top:22px; transform-origin:0 50%; }
+  .beat h2 { font-size:92px; font-weight:900; letter-spacing:-.03em; line-height:1.02; margin-top:30px; }
+  .beat p { font-size:40px; font-weight:500; line-height:1.36; color:#D6E4FA; margin-top:30px; }
+
+  .plan { display:flex; gap:34px; margin-top:54px; }
+  .plan div { width:480px; padding:44px 34px; border-radius:28px; background:rgba(8,20,52,.72); border:2px solid rgba(56,189,248,.6); font-size:46px; font-weight:800; line-height:1.14; box-shadow:0 0 60px rgba(56,189,248,.18); }
+  .plan b { display:block; font-size:30px; letter-spacing:.3em; color:var(--cyan); margin-bottom:18px; }
+  .logo { display:inline-block; background:#fff; border-radius:26px; padding:22px 38px; box-shadow:0 0 90px rgba(56,189,248,.45); }
+  .logo img { display:block; height:170px; }
+  .tag { font-size:74px; font-weight:900; letter-spacing:-.02em; margin-top:40px; text-shadow:0 6px 30px rgba(0,0,0,.6); }
+  .cta-row { display:flex; gap:24px; margin-top:36px; }
+  .cta { font-size:40px; font-weight:800; padding:22px 42px; border-radius:999px; background:var(--grad); color:#041029; }
+  .cta.ghost { background:rgba(5,11,31,.6); color:#fff; border:2px solid rgba(255,255,255,.5); }
+  .fine { font-size:22px; font-weight:500; color:#A9BEDF; margin-top:30px; max-width:1200px; line-height:1.45; }
+
+  #vig { position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse at 50% 50%,transparent 55%,rgba(0,0,0,.55) 100%); }
+  .lb { position:absolute; left:0; right:0; height:96px; background:#000; }
+  #lbt { top:0; } #lbb { bottom:0; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <section class="scene black" data-start="0" data-end="4.7">
+    <div class="center">
+      <div class="year" data-at="0.5" data-fx="zoom" data-dur="3.8">2026</div>
+      <div class="line" data-at="1.7" data-fx="up">Para quem presta serviço, as regras do jogo mudaram.</div>
+    </div>
+  </section>
+
+  <section class="scene" data-start="4.7" data-end="10.4">
+    <div class="dim" style="position:absolute;inset:0"><img class="bg" src="img/time.jpg" alt="" data-kb="1.0,1.1,0,0,0,-10" style="filter:blur(10px)"></div>
+    <div class="center">
+      <div class="small" data-at="5.0" data-fx="track">Grupo Gestor apresenta</div>
+      <div class="title" data-at="5.6" data-fx="zoom" data-dur="4.6">Reforma<br><em>Tributária</em><span class="sweep" data-sweep="6.4,8.0"></span></div>
+      <div class="subtitle" data-at="7.2" data-fx="up">O que muda para quem presta serviço</div>
+    </div>
+  </section>
+
+  <section class="scene" data-start="10.4" data-end="17">
+    <img class="bg" src="img/time.jpg" alt="" data-kb="1.0,1.07,30,0,-30,0">
+    <div class="shade"></div>
+    <div class="lower">
+      <div class="bar" data-at="11.2" data-fx="growx"></div>
+      <h3 data-at="11.4" data-fx="wipe" data-dur="0.9">O time do Grupo Gestor</h3>
+      <p data-at="12.4" data-fx="up">explica o que vem pela frente.</p>
+    </div>
+  </section>
+
+  <section class="scene beat l" data-start="17" data-end="23.5">
+    <div class="frame" data-at="17.15" data-fx="frame"><img src="img/p1.jpg" alt="" data-kb="1.04,1.16,0,0,-14,-8"><i class="num">01</i></div>
+    <div class="txt">
+      <div class="kicker" data-at="17.5" data-fx="track">O que muda</div>
+      <div class="rule" data-at="17.7" data-fx="growx"></div>
+      <h2 data-at="17.9" data-fx="wipe" data-dur="0.9">ISS, PIS e Cofins <em>saem de cena.</em></h2>
+      <p data-at="19" data-fx="up">Entram o IBS e a CBS: mesma base, cobrança por fora e crédito nas compras.</p>
+    </div>
+  </section>
+  <section class="scene beat r" data-start="23.5" data-end="30">
+    <div class="frame" data-at="23.65" data-fx="frame"><img src="img/p2.jpg" alt="" data-kb="1.16,1.05,-10,-6,8,0"><i class="num">02</i></div>
+    <div class="txt">
+      <div class="kicker" data-at="24" data-fx="track">Quando</div>
+      <div class="rule" data-at="24.2" data-fx="growx"></div>
+      <h2 data-at="24.4" data-fx="wipe" data-dur="0.9">A virada vai de <em>2026 a 2033.</em></h2>
+      <p data-at="25.5" data-fx="up">2026 é o ano de teste. Em 2027, a CBS entra de vez. O ISS some aos poucos até 2033.</p>
+    </div>
+  </section>
+  <section class="scene beat l" data-start="30" data-end="36.5">
+    <div class="frame" data-at="30.15" data-fx="frame"><img src="img/p3.jpg" alt="" data-kb="1.04,1.16,0,0,-14,-8"><i class="num">03</i></div>
+    <div class="txt">
+      <div class="kicker" data-at="30.5" data-fx="track">Quanto</div>
+      <div class="rule" data-at="30.7" data-fx="growx"></div>
+      <h2 data-at="30.9" data-fx="wipe" data-dur="0.9">Alíquota padrão estimada em <em>até 28%.</em></h2>
+      <p data-at="32" data-fx="up">Hoje, no Lucro Presumido, o serviço paga de 5,65% a 8,65%.</p>
+    </div>
+  </section>
+  <section class="scene beat r" data-start="36.5" data-end="43">
+    <div class="frame" data-at="36.65" data-fx="frame"><img src="img/p4.jpg" alt="" data-kb="1.16,1.05,-10,-6,8,0"><i class="num">04</i></div>
+    <div class="txt">
+      <div class="kicker" data-at="37" data-fx="track">O ponto de atenção</div>
+      <div class="rule" data-at="37.2" data-fx="growx"></div>
+      <h2 data-at="37.4" data-fx="wipe" data-dur="0.9">Folha de pagamento <em>não gera crédito.</em></h2>
+      <p data-at="38.5" data-fx="up">O crédito vem das compras. E o maior custo de quem presta serviço é gente.</p>
+    </div>
+  </section>
+  <section class="scene beat l" data-start="43" data-end="49.5">
+    <div class="frame" data-at="43.15" data-fx="frame"><img src="img/p5.jpg" alt="" data-kb="1.04,1.16,0,0,-14,-8"><i class="num">05</i></div>
+    <div class="txt">
+      <div class="kicker" data-at="43.5" data-fx="track">Quem tem alívio</div>
+      <div class="rule" data-at="43.7" data-fx="growx"></div>
+      <h2 data-at="43.9" data-fx="wipe" data-dur="0.9">Nem todo serviço paga a <em>alíquota cheia.</em></h2>
+      <p data-at="45" data-fx="up">Saúde e educação: redução de 60%. Profissões regulamentadas: 30%.</p>
+    </div>
+  </section>
+  <section class="scene beat r" data-start="49.5" data-end="56">
+    <div class="frame" data-at="49.65" data-fx="frame"><img src="img/p6.jpg" alt="" data-kb="1.16,1.05,-10,-6,8,0"><i class="num">06</i></div>
+    <div class="txt">
+      <div class="kicker" data-at="50" data-fx="track">Simples Nacional</div>
+      <div class="rule" data-at="50.2" data-fx="growx"></div>
+      <h2 data-at="50.4" data-fx="wipe" data-dur="0.9">Por dentro ou <em>por fora?</em></h2>
+      <p data-at="51.5" data-fx="up">Por dentro, guia única. Por fora, seu cliente empresa aproveita o crédito integral.</p>
+    </div>
+  </section>
+
+  <section class="scene" data-start="56" data-end="63.5">
+    <div class="dim" style="position:absolute;inset:0"><img class="bg" src="img/time.jpg" alt="" data-kb="1.12,1.02,-20,0,10,0" style="filter:blur(8px)"></div>
+    <div class="center">
+      <div class="small" data-at="56.3" data-fx="track">O plano</div>
+      <div class="title" style="font-size:110px;text-transform:none;margin-top:20px" data-at="56.7" data-fx="wipe" data-dur="0.9">Três passos para <em>sair na frente</em></div>
+      <div class="plan">
+        <div data-at="58.0" data-fx="up"><b>01</b>Simular a nova carga</div>
+        <div data-at="58.8" data-fx="up"><b>02</b>Rever preços e contratos</div>
+        <div data-at="59.6" data-fx="up"><b>03</b>Escolher o melhor regime</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" data-start="63.5" data-end="73">
+    <img class="bg" src="img/time.jpg" alt="" data-kb="1.08,1.0,0,0,0,0">
+    <div style="position:absolute;inset:0;background:rgba(5,11,31,.74)"></div>
+    <div class="center">
+      <div class="logo" data-at="64.0" data-fx="zoom" data-dur="8"><img src="../../assets/img/logo-full.png" alt="Grupo Gestor"></div>
+      <div class="tag" data-at="65.0" data-fx="wipe" data-dur="0.9">A base para a tomada de decisões</div>
+      <div class="cta-row"><div class="cta" data-at="66.2" data-fx="up">gestorcerto.com.br</div><div class="cta ghost" data-at="66.6" data-fx="up">WhatsApp (11) 91404-0532</div></div>
+      <p class="fine" data-at="67.6" data-fx="fade">Conteúdo informativo, com base na EC 132/2023 e na LC 214/2025. Alíquotas de referência são estimativas e podem mudar.</p>
+    </div>
+  </section>
+
+  <div id="vig"></div><div class="lb" id="lbt"></div><div class="lb" id="lbb"></div>
+</div>
+<script>
+(function () {
+  var DURATION = 73, FADE = 0.55;
+  var scenes = [].slice.call(document.querySelectorAll('.scene'));
+  var items = [].slice.call(document.querySelectorAll('[data-at]'));
+  var kbs = [].slice.call(document.querySelectorAll('[data-kb]'));
+  var sweeps = [].slice.call(document.querySelectorAll('[data-sweep]'));
+  kbs.forEach(function (el) { var s = el.closest('.scene'); el._a = +s.dataset.start; el._b = +s.dataset.end; });
+  function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function ease(p) { return 1 - Math.pow(1 - p, 3); }
+  function render(t) {
+    scenes.forEach(function (s) {
+      var a = +s.dataset.start, b = +s.dataset.end, on = t >= a && t < b;
+      var o = on ? Math.min(a === 0 ? 1 : clamp((t - a) / FADE), b >= DURATION ? clamp((b - t) / 1.2) : clamp((b - t) / FADE)) : 0;
+      s.style.visibility = on ? 'visible' : 'hidden'; s.style.opacity = o;
+    });
+    kbs.forEach(function (el) {
+      var k = el.dataset.kb.split(',').map(Number), p = clamp((t - el._a) / (el._b - el._a));
+      el.style.transform = 'translate(' + (k[2] + (k[4] - k[2]) * p) + 'px,' + (k[3] + (k[5] - k[3]) * p) + 'px) scale(' + (k[0] + (k[1] - k[0]) * p) + ')';
+    });
+    items.forEach(function (el) {
+      var fx = el.dataset.fx || 'up', raw = clamp((t - +el.dataset.at) / (+el.dataset.dur || 0.8)), p = ease(raw);
+      el.style.opacity = clamp((t - +el.dataset.at) / 0.6);
+      if (fx === 'up') el.style.transform = 'translateY(' + (1 - p) * 36 + 'px)';
+      else if (fx === 'zoom') el.style.transform = 'scale(' + (0.94 + 0.08 * raw) + ')';
+      else if (fx === 'track') el.style.letterSpacing = (0.9 - 0.5 * p) + 'em';
+      else if (fx === 'growx') { el.style.transform = 'scaleX(' + p + ')'; el.style.opacity = p > 0 ? 1 : 0; }
+      else if (fx === 'wipe') { el.style.clipPath = 'inset(-10% ' + (1 - p) * 100 + '% -10% 0)'; el.style.opacity = raw > 0 ? 1 : 0; }
+      else if (fx === 'frame') { el.style.transform = 'scale(' + (1.06 - 0.06 * p) + ')'; el.style.clipPath = 'inset(' + (1 - p) * 50 + '% 0 round 30px)'; el.style.opacity = raw > 0 ? 1 : 0; }
+    });
+    sweeps.forEach(function (el) { var s = el.dataset.sweep.split(',').map(Number), p = clamp((t - s[0]) / (s[1] - s[0])); el.style.left = (-30 + 130 * p) + '%'; el.style.opacity = p > 0 && p < 1 ? 1 : 0; });
+  }
+  window.VIDEO = { duration: DURATION, render: render };
+  if (location.search.indexOf('render') === -1) {
+    var stage = document.getElementById('stage');
+    var fit = function () { stage.style.transform = 'scale(' + Math.min(innerWidth / 1920, innerHeight / 1080) + ')'; };
+    fit(); addEventListener('resize', fit);
+    var t0 = performance.now() - (parseFloat(new URLSearchParams(location.search).get('t')) || 0) * 1000;
+    (function loop() { render(((performance.now() - t0) / 1000) % DURATION); requestAnimationFrame(loop); })();
+  } else { render(0); }
+})();
+</script>
+</body>
+</html>
