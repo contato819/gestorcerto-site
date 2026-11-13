@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Reforma Tributária — comercial</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --teal:#2DD4BF; --teal2:#14B8A6; --blue:#2563EB; --navy:#071B47; --ink:#0F172A; --red:#F87171; --amber:#FBBF24;
+    --grad: linear-gradient(120deg,#2DD4BF 0%,#14B8A6 35%,#2563EB 100%); }
+  *,*::before,*::after { box-sizing:border-box; margin:0; }
+  html,body { background:#000; overflow:hidden; }
+  body { font-family:'Inter Display','Inter',system-ui,Arial,sans-serif; color:#fff; -webkit-font-smoothing:antialiased; }
+  #stage { position:absolute; left:0; top:0; width:1920px; height:1080px; overflow:hidden; transform-origin:0 0; background:var(--navy); }
+  .scene { position:absolute; inset:0; opacity:0; visibility:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 110px; }
+  .dark { background:radial-gradient(1200px 800px at 80% 10%, #12408F 0%, #071B47 60%); }
+  .light { background:#F6F9FC; color:var(--ink); }
+  .brand { background:var(--grad); }
+  .x { font-weight:900; letter-spacing:-.04em; line-height:.95; text-transform:uppercase; }
+  .hl { background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .kick { font-size:44px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); }
+  .word { position:relative; display:inline-block; font-size:170px; margin:0 34px; }
+  .word i { position:absolute; left:-4%; right:-4%; top:46%; height:20px; border-radius:10px; background:var(--red); transform-origin:0 50%; }
+  .cards { display:flex; gap:30px; margin-top:60px; }
+  .card { flex:1; background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.2); border-radius:30px; padding:44px 34px; font-size:44px; font-weight:800; line-height:1.15; }
+  .card b { display:block; width:84px; height:84px; margin:0 auto 24px; border-radius:24px; background:var(--grad); font-size:50px; line-height:84px; }
+  #s7 { flex-direction:row; gap:80px; text-align:left; align-items:center; }
+  #s7 .ph { flex:none; width:470px; height:600px; border-radius:36px; border:6px solid #fff; object-fit:cover; object-position:50% 0; box-shadow:0 30px 70px rgba(0,0,0,.45); }
+  .logo { display:inline-block; background:#fff; border-radius:24px; padding:18px 30px; }
+  .logo img { display:block; height:120px; }
+  .cta-row { display:flex; flex-wrap:wrap; gap:22px; margin-top:38px; }
+  .cta { font-size:42px; font-weight:800; padding:24px 44px; border-radius:999px; background:var(--grad); }
+  .cta.ghost { background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.4); }
+  .fine { font-size:23px; color:#9FB4D9; margin-top:34px; line-height:1.45; max-width:900px; font-weight:500; }
+  #flash { position:absolute; inset:0; background:#fff; opacity:0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <section class="scene dark" data-start="0" data-end="3.5">
+    <div class="kick" data-at="0.15">Você presta serviço?</div>
+    <div class="x" style="font-size:176px;margin-top:30px" data-at="0.7" data-fx="slam">A reforma<br>tributária</div>
+    <div class="x hl" style="font-size:176px;margin-top:10px" data-at="1.8" data-fx="slam">já começou.</div>
+  </section>
+
+  <section class="scene dark" data-start="3.5" data-end="8.2">
+    <div>
+      <span class="word x" data-at="3.7" data-fx="pop">ISS<i data-at="5.0" data-fx="growx" data-dur="0.3"></i></span>
+      <span class="word x" data-at="4.0" data-fx="pop">PIS<i data-at="5.25" data-fx="growx" data-dur="0.3"></i></span>
+      <span class="word x" data-at="4.3" data-fx="pop">Cofins<i data-at="5.5" data-fx="growx" data-dur="0.3"></i></span>
+    </div>
+    <div class="kick" style="margin-top:50px;color:#C7D7F2" data-at="6.0">dão lugar a</div>
+    <div class="x hl" style="font-size:230px;margin-top:16px" data-at="6.4" data-fx="slam">IBS + CBS</div>
+  </section>
+
+  <section class="scene light" data-start="8.2" data-end="13.4">
+    <div class="kick" style="color:#0F766E" data-at="8.4">Alíquota padrão estimada em até</div>
+    <div class="x hl" style="font-size:360px;margin-top:10px;font-variant-numeric:tabular-nums" data-at="8.7" data-fx="pop"><span data-count="5.65,28,8.9,10.9,1"></span>%</div>
+    <div style="font-size:46px;font-weight:700;color:#334155;margin-top:8px" data-at="11.3">Hoje, no Lucro Presumido, o serviço paga de 5,65% a 8,65%.</div>
+  </section>
+
+  <section class="scene dark" data-start="13.4" data-end="18">
+    <div style="display:grid;grid-template-columns:auto auto;column-gap:60px;row-gap:40px;align-items:center;text-align:left">
+      <div class="x" style="font-size:110px" data-at="13.6" data-fx="left">Crédito nas compras?</div>
+      <div class="x" style="font-size:170px;color:var(--teal)" data-at="14.4" data-fx="slam">Sim.</div>
+      <div class="x" style="font-size:110px" data-at="15.4" data-fx="left">Crédito na folha?</div>
+      <div class="x" style="font-size:170px;color:var(--red)" data-at="16.2" data-fx="slam">Não.</div>
+    </div>
+  </section>
+
+  <section class="scene brand" data-start="18" data-end="21.4">
+    <div class="x" style="font-size:230px" data-at="18.15" data-fx="slam">Sua margem<br>aguenta?</div>
+  </section>
+
+  <section class="scene dark" data-start="21.4" data-end="27">
+    <div class="x" style="font-size:104px;text-transform:none" data-at="21.6">O Grupo Gestor <span class="hl">faz a conta</span> com você.</div>
+    <div class="cards">
+      <div class="card" data-at="22.7" data-fx="pop"><b>1</b>Simulação da nova carga</div>
+      <div class="card" data-at="23.5" data-fx="pop"><b>2</b>Revisão de preços e contratos</div>
+      <div class="card" data-at="24.3" data-fx="pop"><b>3</b>Regime tributário ideal</div>
+    </div>
+  </section>
+
+  <section class="scene dark" id="s7" data-start="27" data-end="34">
+    <img class="ph" src="../reforma-tributaria/img/jefferson-retrato.jpg" alt="Jefferson" data-at="27.2" data-fx="left">
+    <div>
+      <div class="logo" data-at="27.5" data-fx="pop"><img src="../../assets/img/logo-full.png" alt="Grupo Gestor"></div>
+      <div class="x" style="font-size:112px;text-transform:none;margin-top:34px" data-at="28">Fale com um<br><span class="hl">especialista.</span></div>
+      <div class="cta-row">
+        <div class="cta" data-at="29" data-fx="pop">gestorcerto.com.br</div>
+        <div class="cta ghost" data-at="29.4" data-fx="pop">WhatsApp (11) 91404-0532</div>
+      </div>
+      <p class="fine" data-at="30.2" data-fx="fade">Conteúdo informativo, com base na EC 132/2023 e na LC 214/2025. Alíquotas de referência são estimativas e podem mudar.</p>
+    </div>
+  </section>
+  <div id="flash"></div>
+</div>
+<script>
+(function () {
+  var DURATION = 34;
+  var scenes = [].slice.call(document.querySelectorAll('.scene'));
+  var items = [].slice.call(document.querySelectorAll('[data-at]'));
+  var counts = [].slice.call(document.querySelectorAll('[data-count]'));
+  var flash = document.getElementById('flash');
+  function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function ease(p) { return 1 - Math.pow(1 - p, 3); }
+  function back(p) { var c = 2.2; return 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); }
+  function render(t) {
+    var f = 0;
+    scenes.forEach(function (s) {
+      var a = +s.dataset.start, b = +s.dataset.end, on = t >= a && t < b;
+      s.style.visibility = on ? 'visible' : 'hidden'; s.style.opacity = on ? 1 : 0;
+      if (on) s.style.transform = 'scale(' + (1 + 0.035 * (t - a) / (b - a)) + ')';
+      if (a > 0 && t >= a) f = Math.max(f, 1 - (t - a) / 0.22);
+    });
+    flash.style.opacity = clamp(f) * 0.85;
+    items.forEach(function (el) {
+      var fx = el.dataset.fx || 'up', raw = clamp((t - +el.dataset.at) / (+el.dataset.dur || (fx === 'slam' ? 0.28 : 0.45))), p = ease(raw), tr = '';
+      if (fx === 'up') tr = 'translateY(' + (1 - p) * 50 + 'px)';
+      else if (fx === 'left') tr = 'translateX(' + (p - 1) * 120 + 'px)';
+      else if (fx === 'slam') tr = 'scale(' + (2.2 - 1.2 * p) + ')';
+      else if (fx === 'pop') tr = 'scale(' + (raw <= 0 ? 0 : back(raw)) + ')';
+      else if (fx === 'growx') tr = 'scaleX(' + p + ')';
+      el.style.opacity = fx === 'growx' ? (p > 0 ? 1 : 0) : clamp(raw * 3);
+      el.style.transform = tr;
+    });
+    counts.forEach(function (el) {
+      var c = el.dataset.count.split(',').map(Number), p = ease(clamp((t - c[2]) / (c[3] - c[2])));
+      var v = c[0] + (c[1] - c[0]) * p;
+      el.textContent = (p >= 1 ? String(c[1]) : v.toFixed(c[4])).replace('.', ',');
+    });
+  }
+  window.VIDEO = { duration: DURATION, render: render };
+  if (location.search.indexOf('render') === -1) {
+    var stage = document.getElementById('stage');
+    var fit = function () { stage.style.transform = 'scale(' + Math.min(innerWidth / 1920, innerHeight / 1080) + ')'; };
+    fit(); addEventListener('resize', fit);
+    var t0 = performance.now();
+    (function loop() { render(((performance.now() - t0) / 1000) % DURATION); requestAnimationFrame(loop); })();
+  } else { render(0); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Reforma Tributária — desenho animado</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --teal:#14B8A6; --teal-l:#2DD4BF; --blue:#2563EB; --navy:#0B2A6B; --ink:#0F172A; --amber:#FBBF24; --red:#EF4444;
+    --grad: linear-gradient(120deg,#2DD4BF 0%,#14B8A6 35%,#2563EB 100%); }
+  *,*::before,*::after { box-sizing:border-box; margin:0; }
+  html,body { background:#000; overflow:hidden; }
+  body { font-family:'Inter',system-ui,Arial,sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; }
+  #stage { position:absolute; left:0; top:0; width:1920px; height:1080px; overflow:hidden; transform-origin:0 0;
+    background:linear-gradient(180deg,#BFE7FF 0%,#E6F6FF 62%,#F4FBFF 100%); }
+  .abs { position:absolute; }
+  .sun { left:1560px; top:90px; width:170px; height:170px; border-radius:50%; background:#FFD86B; box-shadow:0 0 0 26px rgba(255,216,107,.35), 0 0 0 60px rgba(255,216,107,.18); }
+  .cloud { height:64px; border-radius:40px; background:#fff; opacity:.95; }
+  .cloud::before, .cloud::after { content:''; position:absolute; background:#fff; border-radius:50%; }
+  .cloud::before { width:90px; height:90px; left:36px; top:-44px; }
+  .cloud::after { width:70px; height:70px; left:110px; top:-28px; }
+  .ground { left:0; right:0; top:800px; bottom:0; background:#7ED6A5; }
+  .ground::before { content:''; position:absolute; left:0; right:0; top:0; height:22px; background:#5FC58E; }
+  .scene { position:absolute; inset:0; opacity:0; visibility:hidden; }
+  .scene.in .ground { background:#D9C7A8; }
+  .scene.in .ground::before { background:#C7B28E; }
+  .wall { left:0; right:0; top:0; height:800px; background:linear-gradient(180deg,#EAF2FE,#F6F9FC); }
+
+  .char { position:absolute; width:240px; height:480px; }
+  .char svg { display:block; width:100%; height:100%; overflow:visible; }
+  .char .pivot { transform-box:fill-box; transform-origin:50% 8%; }
+  .char .eye { transform-box:fill-box; transform-origin:50% 50%; }
+
+  .bld { background:#fff; border:8px solid var(--navy); border-radius:26px 26px 0 0; }
+  .bld .sign { position:absolute; left:40px; right:40px; top:34px; padding:16px 10px; border-radius:16px; background:var(--navy); color:#fff; font-size:38px; font-weight:800; text-align:center; }
+  .bld .win { position:absolute; top:150px; width:150px; height:150px; border-radius:16px; background:#BFE7FF; border:8px solid var(--navy); }
+  .bld .door { position:absolute; bottom:0; left:50%; margin-left:-70px; width:140px; height:240px; border-radius:16px 16px 0 0; background:var(--teal); border:8px solid var(--navy); border-bottom:0; }
+  .tree { width:150px; height:190px; border-radius:50%; background:#3FB57B; }
+  .tree::after { content:''; position:absolute; left:62px; top:170px; width:26px; height:110px; background:#8B5E3C; border-radius:8px; }
+
+  .coin { display:flex; align-items:center; justify-content:center; border-radius:50%; font-weight:900; color:#fff; border:8px solid rgba(0,0,0,.14); box-shadow:0 12px 0 rgba(0,0,0,.12); }
+  .coin.old { width:170px; height:170px; font-size:46px; background:#94A3B8; }
+  .coin.new { width:250px; height:250px; font-size:84px; background:var(--grad); }
+  .news { left:560px; top:70px; width:800px; padding:34px 40px; border-radius:26px; background:#fff; border:8px solid var(--navy); box-shadow:0 18px 0 rgba(11,42,107,.18); text-align:center; }
+  .news small { display:block; font-size:28px; font-weight:800; letter-spacing:.16em; color:var(--red); text-transform:uppercase; }
+  .news b { display:block; font-size:78px; font-weight:900; letter-spacing:-.02em; color:var(--navy); line-height:1.05; margin-top:8px; }
+  .bubble { width:110px; height:110px; border-radius:50%; background:#fff; border:8px solid var(--navy); font-size:70px; font-weight:900; color:var(--red); display:flex; align-items:center; justify-content:center; }
+
+  .road { left:-40px; right:-40px; top:770px; height:120px; background:#475569; }
+  .road::after { content:''; position:absolute; left:0; right:0; top:54px; height:12px; background:repeating-linear-gradient(90deg,#fff 0 70px,transparent 70px 140px); }
+  .post { width:330px; text-align:center; }
+  .post .plate { padding:18px 12px; border-radius:20px; background:#fff; border:8px solid var(--navy); }
+  .post .plate b { display:block; font-size:62px; font-weight:900; color:var(--navy); letter-spacing:-.02em; line-height:1; }
+  .post .plate span { display:block; font-size:28px; font-weight:700; color:#334155; margin-top:8px; line-height:1.2; }
+  .post .pole { width:18px; height:200px; margin:0 auto; background:var(--navy); }
+  .post.last .plate { background:var(--grad); border-color:var(--navy); }
+  .post.last .plate b, .post.last .plate span { color:#fff; }
+
+  .scale-base { left:470px; top:330px; width:28px; height:470px; background:var(--navy); border-radius:10px; }
+  .scale-foot { left:374px; top:776px; width:220px; height:30px; background:var(--navy); border-radius:14px; }
+  .beam { left:124px; top:318px; width:720px; height:24px; background:var(--navy); border-radius:12px; transform-origin:50% 50%; }
+  .pan { position:absolute; top:24px; width:300px; text-align:center; transform-origin:50% 0; }
+  .pan .rope { width:8px; height:70px; margin:0 auto; background:var(--navy); }
+  .pan .box { border-radius:22px; padding:20px 14px; font-weight:900; color:#fff; border:8px solid var(--navy); }
+  .pan .box b { display:block; font-size:54px; line-height:1; letter-spacing:-.02em; }
+  .pan .box span { display:block; font-size:27px; font-weight:800; margin-top:8px; line-height:1.15; }
+  .tagbox { padding:18px 26px; border-radius:20px; background:#fff; border:8px solid var(--red); font-size:36px; font-weight:900; color:var(--red); text-align:center; line-height:1.15; }
+
+  .board { left:1090px; top:150px; width:700px; padding:34px 38px; border-radius:26px; background:#fff; border:10px solid var(--navy); box-shadow:0 18px 0 rgba(11,42,107,.16); }
+  .board h4 { font-size:34px; font-weight:900; color:var(--navy); letter-spacing:.1em; text-transform:uppercase; }
+  .board .it { display:flex; align-items:center; gap:22px; margin-top:24px; font-size:42px; font-weight:800; color:var(--ink); line-height:1.15; }
+  .board .it i { flex:none; width:60px; height:60px; border-radius:50%; background:var(--teal); color:#fff; font-style:normal; font-size:38px; display:flex; align-items:center; justify-content:center; }
+  .bulb { width:120px; height:120px; border-radius:50%; background:#FFD86B; border:8px solid var(--navy); font-size:64px; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 22px rgba(255,216,107,.4); }
+  .desk { left:520px; top:640px; width:520px; height:26px; background:#8B5E3C; border-radius:10px; }
+  .desk::before, .desk::after { content:''; position:absolute; top:26px; width:22px; height:140px; background:#8B5E3C; }
+  .desk::before { left:40px; } .desk::after { right:40px; }
+
+  .gbar { bottom:0; width:120px; border-radius:20px 20px 0 0; background:var(--grad); transform-origin:50% 100%; border:8px solid var(--navy); border-bottom:0; }
+  .end-card { left:1010px; top:120px; width:840px; }
+  .gz { position:absolute; height:530px; transform-origin:50% 100%; }
+  .nametag { padding:12px 26px; border-radius:999px; background:var(--navy); color:#fff; font-size:34px; font-weight:800; }
+  .logo { display:inline-block; background:#fff; border-radius:26px; padding:20px 34px; border:8px solid var(--navy); }
+  .logo img { display:block; height:140px; }
+  .end-card h2 { font-size:92px; font-weight:900; letter-spacing:-.03em; line-height:1.03; color:var(--navy); margin-top:30px; }
+  .end-card h2 span { color:var(--teal); }
+  .cta { display:inline-block; margin-top:26px; margin-right:16px; font-size:40px; font-weight:800; padding:20px 38px; border-radius:999px; background:var(--grad); color:#fff; border:6px solid var(--navy); }
+  .cta.ghost { background:#fff; color:var(--navy); }
+
+  .cap { position:absolute; left:140px; right:140px; bottom:44px; padding:26px 44px; border-radius:30px; background:#fff; border:8px solid var(--navy);
+    box-shadow:0 14px 0 rgba(11,42,107,.2); font-size:46px; font-weight:700; line-height:1.25; text-align:center; color:var(--ink); opacity:0; }
+  .cap b { color:var(--blue); font-weight:900; }
+  .fine { position:absolute; left:0; right:0; bottom:26px; text-align:center; font-size:22px; font-weight:600; color:#475569; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="abs sun"></div>
+  <div class="abs cloud" style="left:180px;top:140px;width:230px" data-drift="18"></div>
+  <div class="abs cloud" style="left:980px;top:230px;width:200px" data-drift="-12"></div>
+
+  <!-- CENA 1 — A Ana -->
+  <section class="scene" data-start="0" data-end="9.5">
+    <div class="abs ground"></div>
+    <div class="abs tree" style="left:120px;top:540px"></div>
+    <div class="abs tree" style="left:1640px;top:560px"></div>
+    <div class="abs bld" style="left:330px;top:300px;width:520px;height:500px"><div class="sign">Estúdio da Ana</div><div class="win" style="left:40px"></div><div class="win" style="right:40px"></div><div class="door"></div></div>
+    <div class="char" style="left:960px;top:346px" data-who="ana" data-mouth="smile" data-wave="1.2,4.6" data-at="0.4" data-fx="pop"></div>
+    <div class="abs coin old" style="left:1250px;top:250px" data-at="5.4" data-fx="pop"><span data-bob="10,2.1">ISS</span></div>
+    <div class="abs coin old" style="left:1440px;top:170px" data-at="5.9" data-fx="pop"><span data-bob="10,2.4">PIS</span></div>
+    <div class="abs coin old" style="left:1630px;top:270px" data-at="6.4" data-fx="pop"><span data-bob="10,1.9">Cofins</span></div>
+    <div class="cap" data-cap="0.8,4.9">Esta é a <b>Ana</b>. Ela tem um estúdio de design e vive de prestar serviço.</div>
+    <div class="cap" data-cap="5.1,9.5">Todo mês, ela paga <b>ISS, PIS e Cofins</b> sobre o que fatura.</div>
+  </section>
+
+  <!-- CENA 2 — Chega a reforma -->
+  <section class="scene" data-start="9.5" data-end="20">
+    <div class="abs ground"></div>
+    <div class="abs tree" style="left:120px;top:540px"></div>
+    <div class="abs news" data-at="9.8" data-fx="drop"><small>Notícia</small><b>Reforma Tributária</b></div>
+    <div class="char" style="left:300px;top:346px" data-who="ana" data-mouth="o" data-at="9.5" data-fx="none"></div>
+    <div class="abs bubble" style="left:500px;top:300px" data-at="10.8" data-fx="pop">?</div>
+    <div class="abs" data-move="0,0,150,60,13.6,14.6" style="left:800px;top:470px"><div class="coin old" data-out="14.6">ISS</div></div>
+    <div class="abs" data-move="0,0,0,60,13.6,14.6" style="left:1090px;top:470px"><div class="coin old" data-out="14.6">PIS</div></div>
+    <div class="abs" data-move="0,0,-150,60,13.6,14.6" style="left:1380px;top:470px"><div class="coin old" data-out="14.6">Cofins</div></div>
+    <div class="abs coin new" style="left:880px;top:430px" data-at="14.8" data-fx="pop">IBS</div>
+    <div class="abs coin new" style="left:1210px;top:430px" data-at="15.2" data-fx="pop">CBS</div>
+    <div class="cap" data-cap="9.9,13.4">Até que chegou a <b>reforma tributária</b>.</div>
+    <div class="cap" data-cap="13.6,20">Os tributos que a Ana conhecia dão lugar a dois novos: o <b>IBS</b> e a <b>CBS</b>.</div>
+  </section>
+
+  <!-- CENA 3 — A estrada da transição -->
+  <section class="scene" data-start="20" data-end="31">
+    <div class="abs ground"></div>
+    <div class="abs road"></div>
+    <div class="abs post" style="left:90px;top:330px" data-at="20.6" data-fx="pop"><div class="plate"><b>2026</b><span>Ano de teste</span></div><div class="pole"></div></div>
+    <div class="abs post" style="left:550px;top:330px" data-at="22.4" data-fx="pop"><div class="plate"><b>2027</b><span>A CBS entra de vez</span></div><div class="pole"></div></div>
+    <div class="abs post" style="left:1010px;top:330px" data-at="24.6" data-fx="pop"><div class="plate"><b>2029–32</b><span>O ISS vai saindo</span></div><div class="pole"></div></div>
+    <div class="abs post last" style="left:1470px;top:330px" data-at="26.8" data-fx="pop"><div class="plate"><b>2033</b><span>Modelo novo completo</span></div><div class="pole"></div></div>
+    <div class="abs" data-move="-40,0,1560,0,20.8,29.4,lin"><div class="char" style="left:0;top:330px" data-who="ana" data-mouth="smile" data-walk="20.8,29.4"></div></div>
+    <div class="cap" data-cap="20.5,31">A mudança vem aos poucos: começa em <b>2026</b> e só termina em <b>2033</b>.</div>
+  </section>
+
+  <!-- CENA 4 — A balança -->
+  <section class="scene" data-start="31" data-end="43.5">
+    <div class="abs ground"></div>
+    <div class="abs scale-base"></div><div class="abs scale-foot"></div>
+    <div class="abs beam" data-tilt="-9,32.4,34.2">
+      <div class="pan" style="left:-90px" data-untilt="-9,32.4,34.2"><div class="rope"></div><div class="box" style="background:var(--red)"><b>até 28%</b><span>Alíquota padrão estimada</span></div></div>
+      <div class="pan" style="left:510px" data-untilt="-9,32.4,34.2"><div class="rope"></div><div class="box" style="background:var(--teal)"><b>Créditos</b><span>do que ela compra</span></div></div>
+    </div>
+    <div class="char" style="left:1010px;top:346px" data-who="ana" data-mouth="sad" data-at="31" data-fx="none"></div>
+    <div class="char" style="left:1290px;top:476px;width:175px;height:350px" data-who="team1" data-mouth="smile" data-at="37" data-fx="pop"></div>
+    <div class="char" style="left:1460px;top:476px;width:175px;height:350px" data-who="team2" data-mouth="smile" data-at="37.4" data-fx="pop"></div>
+    <div class="char" style="left:1630px;top:476px;width:175px;height:350px" data-who="team3" data-mouth="smile" data-at="37.8" data-fx="pop"></div>
+    <div class="abs tagbox" style="left:1270px;top:300px;width:560px" data-at="39" data-fx="pop">Folha de pagamento<br>não gera crédito</div>
+    <div class="cap" data-cap="31.4,36.6">A alíquota nova é bem maior. Em troca, a Ana desconta <b>créditos</b> do que compra.</div>
+    <div class="cap" data-cap="36.8,43.5">Só que o maior custo dela é a <b>equipe</b>. E folha de pagamento não gera crédito.</div>
+  </section>
+
+  <!-- CENA 5 — O contador -->
+  <section class="scene in" data-start="43.5" data-end="55.5">
+    <div class="abs wall"></div><div class="abs ground"></div>
+    <div class="abs board">
+      <h4>Plano da Ana</h4>
+      <div class="it" data-at="47.6" data-fx="right"><i>✓</i>Simular a nova carga</div>
+      <div class="it" data-at="49.2" data-fx="right"><i>✓</i>Rever preços e contratos</div>
+      <div class="it" data-at="50.8" data-fx="right"><i>✓</i>Escolher o melhor regime</div>
+    </div>
+    <div class="char" style="left:760px;top:346px" data-who="ana" data-mouth="smile" data-at="43.5" data-fx="none"></div>
+    <div class="abs bulb" style="left:820px;top:200px" data-at="52" data-fx="pop">💡</div>
+    <div class="abs" data-move="-320,0,430,0,43.9,46.2,lin"><img class="gz" style="left:0;top:318px" src="gestorzinho.png" alt="Gestorzinho" data-hop="43.9,46.2,26,0.42"></div>
+    <div class="abs nametag" style="left:420px;top:240px" data-at="46.5" data-fx="pop">Gestorzinho</div>
+    <div class="cap" data-cap="44,48.8">Foi aí que a Ana chamou o <b>Gestorzinho</b>, contador do Grupo Gestor.</div>
+    <div class="cap" data-cap="49,55.5">Juntos, eles simularam a carga, revisaram os preços e escolheram o melhor regime.</div>
+  </section>
+
+  <!-- CENA 6 — Final -->
+  <section class="scene" data-start="55.5" data-end="65">
+    <div class="abs ground"></div>
+    <div class="abs" style="left:40px;top:440px;width:300px;height:360px">
+      <div class="abs gbar" style="left:0;height:38%" data-at="56.2" data-fx="growy"></div>
+      <div class="abs gbar" style="left:150px;height:66%" data-at="56.6" data-fx="growy"></div>
+      <div class="abs gbar" style="left:300px;height:100%" data-at="57" data-fx="growy"></div>
+    </div>
+    <div class="char" style="left:440px;top:346px" data-who="ana" data-mouth="smile" data-cheer="56,65"></div>
+    <img class="gz" style="left:690px;top:318px" src="gestorzinho.png" alt="Gestorzinho" data-hop="56,65,14,0.9">
+    <div class="abs end-card">
+      <div class="logo" data-at="56.6" data-fx="pop"><img src="../../assets/img/logo-full.png" alt="Grupo Gestor"></div>
+      <h2 data-at="57.4" data-fx="up">Quer fazer<br>como a <span>Ana</span>?</h2>
+      <div><span class="cta" data-at="58.6" data-fx="pop">gestorcerto.com.br</span><span class="cta ghost" data-at="59" data-fx="pop">WhatsApp (11) 91404-0532</span></div>
+    </div>
+    <div class="fine" data-at="60" data-fx="fade">História ilustrativa. Conteúdo informativo, com base na EC 132/2023 e na LC 214/2025. Alíquotas de referência são estimativas.</div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var DURATION = 65;
+  var WHO = {
+    ana:      { skin:'#F2C3A0', hair:'#5B3A29', style:'long',  shirt:'#F59E0B', pants:'#1E3A8A' },
+    contador: { skin:'#D9A47E', hair:'#9CA3AF', style:'short', shirt:'#111827', pants:'#475569', beard:'#9CA3AF', badge:true },
+    team1:    { skin:'#C68E6B', hair:'#111827', style:'short', shirt:'#2563EB', pants:'#334155' },
+    team2:    { skin:'#F2C3A0', hair:'#B45309', style:'long',  shirt:'#14B8A6', pants:'#334155' },
+    team3:    { skin:'#8D5B3F', hair:'#111827', style:'short', shirt:'#DB2777', pants:'#334155' }
+  };
+  function person(o, mouth) {
+    var hair = o.style === 'long'
+      ? '<path d="M44 104 Q36 26 100 30 Q164 26 156 104 L158 168 Q142 136 142 88 Q100 58 58 88 Q58 136 42 168 Z" fill="' + o.hair + '"/>'
+      : '<path d="M50 84 Q52 40 100 38 Q148 40 150 84 Q132 60 100 60 Q68 60 50 84Z" fill="' + o.hair + '"/>';
+    var m = mouth === 'o' ? '<circle cx="100" cy="122" r="9" fill="#7C2D12"/>'
+      : mouth === 'sad' ? '<path d="M84 128 Q100 114 116 128" fill="none" stroke="#7C2D12" stroke-width="6" stroke-linecap="round"/>'
+      : '<path d="M82 116 Q100 134 118 116" fill="none" stroke="#7C2D12" stroke-width="6" stroke-linecap="round"/>';
+    return '<svg viewBox="0 0 200 400">' +
+      '<ellipse cx="100" cy="392" rx="70" ry="8" fill="rgba(0,0,0,.12)"/>' +
+      '<g class="pivot legL"><rect x="68" y="262" width="28" height="112" rx="12" fill="' + o.pants + '"/><ellipse cx="80" cy="378" rx="22" ry="11" fill="#111827"/></g>' +
+      '<g class="pivot legR"><rect x="104" y="262" width="28" height="112" rx="12" fill="' + o.pants + '"/><ellipse cx="120" cy="378" rx="22" ry="11" fill="#111827"/></g>' +
+      '<g class="pivot armL"><rect x="32" y="154" width="26" height="104" rx="13" fill="' + o.shirt + '"/><circle cx="45" cy="262" r="15" fill="' + o.skin + '"/></g>' +
+      '<rect x="52" y="146" width="96" height="140" rx="30" fill="' + o.shirt + '"/>' +
+      (o.badge ? '<circle cx="122" cy="186" r="11" fill="#2DD4BF"/>' : '') +
+      '<g class="pivot armR"><rect x="142" y="154" width="26" height="104" rx="13" fill="' + o.shirt + '"/><circle cx="155" cy="262" r="15" fill="' + o.skin + '"/></g>' +
+      '<rect x="88" y="128" width="24" height="28" fill="' + o.skin + '"/>' +
+      '<circle cx="100" cy="92" r="54" fill="' + o.skin + '"/>' + hair +
+      (o.beard ? '<path d="M52 102 Q56 150 100 152 Q144 150 148 102 Q134 126 100 126 Q66 126 52 102Z" fill="' + o.beard + '"/>' : '') +
+      '<circle class="eye" cx="81" cy="92" r="7" fill="#1F2937"/><circle class="eye" cx="119" cy="92" r="7" fill="#1F2937"/>' +
+      '<circle cx="66" cy="108" r="9" fill="#F9A8A8" opacity=".55"/><circle cx="134" cy="108" r="9" fill="#F9A8A8" opacity=".55"/>' + m + '</svg>';
+  }
+  var chars = [].slice.call(document.querySelectorAll('.char'));
+  chars.forEach(function (c, i) {
+    c.innerHTML = person(WHO[c.dataset.who], c.dataset.mouth);
+    c._i = i; c._q = function (s) { return c.querySelector(s); };
+    c._walk = (c.dataset.walk || '').split(',').map(Number); c._wave = (c.dataset.wave || '').split(',').map(Number); c._cheer = (c.dataset.cheer || '').split(',').map(Number);
+  });
+
+  var scenes = [].slice.call(document.querySelectorAll('.scene'));
+  var items = [].slice.call(document.querySelectorAll('[data-at]'));
+  var caps = [].slice.call(document.querySelectorAll('[data-cap]'));
+  var moves = [].slice.call(document.querySelectorAll('[data-move]'));
+  var bobs = [].slice.call(document.querySelectorAll('[data-bob]'));
+  var drifts = [].slice.call(document.querySelectorAll('[data-drift]'));
+  var hops = [].slice.call(document.querySelectorAll('[data-hop]'));
+  var outs = [].slice.call(document.querySelectorAll('[data-out]'));
+  var tilts = [].slice.call(document.querySelectorAll('[data-tilt],[data-untilt]'));
+  function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function ease(p) { return 1 - Math.pow(1 - p, 3); }
+  function io(p) { return p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; }
+  function back(p) { var c = 1.9; return 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); }
+  function within(a, t) { return a.length === 2 && t >= a[0] && t <= a[1]; }
+
+  function render(t) {
+    scenes.forEach(function (s) {
+      var a = +s.dataset.start, b = +s.dataset.end, on = t >= a && t < b;
+      var o = on ? Math.min(clamp((t - a) / 0.4), b >= DURATION ? 1 : clamp((b - t) / 0.35)) : 0;
+      s.style.visibility = on ? 'visible' : 'hidden'; s.style.opacity = o;
+    });
+    items.forEach(function (el) {
+      var fx = el.dataset.fx || 'up'; if (fx === 'none') return;
+      var raw = clamp((t - +el.dataset.at) / (+el.dataset.dur || 0.55)), p = ease(raw), tr = '';
+      if (fx === 'up') tr = 'translateY(' + (1 - p) * 40 + 'px)';
+      else if (fx === 'right') tr = 'translateX(' + (1 - p) * 70 + 'px)';
+      else if (fx === 'drop') tr = 'translateY(' + (raw <= 0 ? -400 : (back(raw) - 1) * 400) + 'px)';
+      else if (fx === 'pop') tr = 'scale(' + (raw <= 0 ? 0 : back(raw)) + ')';
+      else if (fx === 'growy') tr = 'scaleY(' + p + ')';
+      el.style.opacity = (fx === 'growy' || fx === 'drop') ? (raw > 0 ? 1 : 0) : clamp(raw * 3);
+      el.style.transform = tr;
+    });
+    caps.forEach(function (el) {
+      var c = el.dataset.cap.split(',').map(Number);
+      var o = Math.min(clamp((t - c[0]) / 0.35), clamp((c[1] - t) / 0.25));
+      el.style.opacity = o; el.style.transform = 'translateY(' + (1 - ease(clamp((t - c[0]) / 0.35))) * 30 + 'px)';
+    });
+    moves.forEach(function (el) {
+      var m = el.dataset.move.split(','), p = clamp((t - m[4]) / (m[5] - m[4])); if (m[6] !== 'lin') p = io(p);
+      el.style.transform = 'translate(' + (+m[0] + (m[2] - m[0]) * p) + 'px,' + (+m[1] + (m[3] - m[1]) * p) + 'px)';
+    });
+    bobs.forEach(function (el) { var b = el.dataset.bob.split(','); el.style.display = 'inline-block'; el.style.transform = 'translateY(' + Math.sin(t * 6.283 / b[1]) * b[0] + 'px)'; });
+    drifts.forEach(function (el) { el.style.transform = 'translateX(' + t * el.dataset.drift + 'px)'; });
+    hops.forEach(function (el) {
+      var h = el.dataset.hop.split(',').map(Number), on = t >= h[0] && t <= h[1];
+      var y = on ? -Math.abs(Math.sin((t - h[0]) * 3.1416 / h[3])) * h[2] : 0, r = on ? Math.sin((t - h[0]) * 6.283 / (h[3] * 2)) * 3 : Math.sin(t * 1.6) * 0.8;
+      el.style.transform = 'translateY(' + y + 'px) rotate(' + r + 'deg)';
+    });
+    outs.forEach(function (el) { var p = clamp((t - el.dataset.out) / 0.3); el.style.opacity = 1 - p; el.style.transform = 'scale(' + (1 - 0.5 * p) + ')'; });
+    tilts.forEach(function (el) {
+      var d = (el.dataset.tilt || el.dataset.untilt).split(',').map(Number), p = io(clamp((t - d[1]) / (d[2] - d[1])));
+      var ang = d[0] * p + (p >= 1 ? Math.sin((t - d[2]) * 2.2) * 0.8 : 0);
+      el.style.transform = 'rotate(' + (el.dataset.tilt ? ang : -ang) + 'deg)';
+    });
+    chars.forEach(function (c) {
+      var ph = t * 6.283, walking = within(c._walk, t), waving = within(c._wave, t), cheering = within(c._cheer, t);
+      var blink = ((t + c._i * 0.7) % 3.4) < 0.13;
+      [].forEach.call(c.querySelectorAll('.eye'), function (e) { e.style.transform = 'scaleY(' + (blink ? 0.12 : 1) + ')'; });
+      var sw = walking ? Math.sin(ph * 1.5) * 24 : 0;
+      c._q('.legL').style.transform = 'rotate(' + sw + 'deg)'; c._q('.legR').style.transform = 'rotate(' + (-sw) + 'deg)';
+      var aL = walking ? -sw : Math.sin(ph / 3 + c._i) * 3, aR = walking ? sw : -Math.sin(ph / 3 + c._i) * 3;
+      if (waving) aR = -150 + Math.sin(ph * 1.4) * 16;
+      if (cheering) { aR = -155 + Math.sin(ph * 1.2) * 10; aL = 155 - Math.sin(ph * 1.2) * 10; }
+      c._q('.armL').style.transform = 'rotate(' + aL + 'deg)'; c._q('.armR').style.transform = 'rotate(' + aR + 'deg)';
+      var bob = walking ? Math.abs(Math.sin(ph * 1.5)) * -10 : cheering ? Math.abs(Math.sin(ph * 1.2)) * -26 : Math.sin(ph / 2.6 + c._i) * 3;
+      c.querySelector('svg').style.transform = 'translateY(' + bob + 'px)';
+    });
+  }
+  window.VIDEO = { duration: DURATION, render: render };
+  if (location.search.indexOf('render') === -1) {
+    var stage = document.getElementById('stage');
+    var fit = function () { stage.style.transform = 'scale(' + Math.min(innerWidth / 1920, innerHeight / 1080) + ')'; };
+    fit(); addEventListener('resize', fit);
+    var t0 = performance.now() - (parseFloat(new URLSearchParams(location.search).get('t')) || 0) * 1000;
+    (function loop() { render(((performance.now() - t0) / 1000) % DURATION); requestAnimationFrame(loop); })();
+  } else { render(0); }
+})();
+</script>
+</body>
+</html>
