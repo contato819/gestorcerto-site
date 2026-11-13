@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>2026 em dia — apresentação</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --teal:#2DD4BF; --teal2:#14B8A6; --blue:#2563EB; --navy:#0B2A6B; --ink:#0F172A; --muted:#64748B; --line:#E2E8F0; --green:#16A34A; --amber:#F59E0B;
+    --grad:linear-gradient(120deg,#2DD4BF 0%,#14B8A6 35%,#2563EB 100%); }
+  *,*::before,*::after { box-sizing:border-box; margin:0; }
+  html,body { background:#000; overflow:hidden; }
+  body { font-family:'Inter',system-ui,Arial,sans-serif; color:#fff; -webkit-font-smoothing:antialiased; }
+  #stage { position:absolute; left:0; top:0; width:1920px; height:1080px; overflow:hidden; transform-origin:0 0;
+    background:linear-gradient(150deg,#071B47 0%,#0B2A6B 42%,#0E3A7A 72%,#0C5F63 118%); }
+  .blob { position:absolute; border-radius:50%; filter:blur(90px); opacity:.45; }
+  #blob1 { width:760px; height:760px; background:#14B8A6; left:-240px; top:560px; }
+  #blob2 { width:680px; height:680px; background:#2563EB; left:1440px; top:-280px; }
+  .scene { position:absolute; inset:0; padding:90px 120px 130px; opacity:0; visibility:hidden; display:flex; flex-direction:column; justify-content:center; }
+  .mid { align-items:center; text-align:center; }
+  .hl { background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .kicker { align-self:flex-start; font-size:26px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); padding:10px 22px; border:2px solid rgba(45,212,191,.45); border-radius:999px; background:rgba(45,212,191,.08); }
+  .mid .kicker { align-self:center; }
+  h1 { font-size:200px; font-weight:900; letter-spacing:-.04em; line-height:1; }
+  h2 { font-size:76px; font-weight:800; letter-spacing:-.025em; line-height:1.08; margin-top:24px; }
+  .sub { font-size:42px; font-weight:500; line-height:1.35; color:#C7D7F2; margin-top:22px; }
+  .three { display:grid; grid-template-columns:repeat(3,1fr); gap:34px; margin-top:54px; }
+  .tile { background:rgba(255,255,255,.08); border:1.5px solid rgba(255,255,255,.18); border-radius:28px; padding:40px 34px; text-align:left; }
+  .tile .ic { width:86px; height:86px; border-radius:24px; background:var(--grad); display:flex; align-items:center; justify-content:center; font-size:44px; font-weight:900; }
+  .tile h3 { font-size:44px; font-weight:800; line-height:1.12; margin-top:24px; }
+  .tile p { font-size:30px; color:#C7D7F2; margin-top:12px; line-height:1.35; }
+
+  .split { display:grid; grid-template-columns:680px 1fr; gap:70px; align-items:center; }
+  .step { font-size:30px; font-weight:800; letter-spacing:.14em; color:var(--teal); text-transform:uppercase; }
+  .split h2 { font-size:74px; margin-top:16px; }
+  .split .sub { font-size:38px; }
+  .ui { background:#fff; color:var(--ink); border-radius:26px; padding:28px 30px; box-shadow:0 30px 70px rgba(0,0,0,.4); }
+  .ui .bar { display:flex; align-items:center; gap:10px; padding-bottom:18px; margin-bottom:6px; border-bottom:2px solid var(--line); font-size:24px; font-weight:800; color:var(--navy); }
+  .ui .bar i { width:14px; height:14px; border-radius:50%; background:#CBD5E1; }
+  .ui .bar span { margin-left:10px; }
+  .rowx { display:grid; align-items:center; gap:16px; padding:17px 6px; border-bottom:1.5px solid var(--line); font-size:28px; font-weight:600; }
+  .rowx:last-child { border-bottom:0; }
+  .rowx small { display:block; font-size:21px; font-weight:500; color:var(--muted); margin-top:2px; }
+  .rowx .v { font-weight:800; text-align:right; font-variant-numeric:tabular-nums; }
+  .badge { justify-self:end; font-size:21px; font-weight:800; padding:8px 16px; border-radius:999px; white-space:nowrap; }
+  .b-ok { background:#DCFCE7; color:#166534; } .b-auto { background:#E0F2FE; color:#075985; } .b-wait { background:#FEF3C7; color:#92400E; }
+  .flow { display:grid; grid-template-columns:1fr 90px 1fr; align-items:center; }
+  .flow .arrow { text-align:center; font-size:70px; font-weight:900; color:var(--teal); }
+  .doc h4 { font-size:22px; font-weight:800; letter-spacing:.12em; color:var(--muted); text-transform:uppercase; }
+  .doc b { display:block; font-size:38px; font-weight:800; color:var(--navy); margin-top:6px; }
+  .doc .ln { height:14px; border-radius:7px; background:#E2E8F0; margin-top:16px; }
+  .doc .tot { display:flex; justify-content:space-between; margin-top:22px; padding-top:16px; border-top:2px solid var(--line); font-size:28px; font-weight:800; }
+  .stamp { display:inline-block; margin-top:18px; font-size:24px; font-weight:800; padding:10px 18px; border-radius:12px; background:#DCFCE7; color:#166534; }
+  .kpis { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:14px; }
+  .kpi { background:#F6F9FC; border-radius:18px; padding:20px 18px; }
+  .kpi small { font-size:21px; font-weight:700; color:var(--muted); }
+  .kpi b { display:block; font-size:48px; font-weight:900; color:var(--navy); margin-top:4px; letter-spacing:-.02em; }
+  .chart { display:flex; align-items:flex-end; gap:14px; height:190px; margin-top:20px; padding:0 6px; }
+  .chart i { flex:1; border-radius:10px 10px 0 0; background:var(--grad); transform-origin:50% 100%; }
+  .ex { font-size:22px; color:#9FB4D9; margin-top:16px; }
+
+  .price { font-size:270px; font-weight:900; letter-spacing:-.04em; line-height:1; margin-top:10px; }
+  .price small { font-size:90px; font-weight:800; letter-spacing:0; margin-right:14px; vertical-align:top; position:relative; top:36px; }
+  .inc { display:flex; gap:20px; margin-top:36px; flex-wrap:wrap; justify-content:center; }
+  .inc div { font-size:34px; font-weight:700; padding:18px 30px; border-radius:999px; background:rgba(45,212,191,.14); border:1.5px solid rgba(45,212,191,.5); color:#CFFAF2; }
+  .logo { display:inline-block; background:#fff; border-radius:28px; padding:24px 40px; }
+  .logo img { display:block; height:190px; }
+  .cta-row { display:flex; gap:24px; margin-top:40px; justify-content:center; }
+  .cta { font-size:42px; font-weight:800; padding:24px 44px; border-radius:999px; background:var(--grad); }
+  .cta.ghost { background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.4); }
+  #foot { position:absolute; left:120px; right:120px; bottom:46px; display:flex; align-items:center; gap:26px; font-size:24px; color:#9FB4D9; font-weight:600; }
+  #foot img { height:54px; background:#fff; border-radius:10px; padding:5px 10px; }
+  #bar { flex:1; height:6px; border-radius:3px; background:rgba(255,255,255,.14); overflow:hidden; }
+  #bar i { display:block; height:100%; background:var(--grad); transform-origin:0 50%; transform:scaleX(0); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="blob" id="blob1"></div><div class="blob" id="blob2"></div>
+
+  <section class="scene mid" data-start="0" data-end="5.5">
+    <span class="kicker" data-at="0.3">Grupo Gestor</span>
+    <h1 data-at="0.7" data-fx="pop" style="margin-top:26px"><span class="hl">2026</span> em dia</h1>
+    <p class="sub" data-at="1.9">Notas, financeiro e contabilidade organizados, de forma simples e prática.</p>
+  </section>
+
+  <section class="scene" data-start="5.5" data-end="13">
+    <span class="kicker" data-at="5.8">O que colocamos em dia</span>
+    <h2 data-at="6.1">Três frentes, <span class="hl">um só lugar</span></h2>
+    <div class="three">
+      <div class="tile" data-at="7.0"><div class="ic">1</div><h3>Notas fiscais de 2026</h3><p>Emissão em dia, sem pendência.</p></div>
+      <div class="tile" data-at="8.0"><div class="ic">2</div><h3>Financeiro conciliado</h3><p>ERP Gestor e uma pessoa do nosso time cuidando dos seus dados.</p></div>
+      <div class="tile" data-at="9.0"><div class="ic">3</div><h3>Contabilidade completa</h3><p>Relatórios e índices na área do cliente.</p></div>
+    </div>
+  </section>
+
+  <section class="scene" data-start="13" data-end="21.5">
+    <div class="split">
+      <div>
+        <div class="step" data-at="13.3">Passo 1</div>
+        <h2 data-at="13.6">O orçamento <span class="hl">vira nota</span></h2>
+        <p class="sub" data-at="14.6">Aprovou o orçamento? A nota fiscal sai dele, sem digitar tudo de novo.</p>
+      </div>
+      <div class="flow">
+        <div class="ui doc" data-at="14.2" data-fx="left"><h4>Orçamento</h4><b>Nº 1042</b><div class="ln" style="width:90%"></div><div class="ln" style="width:70%"></div><div class="ln" style="width:80%"></div><div class="tot"><span>Total</span><span>R$ 2.450,00</span></div></div>
+        <div class="arrow" data-at="16.2" data-fx="pop">→</div>
+        <div class="ui doc" data-at="16.8" data-fx="right"><h4>Nota fiscal</h4><b>NF emitida</b><div class="ln" style="width:90%"></div><div class="ln" style="width:70%"></div><div class="ln" style="width:80%"></div><div class="tot"><span>Total</span><span>R$ 2.450,00</span></div><span class="stamp" data-at="17.8" data-fx="pop">✓ Autorizada</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" data-start="21.5" data-end="30">
+    <div class="split">
+      <div>
+        <div class="step" data-at="21.8">Passo 2</div>
+        <h2 data-at="22.1">As compras entram <span class="hl">sozinhas</span></h2>
+        <p class="sub" data-at="23.1">O sistema busca as notas de entrada de produtos e serviços e já lança no contas a pagar.</p>
+      </div>
+      <div class="ui" data-at="22.6" data-fx="right">
+        <div class="bar"><i></i><i></i><i></i><span>Contas a pagar</span></div>
+        <div class="rowx" style="grid-template-columns:1fr 190px 230px" data-at="24.0"><div>Fornecedor A<small>NF de produto</small></div><div class="v">R$ 1.280,00</div><span class="badge b-auto">Lançado automático</span></div>
+        <div class="rowx" style="grid-template-columns:1fr 190px 230px" data-at="24.9"><div>Fornecedor B<small>NF de serviço</small></div><div class="v">R$ 640,00</div><span class="badge b-auto">Lançado automático</span></div>
+        <div class="rowx" style="grid-template-columns:1fr 190px 230px" data-at="25.8"><div>Fornecedor C<small>NF de produto</small></div><div class="v">R$ 3.115,00</div><span class="badge b-auto">Lançado automático</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" data-start="30" data-end="39">
+    <div class="split">
+      <div>
+        <div class="step" data-at="30.3">Passo 3</div>
+        <h2 data-at="30.6">Banco integrado, <span class="hl">conciliação inteligente</span></h2>
+        <p class="sub" data-at="31.8">O sistema sugere pelo histórico. Uma pessoa do nosso time confere e valida.</p>
+      </div>
+      <div class="ui" data-at="31.2" data-fx="right">
+        <div class="bar"><i></i><i></i><i></i><span>Extrato bancário × lançamentos</span></div>
+        <div class="rowx" style="grid-template-columns:1fr 180px 250px" data-at="32.6"><div>PIX recebido<small>Sugestão: Cliente X, NF 318</small></div><div class="v" style="color:#16A34A">+ 2.450,00</div><span class="badge b-ok" data-at="35.2" data-fx="pop">✓ Validado</span></div>
+        <div class="rowx" style="grid-template-columns:1fr 180px 250px" data-at="33.4"><div>Boleto pago<small>Sugestão: Fornecedor A</small></div><div class="v">− 1.280,00</div><span class="badge b-ok" data-at="35.8" data-fx="pop">✓ Validado</span></div>
+        <div class="rowx" style="grid-template-columns:1fr 180px 250px" data-at="34.2"><div>Tarifa bancária<small>Sugestão: Despesas bancárias</small></div><div class="v">− 49,90</div><span class="badge b-wait" data-at="36.4" data-fx="pop">Em conferência</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" data-start="39" data-end="48">
+    <div class="split">
+      <div>
+        <div class="step" data-at="39.3">Passo 4</div>
+        <h2 data-at="39.6">Contabilidade em dia, <span class="hl">na sua tela</span></h2>
+        <p class="sub" data-at="40.8">Relatórios e índices de análise financeira na área do cliente.</p>
+        <p class="ex" data-at="43" data-fx="fade">Telas e valores ilustrativos.</p>
+      </div>
+      <div class="ui" data-at="40.2" data-fx="right">
+        <div class="bar"><i></i><i></i><i></i><span>Área do cliente</span></div>
+        <div class="kpis">
+          <div class="kpi" data-at="41.4" data-fx="pop"><small>Liquidez corrente</small><b>1,8</b></div>
+          <div class="kpi" data-at="41.8" data-fx="pop"><small>Margem líquida</small><b>14%</b></div>
+          <div class="kpi" data-at="42.2" data-fx="pop"><small>Endividamento</small><b>32%</b></div>
+        </div>
+        <div class="chart">
+          <i style="height:38%" data-at="42.8" data-fx="growy"></i><i style="height:52%" data-at="42.9" data-fx="growy"></i><i style="height:46%" data-at="43.0" data-fx="growy"></i><i style="height:64%" data-at="43.1" data-fx="growy"></i><i style="height:58%" data-at="43.2" data-fx="growy"></i><i style="height:76%" data-at="43.3" data-fx="growy"></i><i style="height:70%" data-at="43.4" data-fx="growy"></i><i style="height:92%" data-at="43.5" data-fx="growy"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene mid" data-start="48" data-end="57">
+    <span class="kicker" data-at="48.3">BPO financeiro</span>
+    <div class="price hl" data-at="48.8" data-fx="pop"><small>R$</small>300,00</div>
+    <div class="inc">
+      <div data-at="50.4">ERP Gestor</div>
+      <div data-at="50.9">Uma pessoa conciliando seus dados de 2026</div>
+      <div data-at="51.4">Conferência humana</div>
+    </div>
+  </section>
+
+  <section class="scene mid" data-start="57" data-end="66">
+    <div class="logo" data-at="57.3" data-fx="pop"><img src="../../assets/img/logo-full.png" alt="Grupo Gestor"></div>
+    <h2 data-at="58.1" style="font-size:96px;margin-top:40px">Vamos colocar seu <span class="hl">2026 em dia</span>?</h2>
+    <div class="cta-row"><div class="cta" data-at="59.4" data-fx="pop">gestorcerto.com.br</div><div class="cta ghost" data-at="59.8" data-fx="pop">WhatsApp (11) 91404-0532</div></div>
+  </section>
+
+  <div id="foot"><img src="../../assets/img/logo-full.png" alt=""><span>2026 em dia</span><div id="bar"><i></i></div></div>
+</div>
+<script>
+(function () {
+  var DURATION = 66;
+  var scenes = [].slice.call(document.querySelectorAll('.scene'));
+  var items = [].slice.call(document.querySelectorAll('[data-at]'));
+  var bar = document.querySelector('#bar i'), foot = document.getElementById('foot');
+  var blob1 = document.getElementById('blob1'), blob2 = document.getElementById('blob2');
+  function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function ease(p) { return 1 - Math.pow(1 - p, 3); }
+  function back(p) { var c = 1.7; return 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); }
+  function render(t) {
+    scenes.forEach(function (s) {
+      var a = +s.dataset.start, b = +s.dataset.end, on = t >= a && t < b;
+      s.style.visibility = on ? 'visible' : 'hidden';
+      s.style.opacity = on ? Math.min(clamp((t - a) / 0.45), b >= DURATION ? 1 : clamp((b - t) / 0.4)) : 0;
+    });
+    items.forEach(function (el) {
+      var fx = el.dataset.fx || 'up', raw = clamp((t - +el.dataset.at) / 0.6), p = ease(raw), tr = '';
+      if (fx === 'up') tr = 'translateY(' + (1 - p) * 40 + 'px)';
+      else if (fx === 'left') tr = 'translateX(' + (p - 1) * 70 + 'px)';
+      else if (fx === 'right') tr = 'translateX(' + (1 - p) * 70 + 'px)';
+      else if (fx === 'pop') tr = 'scale(' + (raw <= 0 ? 0 : back(raw)) + ')';
+      else if (fx === 'growy') tr = 'scaleY(' + p + ')';
+      el.style.opacity = fx === 'growy' ? (p > 0 ? 1 : 0) : clamp(raw * 2.5); el.style.transform = tr;
+    });
+    bar.style.transform = 'scaleX(' + clamp(t / DURATION) + ')';
+    foot.style.opacity = t < 5.5 ? clamp((t - 5.1) * 2.5) : (t > 57 ? clamp(1 - (t - 57) * 2.5) : 1);
+    blob1.style.transform = 'translate(' + Math.sin(t / 9) * 140 + 'px,' + Math.cos(t / 11) * 90 + 'px)';
+    blob2.style.transform = 'translate(' + Math.cos(t / 10) * 120 + 'px,' + Math.sin(t / 8) * 100 + 'px)';
+  }
+  window.VIDEO = { duration: DURATION, render: render };
+  if (location.search.indexOf('render') === -1) {
+    var stage = document.getElementById('stage');
+    var fit = function () { stage.style.transform = 'scale(' + Math.min(innerWidth / 1920, innerHeight / 1080) + ')'; };
+    fit(); addEventListener('resize', fit);
+    var t0 = performance.now() - (parseFloat(new URLSearchParams(location.search).get('t')) || 0) * 1000;
+    (function loop() { render(((performance.now() - t0) / 1000) % DURATION); requestAnimationFrame(loop); })();
+  } else { render(0); }
+})();
+</script>
+</body>
+</html>

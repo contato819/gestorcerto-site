@@ -1,0 +1,26 @@
+# 2026 em dia — apresentação em vídeo
+
+Vídeo: `2026-em-dia.mp4` · 1920x1080 · 30 fps · 1min06s · sem som.
+
+## Locução por cena
+
+| Tempo | Cena | Locução |
+|---|---|---|
+| 0:00 – 0:05 | 2026 em dia | 2026 em dia: notas, financeiro e contabilidade organizados, de forma simples e prática. |
+| 0:05 – 0:13 | Três frentes | A gente coloca em dia a emissão das suas notas de 2026, concilia o financeiro e entrega a contabilidade completa. |
+| 0:13 – 0:21 | Passo 1 | No ERP Gestor, o orçamento aprovado vira nota fiscal, sem digitar tudo de novo. |
+| 0:21 – 0:30 | Passo 2 | As notas de entrada de produtos e serviços são buscadas e lançadas no contas a pagar automaticamente. |
+| 0:30 – 0:39 | Passo 3 | O banco é integrado. O sistema sugere a conciliação pelo histórico e uma pessoa do nosso time valida. |
+| 0:39 – 0:48 | Passo 4 | Com tudo em ordem, a contabilidade fica em dia, com relatórios e índices de análise financeira na área do cliente. |
+| 0:48 – 0:57 | Oferta | BPO financeiro por 300 reais: o ERP Gestor e uma pessoa conciliando os seus dados de 2026. |
+| 0:57 – 1:06 | Encerramento | Vamos colocar o seu 2026 em dia? Fale com o Grupo Gestor. |
+
+## Conferir antes de publicar
+
+- **Preço:** a tela mostra só "R$ 300,00". Falta definir se é por mês ou valor único, e se a contabilidade completa está incluída ou é cobrada à parte.
+- **Telas:** as telas do sistema são desenhos ilustrativos, com fornecedores e valores inventados. Dá para trocar por capturas reais do ERP Gestor.
+- **Índices:** liquidez, margem e endividamento são exemplos.
+
+## Como gerar de novo
+
+`node render.js` (Node, Playwright e ffmpeg). Textos e tempos ficam em `index.html`.
