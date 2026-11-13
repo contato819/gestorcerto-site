@@ -6,9 +6,11 @@ Vídeo: `reforma-tributaria-servicos.mp4` · 1920x1080 · 30 fps · 1min38s · f
 
 Ritmo de leitura: calmo, cerca de 2,5 palavras por segundo. Os tempos indicam onde cada trecho aparece no vídeo.
 
+A abertura usa a fala do próprio Jefferson e passa dos 8 segundos da cena. Não precisa correr: a duração de cada cena é ajustada ao áudio gravado.
+
 | Tempo | Cena | Narração |
 |---|---|---|
-| 0:00 – 0:08 | Abertura | A reforma tributária já começou. E, se você presta serviço, ela mexe direto no seu preço e na sua margem. Veja o que muda. |
+| 0:00 – 0:08 | Abertura | Olá, tudo bem? Eu sou o Jefferson, do Grupo Gestor Escritório de Contabilidade, e vou falar com vocês sobre a reforma tributária. IBS, CBS, Imposto Seletivo, Simples por dentro ou por fora: como vai ficar? Vamos lá. |
 | 0:08 – 0:21 | Cinco tributos viram um IVA dual | Hoje, quem presta serviço paga ISS para o município e PIS e Cofins para a União. No novo modelo, entram dois tributos: o IBS, de estados e municípios, e a CBS, federal. Os dois têm a mesma base, são cobrados por fora e dão crédito nas compras. |
 | 0:21 – 0:36 | Cronograma | A mudança é gradual. 2026 é o ano de teste, com alíquotas simbólicas destacadas na nota. Em 2027, a CBS entra de vez e PIS e Cofins acabam. De 2029 a 2032, o ISS cai ano a ano enquanto o IBS sobe. Em 2033, ISS e ICMS deixam de existir. |
 | 0:36 – 0:51 | Por que o setor de serviços sente mais | O ponto de atenção: a alíquota padrão estimada fica entre 26,5 e 28 por cento, bem acima do que o serviço paga hoje. Em troca, você desconta créditos do que compra. Só que o maior custo do serviço é a folha de pagamento, e folha não gera crédito. |
